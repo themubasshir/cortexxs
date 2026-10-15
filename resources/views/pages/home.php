@@ -200,25 +200,33 @@ ob_start();
   </div>
   <div class="marquee-rows">
     <?php
-    $testimonial = '<article class="tcard testimonial-placeholder"><div class="brand"><span class="logo-text"><i class="mk"></i>Approved client</span></div><blockquote>Approved testimonial content awaiting client copy.</blockquote><div class="who"><div class="client-avatar" aria-hidden="true"></div><div><b>Client name pending</b><span>Role and company pending</span></div></div></article>';
-    $video = '<article class="tcard video-placeholder"><div class="video-placeholder-media"><span>Approved video placeholder</span></div><div class="video-badge">Client badge pending</div></article>';
+    $cards = [
+      ['synergy','Synergy','“Cortexx delivered thoughtful design, clear communication, and a seamless workflow, making the entire collaboration smooth.”',null,null],
+      ['vortex','Vortex','“Cortexx transformed our complex product into a simple, intuitive experience that our users genuinely enjoy navigating.”','1e37881e785c2acf3a1882b6dad6518d55813fa4.png','Alex Carter'],
+      ['velocity','Velocity','“Cortexx delivered thoughtful design, clear communication, and a seamless workflow, making the entire collaboration smooth.”','5c3ed82dabd37cbe156322c8c9b2a0bc9ce4460e.png','Carlos Rivera'],
+      ['synergy','Synergy','“A reliable partner from concept to launch.”','a5347cae3133954bc0feba4678f8acc6a815d29d.png','Jordan Mitchell Rivera, Founder, Synergy'],
+    ];
+    $mkCard = function($t) use ($img, $b) { ?>
+      <article class="tcard">
+        <div class="brand"><img src="<?= $b ?>/assets/images/brand-<?= $t[0] ?>.svg" alt="<?= htmlspecialchars($t[1]) ?>"></div>
+        <blockquote><?= htmlspecialchars($t[2]) ?></blockquote>
+        <?php if ($t[4]): ?><div class="who"><img src="<?= $img($t[3]) ?>" alt="<?= htmlspecialchars($t[4]) ?>"><div><b><?= htmlspecialchars(explode(',', $t[4])[0]) ?></b><?php if (str_contains($t[4], ',')): ?><span><?= htmlspecialchars(trim(explode(',', $t[4], 2)[1])) ?></span><?php endif; ?></div></div><?php endif; ?>
+      </article>
+    <?php };
+    $media = function(string $file, string $alt) use ($img) { ?><article class="tcard media-card"><img src="<?= $img($file) ?>" alt="<?= htmlspecialchars($alt) ?>" loading="lazy"><span class="media-label">Project preview</span></article><?php };
     ?>
     <div class="mrow" id="mrow1" tabindex="0" aria-label="Client testimonials">
-      <?= $testimonial . $video . $testimonial . $video ?>
+      <?php $mkCard($cards[0]); $media('7af8f62724334a5fe91653d7c11017f48534a962.png','Aurora project preview'); $mkCard($cards[1]); $media('e0a2ef80925144329a5e6efe00a4c2547ce10f39.jpg','Project preview'); $mkCard($cards[2]); ?>
     </div>
-    <div class="mrow rev" tabindex="0" aria-label="Client video proofs">
-      <?= $video . $testimonial . $video . $testimonial ?>
-    </div>
-  </div>
-  <div class="wrap">
-    <div class="press approved-content-placeholder">
-      <h4>Featured content awaiting approved client assets.</h4>
+    <div class="mrow rev" tabindex="0" aria-label="Client testimonials and project previews">
+      <?php $media('3e1e2c2f985f2a66ea7d3de34a1b4c9cd7393cfa.jpg','Project preview'); $mkCard($cards[3]); $media('3e6e787da0d4f56c7fba9a99a344c4cfb89e4e3d.jpg','Project preview'); $mkCard($cards[1]); ?>
     </div>
   </div>
 </section>
 </main>
 
 <!-- ================= FOOTER ================= -->
+<div class="footer-reveal">
 <footer class="footer" id="contact">
   <div class="wrap">
     <div class="foot-grid">
@@ -275,6 +283,7 @@ ob_start();
     </div>
   </div>
 </footer>
+</div>
 <?php
 $content = ob_get_clean();
 require __DIR__ . '/../layouts/main.php';

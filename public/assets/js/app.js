@@ -31,29 +31,30 @@
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
 
-  /* testimonial rows: arrows, drag, keyboard */
+  /* testimonial rows: independent drag, arrows, keyboard */
   const rows = [...document.querySelectorAll('.mrow')];
-  let offset = 0;
-  const nudge = dir => {
-    offset += dir * 300;
-    rows.forEach(r => { r.style.animationPlayState = 'paused'; r.style.transform = `translateX(${offset}px)`; });
-    clearTimeout(window.testimonialResume);
-    window.testimonialResume = setTimeout(() => rows.forEach(r => { r.style.transform = ''; r.style.animationPlayState = ''; }), 900);
+  const positions = rows.map(() => 0);
+  const move = (index, amount) => {
+    const row = rows[index];
+    const min = Math.min(0, row.parentElement.clientWidth - row.scrollWidth - 16);
+    positions[index] = Math.max(min, Math.min(0, positions[index] + amount));
+    row.style.transform = `translateX(${positions[index]}px)`;
   };
-  document.getElementById('tPrev')?.addEventListener('click', () => nudge(1));
-  document.getElementById('tNext')?.addEventListener('click', () => nudge(-1));
-  rows.forEach(row => {
-    row.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') nudge(1); if (e.key === 'ArrowRight') nudge(-1); });
+  document.getElementById('tPrev')?.addEventListener('click', () => rows.forEach((_, i) => move(i, 320)));
+  document.getElementById('tNext')?.addEventListener('click', () => rows.forEach((_, i) => move(i, -320)));
+  rows.forEach((row, index) => {
+    row.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') move(index, 320); if (e.key === 'ArrowRight') move(index, -320); });
     let start = 0;
-    row.addEventListener('pointerdown', e => { start = e.clientX; row.setPointerCapture(e.pointerId); row.style.animationPlayState = 'paused'; });
-    row.addEventListener('pointerup', e => { const delta = e.clientX - start; if (Math.abs(delta) > 24) nudge(delta > 0 ? 1 : -1); else row.style.animationPlayState = ''; });
+    row.addEventListener('pointerdown', e => { start = e.clientX; row.classList.add('is-dragging'); row.setPointerCapture(e.pointerId); });
+    row.addEventListener('pointerup', e => { move(index, e.clientX - start); row.classList.remove('is-dragging'); });
+    row.addEventListener('pointercancel', () => row.classList.remove('is-dragging'));
   });
 
   /* footer reveal */
   const footer = document.querySelector('.footer');
   if (footer && !reduceMotion) new IntersectionObserver(([entry], observer) => {
     if (entry.isIntersecting) { footer.classList.add('footer-in'); observer.disconnect(); }
-  }, { threshold: .18 }).observe(footer);
+  }, { threshold: .08 }).observe(footer);
   if (footer && reduceMotion) footer.classList.add('footer-in');
 
   /* newsletter forms */
