@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Never serve private dirs directly
+RewriteRule ^(app|bootstrap|config|resources|routes|storage|tests|vendor|docs)/ - [F,L]
+RewriteRule (^|/)\.env - [F,L]
+RewriteRule (^|/)composer\.(json|lock) - [F,L]
+
+# Route everything through public/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !/public/ [NC]
+RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

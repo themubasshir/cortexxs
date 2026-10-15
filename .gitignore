@@ -1,0 +1,44 @@
+# Dependencies
+/vendor/
+composer.phar
+
+# Environment & secrets
+.env
+.env.*
+!.env.example
+!.env.production.example
+
+# Runtime storage — logs, subscriber data, rate-limit state
+/storage/logs/*
+!/storage/logs/.gitkeep
+
+# OS / editor junk
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Archives & binary exports
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+
+# Design source files (too large / not for repo)
+*.fig
+*.sketch
+*.psd
+*.ai
+
+# Build/deploy artifacts
+/cortexx-deploy/
+/deploy-output/
+
+# PHP caches
+*.cache
+.phpunit.result.cache
