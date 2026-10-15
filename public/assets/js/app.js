@@ -31,11 +31,30 @@
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
 
-  /* testimonial arrows nudge marquee rows */
-  const row = document.getElementById('mrow1');
-  const nudge = dir => { row.style.animationPlayState = 'paused'; row.style.transform = `translateX(${dir * 300}px)`; setTimeout(() => { row.style.transform=''; row.style.animationPlayState=''; }, 350); };
+  /* testimonial rows: arrows, drag, keyboard */
+  const rows = [...document.querySelectorAll('.mrow')];
+  let offset = 0;
+  const nudge = dir => {
+    offset += dir * 300;
+    rows.forEach(r => { r.style.animationPlayState = 'paused'; r.style.transform = `translateX(${offset}px)`; });
+    clearTimeout(window.testimonialResume);
+    window.testimonialResume = setTimeout(() => rows.forEach(r => { r.style.transform = ''; r.style.animationPlayState = ''; }), 900);
+  };
   document.getElementById('tPrev')?.addEventListener('click', () => nudge(1));
   document.getElementById('tNext')?.addEventListener('click', () => nudge(-1));
+  rows.forEach(row => {
+    row.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') nudge(1); if (e.key === 'ArrowRight') nudge(-1); });
+    let start = 0;
+    row.addEventListener('pointerdown', e => { start = e.clientX; row.setPointerCapture(e.pointerId); row.style.animationPlayState = 'paused'; });
+    row.addEventListener('pointerup', e => { const delta = e.clientX - start; if (Math.abs(delta) > 24) nudge(delta > 0 ? 1 : -1); else row.style.animationPlayState = ''; });
+  });
+
+  /* footer reveal */
+  const footer = document.querySelector('.footer');
+  if (footer && !reduceMotion) new IntersectionObserver(([entry], observer) => {
+    if (entry.isIntersecting) { footer.classList.add('footer-in'); observer.disconnect(); }
+  }, { threshold: .18 }).observe(footer);
+  if (footer && reduceMotion) footer.classList.add('footer-in');
 
   /* newsletter forms */
   document.querySelectorAll('.news-form').forEach(form => {
