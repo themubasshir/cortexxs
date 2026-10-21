@@ -41,13 +41,21 @@
     carouselX = Math.max(min, Math.min(0, carouselX + amount));
     track.style.transform = `translateX(${carouselX}px)`;
   };
-  document.getElementById('tPrev')?.addEventListener('click', () => carouselMove(420));
-  document.getElementById('tNext')?.addEventListener('click', () => carouselMove(-420));
+  const carouselStep = () => {
+    const card = track?.querySelector('.tcard');
+    return (card?.getBoundingClientRect().width || 400) + 20;
+  };
+  document.getElementById('tPrev')?.addEventListener('click', () => carouselMove(carouselStep()));
+  document.getElementById('tNext')?.addEventListener('click', () => carouselMove(-carouselStep()));
   if (carousel && track) {
     carousel.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') carouselMove(420); if (e.key === 'ArrowRight') carouselMove(-420); });
     let start = 0;
     carousel.addEventListener('pointerdown', e => { start = e.clientX; track.classList.add('is-dragging'); carousel.setPointerCapture(e.pointerId); });
-    carousel.addEventListener('pointerup', e => { carouselMove(e.clientX - start); track.classList.remove('is-dragging'); });
+    carousel.addEventListener('pointerup', e => {
+      const delta = e.clientX - start;
+      carouselMove(Math.abs(delta) > 24 ? delta : 0);
+      track.classList.remove('is-dragging');
+    });
     carousel.addEventListener('pointercancel', () => track.classList.remove('is-dragging'));
   }
 
