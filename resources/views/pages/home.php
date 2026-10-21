@@ -156,12 +156,12 @@ ob_start();
     <div class="stack">
       <?php
       $cases = [
-        ['0107fc41fbf0a5f7bbb05203baf9f9ae1554be67.png'],
-        ['0483e4d21d214fab7b3feec8e2944b2fd53a73a0.png'],
-        ['dd9cbbd94fb6d171f0a7211523d954c2a128932d.png'],
+        ['0107fc41fbf0a5f7bbb05203baf9f9ae1554be67.png', 'nextworld'],
+        ['0483e4d21d214fab7b3feec8e2944b2fd53a73a0.png', 'velocity'],
+        ['dd9cbbd94fb6d171f0a7211523d954c2a128932d.png', 'synergy'],
       ];
       foreach ($cases as $c): ?>
-      <article class="case-card">
+      <article class="case-card case-<?= htmlspecialchars($c[1]) ?>">
         <div class="case-left">
           <span class="pill-label">Case Study</span>
           <div class="case-title">
@@ -263,7 +263,9 @@ ob_start();
           <h5>Contact</h5>
           <ul>
             <li><a href="mailto:support@parfaitartlogistics.com">info@cortexx.tech</a></li>
-            <li><a href="tel:+18662553892">+(866) 255-3892</a></li>
+            <li><a href="tel:+18662553892">+(866) 255-3892</a></li>          </ul>
+          <h5 class="address-heading">Address</h5>
+          <p>Los Angeles, CA 1800 S Main St, Los Angeles, CA 90015</p>
           </ul>
         </div>
       </div>
@@ -287,3 +289,5 @@ ob_start();
 <?php
 $content = ob_get_clean();
 require __DIR__ . '/../layouts/main.php';
+
+
