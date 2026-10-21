@@ -202,16 +202,16 @@ ob_start();
     <div class="testimonial-track" id="testimonialTrack">
       <?php
       $cards = [
-        ['vortex','Vortex','5c3ed82dabd37cbe156322c8c9b2a0bc9ce4460e.png','“Cortexx made our product simple and intuitive”','Alex Carter','Product Lead, Vortextt'],
-        ['velocity','Velocity','1e37881e785c2acf3a1882b6dad6518d55813fa4.png','“Thoughtful design and clear communication”','Carlos Rivera','Design Director, Velocity'],
+        ['vortex','Vortex','1e37881e785c2acf3a1882b6dad6518d55813fa4.png','“Cortexx made our product simple and intuitive”','Alex Carter','Product Lead, Vortextt'],
+        ['velocity','Velocity','5c3ed82dabd37cbe156322c8c9b2a0bc9ce4460e.png','“Thoughtful design and clear communication”','Carlos Rivera','Design Director, Velocity'],
         ['synergy','Synergy','a5347cae3133954bc0feba4678f8acc6a815d29d.png','“A reliable partner from concept to lanuch”','Jordan MItchell Rivera','Founder, Synergy'],
       ];
       foreach ($cards as $t): ?>
       <article class="tcard">
-        <header class="tcard-head"><img class="tavatar" src="<?= $b ?>/assets/images/figma/<?= $t[2] ?>" alt="<?= htmlspecialchars($t[3]) ?> client avatar"><img src="<?= $b ?>/assets/images/brand-<?= $t[0] ?>.svg" alt="<?= htmlspecialchars($t[1]) ?>"></header>
+        <header class="tcard-head"><img class="tavatar" src="<?= $b ?>/assets/images/figma/<?= $t[2] ?>" alt="<?= htmlspecialchars($t[4]) ?> client avatar"><img src="<?= $b ?>/assets/images/brand-<?= $t[0] ?>.svg" alt="<?= htmlspecialchars($t[1]) ?>"></header>
         <div class="stars" aria-label="5 out of 5 stars"><?php for ($i = 0; $i < 5; $i++): ?><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 .9l2.4 5 5.5.7-4 3.9 1 5.4L9 13.4l-4.9 2.5 1-5.4-4-3.9 5.5-.7z"/></svg><?php endfor; ?></div>
-        <blockquote><?= htmlspecialchars($t[2]) ?></blockquote>
-        <footer class="who"><b><?= htmlspecialchars($t[3]) ?></b><span><?= htmlspecialchars($t[4]) ?></span></footer>
+        <blockquote><?= htmlspecialchars($t[3]) ?></blockquote>
+        <footer class="who"><b><?= htmlspecialchars($t[4]) ?></b><span><?= htmlspecialchars($t[5]) ?></span></footer>
       </article>
       <?php endforeach; ?>
     </div>

@@ -45,15 +45,36 @@
     const card = track?.querySelector('.tcard');
     return (card?.getBoundingClientRect().width || 400) + 20;
   };
-  document.getElementById('tPrev')?.addEventListener('click', () => carouselMove(carouselStep()));
-  document.getElementById('tNext')?.addEventListener('click', () => carouselMove(-carouselStep()));
+  const carouselLoop = direction => {
+    if (!track || track.children.length < 2 || track.dataset.moving) return;
+    track.dataset.moving = '1';
+    const step = carouselStep();
+    if (direction === 'next') track.append(track.firstElementChild);
+    else {
+      track.prepend(track.lastElementChild);
+      track.style.transform = `translateX(${-step}px)`;
+    }
+    requestAnimationFrame(() => {
+      track.style.transition = 'transform .4s cubic-bezier(.16,1,.3,1)';
+      track.style.transform = `translateX(${direction === 'next' ? -step : 0}px)`;
+    });
+    track.addEventListener('transitionend', () => {
+      track.style.transition = 'none';
+      if (direction === 'prev') track.append(track.lastElementChild);
+      track.style.transform = 'translateX(0)';
+      delete track.dataset.moving;
+      requestAnimationFrame(() => { track.style.transition = ''; });
+    }, { once: true });
+  };
+  document.getElementById('tPrev')?.addEventListener('click', () => carouselLoop('prev'));
+  document.getElementById('tNext')?.addEventListener('click', () => carouselLoop('next'));
   if (carousel && track) {
-    carousel.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') carouselMove(420); if (e.key === 'ArrowRight') carouselMove(-420); });
+    carousel.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') carouselLoop('prev'); if (e.key === 'ArrowRight') carouselLoop('next'); });
     let start = 0;
     carousel.addEventListener('pointerdown', e => { start = e.clientX; track.classList.add('is-dragging'); carousel.setPointerCapture(e.pointerId); });
     carousel.addEventListener('pointerup', e => {
       const delta = e.clientX - start;
-      carouselMove(Math.abs(delta) > 24 ? delta : 0);
+      if (Math.abs(delta) > 24) carouselLoop(delta < 0 ? 'next' : 'prev');
       track.classList.remove('is-dragging');
     });
     carousel.addEventListener('pointercancel', () => track.classList.remove('is-dragging'));
