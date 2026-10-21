@@ -175,29 +175,24 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .testi .arrow:hover{background:var(--blue);border-color:var(--blue)}
 .testi .arrow:hover svg{stroke:#fff}
 .testi .arrow svg{width:18px;height:18px;stroke:var(--ink);fill:none;stroke-width:2}
-.marquee-rows{display:flex;flex-direction:column;gap:28px;overflow:hidden;max-width:100vw;contain:inline-size;padding:0 7vw;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
-.mrow{display:flex;gap:24px;width:max-content;transform:translateX(0);touch-action:pan-y;cursor:grab;user-select:none;transition:transform .45s cubic-bezier(.16,1,.3,1)}
-.mrow.is-dragging{cursor:grabbing;transition:none}
-.tcard{width:390px;height:250px;flex:none;background:#faf9f6;border:1px solid var(--line);border-radius:16px;padding:24px;position:relative}
-.tcard .brand img{height:28px;width:100px;object-fit:contain;object-position:left center}
-.media-card{padding:0;overflow:hidden;background:#eef2fb}
-.media-card>img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
-.media-label{position:absolute;left:16px;bottom:16px;padding:7px 11px;border-radius:999px;background:rgba(2,6,18,.68);color:#fff;font-size:12px}
-.tcard .brand{color:var(--ink)}
-.tcard .mk{background:#c8d5ff;width:26px;height:26px;border-radius:7px}
-.tcard .who span{display:block;color:var(--muted);font-size:14px}
-.client-avatar{width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,#d8deef,#b8c4dd)}
-.video-placeholder{padding:0;background:#17213d;color:#fff;overflow:hidden;position:relative}
-.video-placeholder-media{min-height:248px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#243b78,#11192d);color:rgba(255,255,255,.7);font-size:14px}
-.video-badge{position:absolute;left:20px;bottom:20px;padding:8px 12px;border-radius:999px;background:rgba(0,0,0,.35);font-size:13px}
-.approved-content-placeholder{color:var(--muted)}
-.tcard .brand{height:38px;display:flex;align-items:center;margin-bottom:18px}
-.tcard blockquote{font-size:22px;line-height:32px;letter-spacing:-.72px;color:var(--ink)}
-.tcard .who{display:flex;gap:12px;align-items:center;margin-top:20px}
-.tcard .who img{width:64px;height:64px;border-radius:800px;object-fit:cover}
-.tcard .who b{display:block;font-size:20px;font-weight:600;color:var(--ink)}
-.tcard .who .stars svg{width:20px;height:20px}
+.testimonial-carousel{overflow:hidden;max-width:1240px;margin:0 auto;touch-action:pan-y}
+.testimonial-track{display:flex;gap:20px;transition:transform .4s cubic-bezier(.16,1,.3,1);cursor:grab;user-select:none}
+.testimonial-track.is-dragging{cursor:grabbing;transition:none}
+.tcard{width:400px;height:353px;flex:0 0 400px;background:#f2f2f2;border:1px solid #e9e5fa;border-radius:16px;padding:24px;display:flex;flex-direction:column;min-width:0}
+.tcard-head{height:78px;display:flex;align-items:center;gap:18px;flex:none}
+.tcard-head img{width:151px;height:50px;object-fit:contain;object-position:left center}
+.client-mark{width:78px;height:78px;flex:none;border-radius:50%;background:#dddde0}
+.tcard>.stars{display:flex;gap:5px;height:24px;margin-top:36px;flex:none}
+.tcard>.stars svg{width:24px;height:24px;fill:#fda328}
+.tcard blockquote{font-size:22px;line-height:32px;letter-spacing:-.72px;color:var(--ink);margin-top:9px;flex:1}
+.tcard .who{display:flex;flex-direction:column;margin-top:16px;flex:none}
+.tcard .who b{display:block;font-size:20px;line-height:24px;font-weight:600;color:var(--ink)}
+.tcard .who span{display:block;color:var(--muted);font-size:16px;line-height:24px}
+.recognition{margin-top:24px;border-top:1px solid var(--line);padding-top:16px}
+.recognition h3{font-size:24px;line-height:36px;font-weight:600;color:var(--ink)}
+.recognition-logos{display:grid;grid-template-columns:repeat(6,1fr);height:96px;align-items:center}
+.recognition-logos span{height:96px;display:flex;align-items:center;justify-content:center;border-right:1px solid var(--line);font-weight:800;font-size:20px;color:#333}
+.recognition-logos span:last-child{border-right:0}
 .press{margin-top:56px;text-align:center}
 .press h4{font-size:24px;font-weight:500;letter-spacing:-.72px;color:var(--ink)}
 .press-row{display:flex;justify-content:center;gap:0;margin-top:28px;flex-wrap:wrap}
@@ -205,8 +200,8 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .press-row .pl span{font-weight:800;font-size:18px;letter-spacing:-.02em;color:#333;display:flex;align-items:center;gap:6px}
 
 /* ---------- footer (Figma: #020612 navy) ---------- */
-.footer-reveal{position:relative;background:#020612;margin-top:60px;min-height:100vh}
-.footer{background:#020612;color:#fff;padding:50px 0 68px;min-height:100vh;overflow:hidden;position:sticky;bottom:0;z-index:1}
+.footer-reveal{position:relative;background:#020612;margin-top:60px}
+.footer{background:#020612;color:#fff;padding:50px 0 68px;min-height:752px;overflow:hidden;position:relative;z-index:1}
 .foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;justify-content:space-between;gap:72px;flex-wrap:wrap;opacity:0;transform:translateY(22px);transition:opacity .9s ease .12s,transform .9s cubic-bezier(.16,1,.3,1) .12s}
 .footer.footer-in .foot-grid{opacity:1;transform:none}
 .foot-news{max-width:390px}
@@ -281,14 +276,28 @@ button{font:inherit;border:0;background:none;cursor:pointer}
   .svc-grid{grid-template-columns:1fr}
   .work-card h3{font-size:24px}
   .sec-head h2{font-size:32px}
-  .marquee-rows{padding:0 24px}
-  .tcard{width:320px;height:230px}
-  .tcard blockquote{font-size:17px;line-height:26px}
+  .testimonial-carousel{margin-inline:24px}
+  .testimonial-track{gap:20px}
+  .tcard{width:284px;height:262px;flex-basis:284px;padding:20px}
+  .tcard-head{height:52px;gap:10px}
+  .client-mark{width:52px;height:52px}
+  .tcard-head img{width:120px;height:40px}
+  .tcard>.stars{height:18px;margin-top:18px;gap:3px}
+  .tcard>.stars svg{width:18px;height:18px}
+  .tcard blockquote{font-size:17px;line-height:26px;margin-top:7px}
+  .tcard .who{margin-top:8px}
+  .tcard .who b{font-size:16px;line-height:20px}
+  .tcard .who span{font-size:13px;line-height:18px}
+  .recognition{margin-inline:24px;padding-inline:0}
+  .recognition h3{font-size:18px;line-height:28px}
+  .recognition-logos{grid-template-columns:repeat(3,1fr);height:auto}
+  .recognition-logos span{height:54px;font-size:14px}
   .case-stats{gap:20px}
   .foot-grid{grid-template-columns:1fr;gap:42px}
   .news-form input{max-width:none}
   .desktop-only{display:none}
   .site-header{padding:12px 16px}
+  .footer{min-height:594px;padding:32px 0}
 }
 .mobile-nav{display:none;position:fixed;inset:0;background:#fff;z-index:200;padding:90px 32px;flex-direction:column;gap:24px}
 .mobile-nav.open{display:flex}

@@ -31,24 +31,25 @@
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
 
-  /* testimonial rows: independent drag, arrows, keyboard */
-  const rows = [...document.querySelectorAll('.mrow')];
-  const positions = rows.map(() => 0);
-  const move = (index, amount) => {
-    const row = rows[index];
-    const min = Math.min(0, row.parentElement.clientWidth - row.scrollWidth - 16);
-    positions[index] = Math.max(min, Math.min(0, positions[index] + amount));
-    row.style.transform = `translateX(${positions[index]}px)`;
+  /* testimonial carousel */
+  const carousel = document.getElementById('testimonialCarousel');
+  const track = document.getElementById('testimonialTrack');
+  let carouselX = 0;
+  const carouselMove = amount => {
+    if (!carousel || !track) return;
+    const min = Math.min(0, carousel.clientWidth - track.scrollWidth);
+    carouselX = Math.max(min, Math.min(0, carouselX + amount));
+    track.style.transform = `translateX(${carouselX}px)`;
   };
-  document.getElementById('tPrev')?.addEventListener('click', () => rows.forEach((_, i) => move(i, 320)));
-  document.getElementById('tNext')?.addEventListener('click', () => rows.forEach((_, i) => move(i, -320)));
-  rows.forEach((row, index) => {
-    row.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') move(index, 320); if (e.key === 'ArrowRight') move(index, -320); });
+  document.getElementById('tPrev')?.addEventListener('click', () => carouselMove(420));
+  document.getElementById('tNext')?.addEventListener('click', () => carouselMove(-420));
+  if (carousel && track) {
+    carousel.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') carouselMove(420); if (e.key === 'ArrowRight') carouselMove(-420); });
     let start = 0;
-    row.addEventListener('pointerdown', e => { start = e.clientX; row.classList.add('is-dragging'); row.setPointerCapture(e.pointerId); });
-    row.addEventListener('pointerup', e => { move(index, e.clientX - start); row.classList.remove('is-dragging'); });
-    row.addEventListener('pointercancel', () => row.classList.remove('is-dragging'));
-  });
+    carousel.addEventListener('pointerdown', e => { start = e.clientX; track.classList.add('is-dragging'); carousel.setPointerCapture(e.pointerId); });
+    carousel.addEventListener('pointerup', e => { carouselMove(e.clientX - start); track.classList.remove('is-dragging'); });
+    carousel.addEventListener('pointercancel', () => track.classList.remove('is-dragging'));
+  }
 
   /* footer reveal */
   const footer = document.querySelector('.footer');

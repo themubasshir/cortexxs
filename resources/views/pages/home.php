@@ -35,9 +35,9 @@ ob_start();
   <div class="wrap">
     <div class="hero-grid">
       <div class="hero-left">
-        <span class="pill-label reveal">Design <i class="dot"></i> Engineer <i class="dot"></i> Deliver</span>
-        <h1 class="reveal"><span class="blue">We build</span> software,<br>websites, apps &amp;<br>AI systems.</h1>
-        <p class="hero-sub reveal">Digital products that attract customers, simplify operations and support growth.</p>
+        <span class="pill-label reveal">Think <i class="dot"></i> Design <i class="dot"></i> Build</span>
+        <h1 class="reveal"><span class="blue">We Build</span> Software,<br>Websites, App<br>and AI.</h1>
+        <p class="hero-sub reveal">Designed around your business. Built to move it forward.</p>
         <div class="hero-ctas reveal">
           <a class="btn btn-primary" href="#contact">Start Project</a>
           <a class="btn btn-ghost" href="#work">View Work <span aria-hidden="true">→</span></a>
@@ -66,7 +66,7 @@ ob_start();
       </div>
     </div>
     <div class="trust reveal">
-      <p>Chosen by businesses thinking ahead</p>
+      <p>Trusted by 50,000+ businesses for innovative design and growth.</p>
       <?php $brandLogos = ['lumina' => 'Lumina', 'vortex' => 'Vortex', 'velocity' => 'Velocity', 'synergy' => 'Synergy', 'enigma' => 'Enigma', 'spectrum' => 'Spectrum']; ?>
       <div class="trust-logos" aria-label="Trusted brands. Logo carousel pauses on hover or keyboard focus.">
         <div class="trust-track" tabindex="0">
@@ -132,10 +132,10 @@ ob_start();
     <div class="svc-grid">
       <?php
       $svcs = [
-        ['Web Development','Systems built to simplify and scale.','<rect x="5" y="4" width="22" height="18" rx="2"/><path d="M5 9h22M9 4v5"/>'],
-        ['Software','Digital experiences that attract and convert','<path d="M4 6h24M8 6v14a2 2 0 002 2h4a2 2 0 002-2V6"/><rect x="4" y="4" width="24" height="4" rx="1"/>'],
+        ['Software','Systems built to simplify and scale.','<rect x="5" y="4" width="22" height="18" rx="2"/><path d="M5 9h22M9 4v5"/>'],
+        ['Websites','Digital experiences that attract and convert','<path d="M4 6h24M8 6v14a2 2 0 002 2h4a2 2 0 002-2V6"/><rect x="4" y="4" width="24" height="4" rx="1"/>'],
+        ['Apps','Useful products designed around real users.','<rect x="6" y="4" width="20" height="24" rx="3"/><path d="M12 24h8"/><circle cx="16" cy="10" r="2"/>'],
         ['AI & Automation','Smarter workflows that save time','<circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M8 8l2.5 2.5M24 8l-2.5 2.5M8 24l2.5-2.5M24 24l-2.5-2.5"/>'],
-        ['UI/UX Design','Useful products designed around real users.','<rect x="6" y="4" width="20" height="24" rx="3"/><path d="M12 24h8"/><circle cx="16" cy="10" r="2"/>'],
       ];
       foreach ($svcs as $s): ?>
       <article class="svc-card reveal">
@@ -198,28 +198,28 @@ ob_start();
       </div>
     </div>
   </div>
-  <div class="marquee-rows">
-    <?php
-    $cards = [
-      ['synergy','Synergy','“Cortexx delivered thoughtful design, clear communication, and a seamless workflow, making the entire collaboration smooth.”',null,null],
-      ['vortex','Vortex','“Cortexx transformed our complex product into a simple, intuitive experience that our users genuinely enjoy navigating.”','1e37881e785c2acf3a1882b6dad6518d55813fa4.png','Alex Carter'],
-      ['velocity','Velocity','“Cortexx delivered thoughtful design, clear communication, and a seamless workflow, making the entire collaboration smooth.”','5c3ed82dabd37cbe156322c8c9b2a0bc9ce4460e.png','Carlos Rivera'],
-      ['synergy','Synergy','“A reliable partner from concept to launch.”','a5347cae3133954bc0feba4678f8acc6a815d29d.png','Jordan Mitchell Rivera, Founder, Synergy'],
-    ];
-    $mkCard = function($t) use ($img, $b) { ?>
+  <div class="testimonial-carousel" id="testimonialCarousel" tabindex="0" aria-label="Client testimonials">
+    <div class="testimonial-track" id="testimonialTrack">
+      <?php
+      $cards = [
+        ['vortex','Vortex','“Cortexx made our product simple and intuitive”','Alex Carter','Product Lead, Vortextt'],
+        ['velocity','Velocity','“Thoughtful design and clear communication”','Carlos Rivera','Design Director, Velocity'],
+        ['synergy','Synergy','“A reliable partner from concept to lanuch”','Jordan MItchell Rivera','Founder, Synergy'],
+      ];
+      foreach ($cards as $t): ?>
       <article class="tcard">
-        <div class="brand"><img src="<?= $b ?>/assets/images/brand-<?= $t[0] ?>.svg" alt="<?= htmlspecialchars($t[1]) ?>"></div>
+        <header class="tcard-head"><span class="client-mark" aria-hidden="true"></span><img src="<?= $b ?>/assets/images/brand-<?= $t[0] ?>.svg" alt="<?= htmlspecialchars($t[1]) ?>"></header>
+        <div class="stars" aria-label="5 out of 5 stars"><?php for ($i = 0; $i < 5; $i++): ?><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 .9l2.4 5 5.5.7-4 3.9 1 5.4L9 13.4l-4.9 2.5 1-5.4-4-3.9 5.5-.7z"/></svg><?php endfor; ?></div>
         <blockquote><?= htmlspecialchars($t[2]) ?></blockquote>
-        <?php if ($t[4]): ?><div class="who"><img src="<?= $img($t[3]) ?>" alt="<?= htmlspecialchars($t[4]) ?>"><div><b><?= htmlspecialchars(explode(',', $t[4])[0]) ?></b><?php if (str_contains($t[4], ',')): ?><span><?= htmlspecialchars(trim(explode(',', $t[4], 2)[1])) ?></span><?php endif; ?></div></div><?php endif; ?>
+        <footer class="who"><b><?= htmlspecialchars($t[3]) ?></b><span><?= htmlspecialchars($t[4]) ?></span></footer>
       </article>
-    <?php };
-    $media = function(string $file, string $alt) use ($img) { ?><article class="tcard media-card"><img src="<?= $img($file) ?>" alt="<?= htmlspecialchars($alt) ?>" loading="lazy"><span class="media-label">Project preview</span></article><?php };
-    ?>
-    <div class="mrow" id="mrow1" tabindex="0" aria-label="Client testimonials">
-      <?php $mkCard($cards[0]); $media('7af8f62724334a5fe91653d7c11017f48534a962.png','Aurora project preview'); $mkCard($cards[1]); $media('e0a2ef80925144329a5e6efe00a4c2547ce10f39.jpg','Project preview'); $mkCard($cards[2]); ?>
+      <?php endforeach; ?>
     </div>
-    <div class="mrow rev" tabindex="0" aria-label="Client testimonials and project previews">
-      <?php $media('3e1e2c2f985f2a66ea7d3de34a1b4c9cd7393cfa.jpg','Project preview'); $mkCard($cards[3]); $media('3e6e787da0d4f56c7fba9a99a344c4cfb89e4e3d.jpg','Project preview'); $mkCard($cards[1]); ?>
+  </div>
+  <div class="recognition wrap">
+    <h3>Featured and recognized:</h3>
+    <div class="recognition-logos" aria-label="Featured and recognized brands">
+      <span>OYO</span><span>FedEx</span><span>Amazon</span><span>OLA</span><span>Microsoft</span><span>Walmart</span>
     </div>
   </div>
 </section>
