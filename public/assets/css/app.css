@@ -172,17 +172,22 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .case-visual img{width:100%;border-radius:32px;box-shadow:0 30px 70px rgba(13,45,206,.16)}
 
 /* ---------- testimonials ---------- */
-.testi{position:relative}
-.testi .arrows{display:flex;gap:16px}
-.testi .arrow{width:48px;height:48px;border-radius:999px;background:#e8efff;color:var(--blue);display:flex;align-items:center;justify-content:center;transition:.2s}
+.testi{position:relative;padding-top:0}
+.testi .sec-head{margin-bottom:40px}
+.testi .sec-head .col-left{display:flex;flex-direction:column;align-items:flex-start}
+.testi .sec-head h2{margin-top:16px}
+.testi .pill-label{height:39px}
+.testi .recognition{margin-top:43px}
+.testi .arrows{display:flex;gap:16px;align-items:flex-end}
+.testi .arrow{width:40px;height:40px;border-radius:999px;background:#e8efff;color:var(--blue);display:flex;align-items:center;justify-content:center;transition:.2s}
 .testi .arrow:last-child{background:var(--blue);color:#fff}
 .testi .arrow:hover{background:var(--blue);border-color:var(--blue)}
 .testi .arrow:hover svg{stroke:#fff}
-.testi .arrow svg{width:18px;height:18px;stroke:var(--ink);fill:none;stroke-width:2}
+.testi .arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
 .testimonial-carousel{overflow:hidden;max-width:1240px;margin:0 auto;touch-action:pan-y}
 .testimonial-track{display:flex;gap:20px;transition:transform .4s cubic-bezier(.16,1,.3,1);cursor:grab;user-select:none}
 .testimonial-track.is-dragging{cursor:grabbing;transition:none}
-.tcard{width:400px;height:353px;flex:0 0 400px;background:#fff;border:1px solid #e5e7ef;border-radius:16px;box-shadow:0 10px 28px rgba(26,38,82,.07);padding:24px;display:flex;flex-direction:column;min-width:0}
+.tcard{width:400px;height:353px;flex:0 0 400px;background:#f2f2f2;border:1px solid #e9e5fa;border-radius:16px;box-shadow:0 10px 28px rgba(26,38,82,.07);padding:24px;display:flex;flex-direction:column;min-width:0}
 .tcard-head{height:78px;display:flex;align-items:center;gap:18px;flex:none}
 .tcard-head img:not(.tavatar){width:151.2px;height:50.4px;object-fit:contain;object-position:left center}
 .tcard:first-child .tcard-head img:not(.tavatar){width:162px;height:60px}
@@ -288,9 +293,16 @@ button{font:inherit;border:0;background:none;cursor:pointer}
   .svc-grid{grid-template-columns:1fr}
   .work-card h3{font-size:24px}
   .sec-head h2{font-size:32px}
+  .testi{padding-top:0}
+  .testi .sec-head{margin-bottom:32px}
+  .testi .sec-head h2{margin-top:12px}
+  .testi .pill-label{height:26px;padding:4px 10px;font-size:12px}
+  .testi .recognition{margin-top:32px}
+  .testi .arrows{gap:10px;margin-top:16px;align-self:flex-end}
+  .testi .arrow{width:34px;height:34px}
   .testimonial-carousel{margin-inline:24px}
   .testimonial-track{gap:20px}
-  .tcard{width:284px;height:262px;flex-basis:284px;padding:20px;background:#fff;border-color:#e5e7ef;box-shadow:0 8px 18px rgba(26,38,82,.06)}
+  .tcard{width:284px;height:262px;flex-basis:284px;padding:20px;background:#f2f2f2;border-color:#e9e5fa;box-shadow:0 8px 18px rgba(26,38,82,.06)}
   .tcard-head{height:52px;gap:10px}
   .tcard-head .tavatar{width:52px;height:52px}
   .tcard-head img:not(.tavatar){width:120px;height:40px}

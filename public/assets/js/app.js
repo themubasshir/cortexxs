@@ -82,9 +82,14 @@
 
   /* footer reveal */
   const footer = document.querySelector('.footer');
-  if (footer && !reduceMotion) new IntersectionObserver(([entry], observer) => {
-    if (entry.isIntersecting) { footer.classList.add('footer-in'); observer.disconnect(); }
-  }, { threshold: .08 }).observe(footer);
+  const footerReveal = document.querySelector('.footer-reveal');
+  if (footer && !reduceMotion) {
+    const revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) footer.classList.add('footer-in');
+      else footer.classList.remove('footer-in');
+    }), { threshold: [0, .08] });
+    revealObserver.observe(footerReveal || footer);
+  }
   if (footer && reduceMotion) footer.classList.add('footer-in');
 
   /* newsletter forms */
