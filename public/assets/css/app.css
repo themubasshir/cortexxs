@@ -179,6 +179,9 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .testi .pill-label{height:39px}
 .testi .recognition{margin-top:43px;padding-top:16px}
 .testi .arrows{display:flex;gap:16px;align-items:flex-end}
+.carousel-toggle{height:40px;padding:0 12px;border:1px solid #d8def8;border-radius:999px;background:#fff;color:#0d2dce;font-size:13px;font-weight:600}
+.carousel-toggle:hover{background:#e8efff}
+.carousel-toggle:focus-visible{outline:2px solid #3960f9;outline-offset:3px}
 .testi .arrow{width:40px;height:40px;border:0;border-radius:999px;background:#e8efff;color:#0d2dce;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s,box-shadow .2s}
 .testi .arrow:last-child{background:#0d2dce;color:#fff}
 .testi .arrow:hover{background:#3960f9;box-shadow:0 6px 14px rgba(13,45,206,.2);transform:translateY(-1px)}
@@ -301,6 +304,7 @@ button{font:inherit;border:0;background:none;cursor:pointer}
   .testi .recognition{margin-top:32px;padding-top:0}
   .testi .arrows{gap:10px;margin-top:16px;align-self:flex-end}
   .testi .arrow{width:34px;height:34px}
+  .carousel-toggle{height:34px;padding-inline:10px}
   .testi .arrow svg{width:20px;height:20px}
   .testimonial-carousel{margin-inline:24px}
   .testimonial-track{gap:20px}

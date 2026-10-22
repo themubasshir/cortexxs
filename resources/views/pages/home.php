@@ -195,6 +195,7 @@ ob_start();
       <div class="arrows">
         <button class="arrow" id="tPrev" aria-label="Scroll testimonials left"><svg viewBox="0 0 18 18"><path d="M12 3l-6 6 6 6"/></svg></button>
         <button class="arrow" id="tNext" aria-label="Scroll testimonials right"><svg viewBox="0 0 18 18"><path d="M6 3l6 6-6 6"/></svg></button>
+        <button class="carousel-toggle" id="tToggle" type="button" aria-label="Pause testimonials" aria-pressed="false">Pause</button>
       </div>
     </div>
   </div>

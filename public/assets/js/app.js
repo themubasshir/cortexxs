@@ -34,20 +34,32 @@
   /* testimonial carousel */
   const carousel = document.getElementById('testimonialCarousel');
   const track = document.getElementById('testimonialTrack');
-  let carouselX = 0;
-  const carouselMove = amount => {
-    if (!carousel || !track) return;
-    const min = Math.min(0, carousel.clientWidth - track.scrollWidth);
-    carouselX = Math.max(min, Math.min(0, carouselX + amount));
-    track.style.transform = `translateX(${carouselX}px)`;
+  let carouselTimer;
+  let carouselLastAdvance = Date.now();
+  let carouselVisible = false;
+  let carouselBusy = false;
+  let carouselHover = false;
+  let carouselFocused = false;
+  let carouselDragging = false;
+  let carouselPaused = reduceMotion;
+  const carouselStep = () => (track?.querySelector('.tcard')?.getBoundingClientRect().width || 400) + 20;
+  const carouselCanPlay = () => {
+    if (!carousel) return false;
+    const rect = carousel.getBoundingClientRect();
+    carouselVisible = rect.bottom > 0 && rect.top < innerHeight;
+    return carouselVisible && !carouselPaused && !carouselHover && !carouselFocused && !carouselDragging && !document.hidden;
   };
-  const carouselStep = () => {
-    const card = track?.querySelector('.tcard');
-    return (card?.getBoundingClientRect().width || 400) + 20;
+  const scheduleCarousel = () => {
+    clearTimeout(carouselTimer);
+    if (!carouselCanPlay()) return;
+    carouselLastAdvance = Date.now();
+    carouselTimer = setTimeout(() => {
+      if (carouselCanPlay()) carouselLoop('next');
+    }, 4000);
   };
   const carouselLoop = direction => {
-    if (!track || track.children.length < 2 || track.dataset.moving) return;
-    track.dataset.moving = '1';
+    if (!track || track.children.length < 2 || carouselBusy) return;
+    carouselBusy = true;
     const step = carouselStep();
     if (direction === 'prev') {
       track.prepend(track.lastElementChild);
@@ -55,30 +67,60 @@
       track.style.transform = `translateX(${-step}px)`;
     }
     requestAnimationFrame(() => {
-      track.style.transition = 'transform .4s cubic-bezier(.16,1,.3,1)';
+      track.style.transition = 'transform .6s cubic-bezier(.16,1,.3,1)';
       track.style.transform = `translateX(${direction === 'next' ? -step : 0}px)`;
     });
     track.addEventListener('transitionend', () => {
       track.style.transition = 'none';
       if (direction === 'next') track.append(track.firstElementChild);
       track.style.transform = 'translateX(0)';
-      delete track.dataset.moving;
-      requestAnimationFrame(() => { track.style.transition = ''; });
+      carouselBusy = false;
+      requestAnimationFrame(() => { track.style.transition = ''; scheduleCarousel(); });
     }, { once: true });
   };
-  document.getElementById('tPrev')?.addEventListener('click', () => carouselLoop('prev'));
-  document.getElementById('tNext')?.addEventListener('click', () => carouselLoop('next'));
+  const manualCarousel = direction => { clearTimeout(carouselTimer); carouselLastAdvance = Date.now(); carouselLoop(direction); };
+  const toggle = document.getElementById('tToggle');
+  const updateToggle = () => {
+    if (!toggle) return;
+    toggle.textContent = carouselPaused ? 'Play' : 'Pause';
+    toggle.setAttribute('aria-label', carouselPaused ? 'Play testimonials' : 'Pause testimonials');
+    toggle.setAttribute('aria-pressed', String(carouselPaused));
+  };
+  toggle?.addEventListener('click', () => { carouselPaused = !carouselPaused; updateToggle(); scheduleCarousel(); });
+  document.getElementById('tPrev')?.addEventListener('click', () => manualCarousel('prev'));
+  document.getElementById('tNext')?.addEventListener('click', () => manualCarousel('next'));
   if (carousel && track) {
-    carousel.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') carouselLoop('prev'); if (e.key === 'ArrowRight') carouselLoop('next'); });
+    const carouselRegion = document.querySelector('.testi') || carousel;
+    carousel.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') manualCarousel('prev'); if (e.key === 'ArrowRight') manualCarousel('next'); });
+    carouselRegion.addEventListener('mouseenter', () => { carouselHover = true; clearTimeout(carouselTimer); });
+    carouselRegion.addEventListener('mouseleave', () => { carouselHover = false; scheduleCarousel(); });
+    carouselHover = false;
+    carouselRegion.addEventListener('focusin', () => { carouselFocused = true; clearTimeout(carouselTimer); });
+    carouselRegion.addEventListener('focusout', e => { if (!carouselRegion.contains(e.relatedTarget)) { carouselFocused = false; scheduleCarousel(); } });
     let start = 0;
-    carousel.addEventListener('pointerdown', e => { start = e.clientX; track.classList.add('is-dragging'); carousel.setPointerCapture(e.pointerId); });
-    carousel.addEventListener('pointerup', e => {
-      const delta = e.clientX - start;
-      if (Math.abs(delta) > 24) carouselLoop(delta < 0 ? 'next' : 'prev');
-      track.classList.remove('is-dragging');
-    });
-    carousel.addEventListener('pointercancel', () => track.classList.remove('is-dragging'));
+    carousel.addEventListener('pointerdown', e => { carouselDragging = true; start = e.clientX; clearTimeout(carouselTimer); track.classList.add('is-dragging'); carousel.setPointerCapture(e.pointerId); });
+    carousel.addEventListener('pointerup', e => { const delta = e.clientX - start; if (Math.abs(delta) > 24) manualCarousel(delta < 0 ? 'next' : 'prev'); carouselDragging = false; track.classList.remove('is-dragging'); scheduleCarousel(); });
+    carousel.addEventListener('pointercancel', () => { carouselDragging = false; track.classList.remove('is-dragging'); scheduleCarousel(); });
+    new IntersectionObserver(([entry]) => {
+      const rect = carousel.getBoundingClientRect();
+      carouselVisible = entry.isIntersecting || (rect.bottom > 0 && rect.top < innerHeight);
+      scheduleCarousel();
+    }, { threshold: .1 }).observe(carousel);
+    carouselVisible = carousel.getBoundingClientRect().bottom > 0 && carousel.getBoundingClientRect().top < innerHeight;
+    scheduleCarousel();
   }
+  addEventListener('scroll', () => {
+    if (!carousel) return;
+    const rect = carousel.getBoundingClientRect();
+    const visible = rect.bottom > 0 && rect.top < innerHeight;
+    if (visible !== carouselVisible) { carouselVisible = visible; scheduleCarousel(); }
+    if (visible && !carouselDue && !carouselPaused && !carouselHover && !carouselFocused) scheduleCarousel();
+  }, { passive: true });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) clearTimeout(carouselTimer);
+    else { carouselLastAdvance = Date.now(); scheduleCarousel(); }
+  });
+  updateToggle();
 
   /* footer reveal */
   const footer = document.querySelector('.footer');
