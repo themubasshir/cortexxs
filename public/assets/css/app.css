@@ -63,11 +63,11 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .hero-ctas{display:flex;gap:12px;margin-top:32px}
 .hero-ctas .btn-ghost svg{width:16px;height:16px}
 .social-proof{display:flex;align-items:center;gap:10px;margin-top:38px}
-.avatars{display:flex}
+.avatars{display:flex;flex:none}
 .avatars img,.avatars .av-more{width:42px;height:42px;border-radius:50%;border:1.5px solid #f9f5fc;margin-left:-14px}
 .avatars img:first-child{margin-left:0}
 .av-more{display:flex;align-items:center;justify-content:center;background:#111;color:#fff;font-size:12px;font-weight:600}
-.proof-text{font-size:16px;line-height:1.38}
+.proof-text{font-size:16px;line-height:1.38;min-width:0}
 .stars{display:flex;gap:4px}
 .stars svg{width:18px;height:18px;fill:var(--star)}
 .hero-visual{position:relative;flex:1}
@@ -355,4 +355,5 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .mobile-nav{display:none;position:fixed;inset:0;background:#fff;z-index:200;padding:90px 32px;flex-direction:column;gap:24px}
 .mobile-nav.open{display:flex}
 .mobile-nav a{font-size:28px;font-weight:600;color:var(--ink)}
+.mobile-nav .btn-dark{color:#fff}
 .mobile-nav .close{position:absolute;top:24px;right:24px;width:44px;height:44px}
