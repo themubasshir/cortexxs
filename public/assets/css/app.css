@@ -183,8 +183,8 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .carousel-toggle:hover{background:#e8efff}
 .carousel-toggle:focus-visible{outline:2px solid #3960f9;outline-offset:3px}
 .testi .arrow{width:40px;height:40px;border:0;border-radius:999px;background:#e8efff;color:#0d2dce;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s,box-shadow .2s}
-.testi .arrow:last-child{background:#0d2dce;color:#fff}
-.testi .arrow:hover{background:#3960f9;box-shadow:0 6px 14px rgba(13,45,206,.2);transform:translateY(-1px)}
+.testi #tNext{background:#0d2dce;color:#fff}
+.testi .arrow:hover{background:#3960f9;color:#fff;box-shadow:0 6px 14px rgba(13,45,206,.2);transform:translateY(-1px)}
 .testi .arrow:active{transform:translateY(0);box-shadow:none}
 .testi .arrow:focus-visible{outline:2px solid #3960f9;outline-offset:3px}
 .testi .arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
