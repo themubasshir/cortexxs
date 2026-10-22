@@ -35,7 +35,6 @@
   const carousel = document.getElementById('testimonialCarousel');
   const track = document.getElementById('testimonialTrack');
   let carouselTimer;
-  let carouselLastAdvance = Date.now();
   let carouselVisible = false;
   let carouselBusy = false;
   let carouselHover = false;
@@ -52,7 +51,6 @@
   const scheduleCarousel = () => {
     clearTimeout(carouselTimer);
     if (!carouselCanPlay()) return;
-    carouselLastAdvance = Date.now();
     carouselTimer = setTimeout(() => {
       if (carouselCanPlay()) carouselLoop('next');
     }, 4000);
@@ -78,7 +76,7 @@
       requestAnimationFrame(() => { track.style.transition = ''; scheduleCarousel(); });
     }, { once: true });
   };
-  const manualCarousel = direction => { clearTimeout(carouselTimer); carouselLastAdvance = Date.now(); carouselLoop(direction); };
+  const manualCarousel = direction => { clearTimeout(carouselTimer); carouselLoop(direction); };
   const toggle = document.getElementById('tToggle');
   const updateToggle = () => {
     if (!toggle) return;
@@ -114,11 +112,10 @@
     const rect = carousel.getBoundingClientRect();
     const visible = rect.bottom > 0 && rect.top < innerHeight;
     if (visible !== carouselVisible) { carouselVisible = visible; scheduleCarousel(); }
-    if (visible && !carouselDue && !carouselPaused && !carouselHover && !carouselFocused) scheduleCarousel();
   }, { passive: true });
   document.addEventListener('visibilitychange', () => {
     if (document.hidden) clearTimeout(carouselTimer);
-    else { carouselLastAdvance = Date.now(); scheduleCarousel(); }
+    else scheduleCarousel();
   });
   updateToggle();
 

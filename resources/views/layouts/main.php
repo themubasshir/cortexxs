@@ -1,6 +1,9 @@
 <?php
 /** @var string $title @var string $description @var string $content @var string $base */
 $base = $base ?? '';
+$assetRelease = getenv('CORTEXX_ASSET_RELEASE') ?: '';
+$assetPrefix = $base . '/assets' . ($assetRelease !== '' ? '/releases/' . rawurlencode($assetRelease) : '');
+$content = str_replace($base . '/assets/', $assetPrefix . '/', $content);
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,15 +15,15 @@ $base = $base ?? '';
 <meta property="og:type" content="website">
 <meta property="og:title" content="<?= htmlspecialchars($title ?? 'Cortexx') ?>">
 <meta property="og:description" content="<?= htmlspecialchars($description ?? '') ?>">
-<meta property="og:image" content="<?= $base ?>/assets/images/og.png">
-<link rel="icon" href="<?= $base ?>/assets/images/favicon.png">
+<meta property="og:image" content="<?= $assetPrefix ?>/images/og.png">
+<link rel="icon" href="<?= $assetPrefix ?>/images/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="<?= $base ?>/assets/css/app.css">
+<link rel="stylesheet" href="<?= $assetPrefix ?>/css/app.css">
 </head>
 <body>
 <?= $content ?>
-<script src="<?= $base ?>/assets/js/app.js" defer></script>
+<script src="<?= $assetPrefix ?>/js/app.js" defer></script>
 </body>
 </html>
