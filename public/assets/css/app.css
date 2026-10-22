@@ -177,13 +177,14 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .testi .sec-head .col-left{display:flex;flex-direction:column;align-items:flex-start}
 .testi .sec-head h2{margin-top:16px}
 .testi .pill-label{height:39px}
-.testi .recognition{margin-top:43px}
+.testi .recognition{margin-top:43px;padding-top:16px}
 .testi .arrows{display:flex;gap:16px;align-items:flex-end}
-.testi .arrow{width:40px;height:40px;border-radius:999px;background:#e8efff;color:var(--blue);display:flex;align-items:center;justify-content:center;transition:.2s}
-.testi .arrow:last-child{background:var(--blue);color:#fff}
-.testi .arrow:hover{background:var(--blue);border-color:var(--blue)}
-.testi .arrow:hover svg{stroke:#fff}
-.testi .arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2}
+.testi .arrow{width:40px;height:40px;border:0;border-radius:999px;background:#e8efff;color:#0d2dce;display:flex;align-items:center;justify-content:center;transition:background .2s,transform .2s,box-shadow .2s}
+.testi .arrow:last-child{background:#0d2dce;color:#fff}
+.testi .arrow:hover{background:#3960f9;box-shadow:0 6px 14px rgba(13,45,206,.2);transform:translateY(-1px)}
+.testi .arrow:active{transform:translateY(0);box-shadow:none}
+.testi .arrow:focus-visible{outline:2px solid #3960f9;outline-offset:3px}
+.testi .arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .testimonial-carousel{overflow:hidden;max-width:1240px;margin:0 auto;touch-action:pan-y}
 .testimonial-track{display:flex;gap:20px;transition:transform .4s cubic-bezier(.16,1,.3,1);cursor:grab;user-select:none}
 .testimonial-track.is-dragging{cursor:grabbing;transition:none}
@@ -297,9 +298,10 @@ button{font:inherit;border:0;background:none;cursor:pointer}
   .testi .sec-head{margin-bottom:32px}
   .testi .sec-head h2{margin-top:12px}
   .testi .pill-label{height:26px;padding:4px 10px;font-size:12px}
-  .testi .recognition{margin-top:32px}
+  .testi .recognition{margin-top:32px;padding-top:0}
   .testi .arrows{gap:10px;margin-top:16px;align-self:flex-end}
   .testi .arrow{width:34px;height:34px}
+  .testi .arrow svg{width:20px;height:20px}
   .testimonial-carousel{margin-inline:24px}
   .testimonial-track{gap:20px}
   .tcard{width:284px;height:262px;flex-basis:284px;padding:20px;background:#f2f2f2;border-color:#e9e5fa;box-shadow:0 8px 18px rgba(26,38,82,.06)}

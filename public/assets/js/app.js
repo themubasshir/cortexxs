@@ -49,9 +49,9 @@
     if (!track || track.children.length < 2 || track.dataset.moving) return;
     track.dataset.moving = '1';
     const step = carouselStep();
-    if (direction === 'next') track.append(track.firstElementChild);
-    else {
+    if (direction === 'prev') {
       track.prepend(track.lastElementChild);
+      track.style.transition = 'none';
       track.style.transform = `translateX(${-step}px)`;
     }
     requestAnimationFrame(() => {
@@ -60,7 +60,7 @@
     });
     track.addEventListener('transitionend', () => {
       track.style.transition = 'none';
-      if (direction === 'prev') track.append(track.lastElementChild);
+      if (direction === 'next') track.append(track.firstElementChild);
       track.style.transform = 'translateX(0)';
       delete track.dataset.moving;
       requestAnimationFrame(() => { track.style.transition = ''; });
