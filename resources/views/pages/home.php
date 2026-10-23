@@ -206,14 +206,17 @@ ob_start();
       ['velocity','Velocity','5c3ed82dabd37cbe156322c8c9b2a0bc9ce4460e.png','“Thoughtful design and clear communication”','Carlos Rivera','Design Director, Velocity'],
       ['synergy','Synergy','a5347cae3133954bc0feba4678f8acc6a815d29d.png','“Cortexx delivered thoughtful design, clear communication, and a seamless workflow, making the entire collaboration smooth.”','Jordan MItchell Rivera','Founder, Synergy'],
     ];
-    $media = ['3e6e787da0d4f56c7fba9a99a344c4cfb89e4e3d.jpg','a0a19859e775361bd68698ede43c8678737c182d.jpg'];
+    $media = [
+      ['3e6e787da0d4f56c7fba9a99a344c4cfb89e4e3d.jpg','velocity','Velocity','cb07be31077901284b216bad893805196f094747.png','“Cortexx delivered thoughtful design, clear communication, and a seamless workflow, making the entire collaboration smooth.”'],
+      ['a0a19859e775361bd68698ede43c8678737c182d.jpg','synergy','Synergy','a5347cae3133954bc0feba4678f8acc6a815d29d.png','“Cortexx transformed our complex product into a simple, intuitive experience that our users genuinely enjoy navigating.”'],
+    ];
     $rows = [[$media[0], $cards[0], $cards[2], $cards[1], $media[1]], [$media[1], $cards[1], $cards[0], $cards[2], $media[0]]];
     foreach ($rows as $ri => $row): ?>
     <div class="testimonial-row testimonial-row-<?= $ri + 1 ?>">
       <div class="testimonial-track" data-direction="<?= $ri ? 'right' : 'left' ?>">
         <?php for ($copy = 0; $copy < 2; $copy++): ?><div class="testimonial-set" <?= $copy ? 'aria-hidden="true"' : '' ?>>
-          <?php foreach ($row as $item): if (is_string($item)): ?>
-            <article class="tcard-media"><img src="<?= $img($item) ?>" alt="" loading="lazy"></article>
+          <?php foreach ($row as $item): if (is_array($item) && isset($item[4]) && str_ends_with($item[0], '.jpg')): ?>
+            <article class="tcard-media"><img src="<?= $img($item[0]) ?>" alt=""><div class="tmedia-overlay"><img class="tmedia-logo" src="<?= $b ?>/assets/images/brand-<?= $item[1] ?>.svg" alt="<?= htmlspecialchars($item[2]) ?>"><blockquote><?= htmlspecialchars($item[4]) ?></blockquote></div></article>
           <?php else: ?>
             <article class="tcard">
               <header class="tcard-head"><img class="tavatar" src="<?= $b ?>/assets/images/figma/<?= $item[2] ?>" alt="<?= htmlspecialchars($item[4]) ?> client avatar"><img src="<?= $b ?>/assets/images/brand-<?= $item[0] ?>.svg" alt="<?= htmlspecialchars($item[1]) ?>"></header>
