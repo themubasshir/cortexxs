@@ -33,7 +33,8 @@
 
   /* testimonial carousel */
   const carousel = document.getElementById('testimonialCarousel');
-  const track = document.getElementById('testimonialTrack');
+  const tracks = carousel ? [...carousel.querySelectorAll('.testimonial-track')] : [];
+  const track = tracks[0];
   let carouselTimer;
   let carouselVisible = false;
   let carouselBusy = false;
@@ -43,6 +44,7 @@
   let carouselPaused = reduceMotion;
   let manualPause = reduceMotion;
   const carouselStep = () => (track?.querySelector('.tcard')?.getBoundingClientRect().width || 400) + 20;
+  tracks.forEach(row => row.style.animationPlayState = 'running');
   const carouselCanPlay = () => {
     if (!carousel) return false;
     carouselPaused = manualPause || reduceMotion;
@@ -58,7 +60,8 @@
     }, 4000);
   };
   const carouselLoop = direction => {
-    if (!track || track.children.length < 2 || carouselBusy) return;
+    if (!track || tracks.some(row => row.children.length < 2) || carouselBusy) return;
+    tracks.forEach(row => row.style.animation = 'none');
     carouselBusy = true;
     const step = carouselStep();
     if (direction === 'prev') {
@@ -74,6 +77,7 @@
       track.style.transition = 'none';
       if (direction === 'next') track.append(track.firstElementChild);
       track.style.transform = 'translateX(0)';
+      tracks.forEach(row => { row.style.animation = ''; row.style.animationPlayState = 'running'; });
       carouselBusy = false;
       requestAnimationFrame(() => { track.style.transition = ''; scheduleCarousel(); });
     }, { once: true });
@@ -86,17 +90,17 @@
     toggle.setAttribute('aria-label', carouselPaused ? 'Play testimonials' : 'Pause testimonials');
     toggle.setAttribute('aria-pressed', String(carouselPaused));
   };
-  toggle?.addEventListener('click', () => { manualPause = !manualPause; carouselPaused = manualPause || reduceMotion; updateToggle(); scheduleCarousel(); });
+  toggle?.addEventListener('click', () => { manualPause = !manualPause; carouselPaused = manualPause || reduceMotion; tracks.forEach(row => row.style.animationPlayState = carouselPaused ? 'paused' : 'running'); updateToggle(); scheduleCarousel(); });
   document.getElementById('tPrev')?.addEventListener('click', () => manualCarousel('prev'));
   document.getElementById('tNext')?.addEventListener('click', () => manualCarousel('next'));
   if (carousel && track) {
     const carouselRegion = document.querySelector('.testi') || carousel;
     carousel.addEventListener('keydown', e => { if (e.key === 'ArrowLeft') manualCarousel('prev'); if (e.key === 'ArrowRight') manualCarousel('next'); });
-    carouselRegion.addEventListener('mouseenter', () => { carouselHover = true; clearTimeout(carouselTimer); });
-    carouselRegion.addEventListener('mouseleave', () => { carouselHover = false; scheduleCarousel(); });
+    carouselRegion.addEventListener('mouseenter', () => { carouselHover = true; clearTimeout(carouselTimer); tracks.forEach(row => row.style.animationPlayState = 'paused'); });
+    carouselRegion.addEventListener('mouseleave', () => { carouselHover = false; tracks.forEach(row => row.style.animationPlayState = 'running'); scheduleCarousel(); });
     carouselHover = false;
-    carouselRegion.addEventListener('focusin', () => { carouselFocused = true; clearTimeout(carouselTimer); });
-    carouselRegion.addEventListener('focusout', e => { if (!carouselRegion.contains(e.relatedTarget)) { carouselFocused = false; scheduleCarousel(); } });
+    carouselRegion.addEventListener('focusin', () => { carouselFocused = true; clearTimeout(carouselTimer); tracks.forEach(row => row.style.animationPlayState = 'paused'); });
+    carouselRegion.addEventListener('focusout', e => { if (!carouselRegion.contains(e.relatedTarget)) { carouselFocused = false; tracks.forEach(row => row.style.animationPlayState = 'running'); scheduleCarousel(); } });
     let start = 0;
     carousel.addEventListener('pointerdown', e => { carouselDragging = true; start = e.clientX; clearTimeout(carouselTimer); track.classList.add('is-dragging'); carousel.setPointerCapture(e.pointerId); });
     carousel.addEventListener('pointerup', e => { const delta = e.clientX - start; if (Math.abs(delta) > 24) manualCarousel(delta < 0 ? 'next' : 'prev'); carouselDragging = false; track.classList.remove('is-dragging'); scheduleCarousel(); });
@@ -116,8 +120,8 @@
     if (visible !== carouselVisible) { carouselVisible = visible; scheduleCarousel(); }
   }, { passive: true });
   document.addEventListener('visibilitychange', () => {
-    if (document.hidden) clearTimeout(carouselTimer);
-    else scheduleCarousel();
+    if (document.hidden) { clearTimeout(carouselTimer); tracks.forEach(row => row.style.animationPlayState = 'paused'); }
+    else { tracks.forEach(row => row.style.animationPlayState = 'running'); scheduleCarousel(); }
   });
   updateToggle();
 

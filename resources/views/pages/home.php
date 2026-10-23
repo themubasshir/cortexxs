@@ -199,25 +199,31 @@ ob_start();
       </div>
     </div>
   </div>
-  <div class="testimonial-carousel" id="testimonialCarousel" tabindex="0" aria-label="Client testimonials">
-    <div class="testimonial-track" id="testimonialTrack">
-      <?php
-      $cards = [
-        ['vortex','Vortex','1e37881e785c2acf3a1882b6dad6518d55813fa4.png','“Cortexx transformed our complex product into a simple, intuitive experience that our users genuinely enjoy navigating.”','Alex Carter','Product Lead, Vortextt'],
-        ['velocity','Velocity','5c3ed82dabd37cbe156322c8c9b2a0bc9ce4460e.png','“Thoughtful design and clear communication”','Carlos Rivera','Design Director, Velocity'],
-        ['synergy','Synergy','a5347cae3133954bc0feba4678f8acc6a815d29d.png','“Cortexx delivered thoughtful design, clear communication, and a seamless workflow, making the entire collaboration smooth.”','Jordan MItchell Rivera','Founder, Synergy'],
-      ];
-      ?>
-      <article class="tcard-media" aria-hidden="true"><img src="<?= $img('3e6e787da0d4f56c7fba9a99a344c4cfb89e4e3d.jpg') ?>" alt=""></article>
-      <?php foreach ($cards as $t): ?>
-      <article class="tcard">
-        <header class="tcard-head"><img class="tavatar" src="<?= $b ?>/assets/images/figma/<?= $t[2] ?>" alt="<?= htmlspecialchars($t[4]) ?> client avatar"><img src="<?= $b ?>/assets/images/brand-<?= $t[0] ?>.svg" alt="<?= htmlspecialchars($t[1]) ?>"></header>
-        <div class="stars" aria-label="5 out of 5 stars"><?php for ($i = 0; $i < 5; $i++): ?><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 .9l2.4 5 5.5.7-4 3.9 1 5.4L9 13.4l-4.9 2.5 1-5.4-4-3.9 5.5-.7z"/></svg><?php endfor; ?></div>
-        <blockquote><?= htmlspecialchars($t[3]) ?></blockquote>
-        <footer class="who"><b><?= htmlspecialchars($t[4]) ?></b><span><?= htmlspecialchars($t[5]) ?></span></footer>
-      </article>
-      <?php endforeach; ?>
+  <div class="testimonials-viewport" id="testimonialCarousel" tabindex="0" aria-label="Client testimonials">
+    <?php
+    $cards = [
+      ['vortex','Vortex','1e37881e785c2acf3a1882b6dad6518d55813fa4.png','“Cortexx transformed our complex product into a simple, intuitive experience that our users genuinely enjoy navigating.”','Alex Carter','Product Lead, Vortextt'],
+      ['velocity','Velocity','5c3ed82dabd37cbe156322c8c9b2a0bc9ce4460e.png','“Thoughtful design and clear communication”','Carlos Rivera','Design Director, Velocity'],
+      ['synergy','Synergy','a5347cae3133954bc0feba4678f8acc6a815d29d.png','“Cortexx delivered thoughtful design, clear communication, and a seamless workflow, making the entire collaboration smooth.”','Jordan MItchell Rivera','Founder, Synergy'],
+    ];
+    $media = ['3e6e787da0d4f56c7fba9a99a344c4cfb89e4e3d.jpg','a0a19859e775361bd68698ede43c8678737c182d.jpg'];
+    $rows = [[$media[0], $cards[0], $cards[2], $cards[1], $media[1]], [$media[1], $cards[1], $cards[0], $cards[2], $media[0]]];
+    foreach ($rows as $ri => $row): ?>
+    <div class="testimonial-row testimonial-row-<?= $ri + 1 ?>">
+      <div class="testimonial-track" data-direction="<?= $ri ? 'right' : 'left' ?>">
+        <?php for ($copy = 0; $copy < 2; $copy++): ?><div class="testimonial-set" <?= $copy ? 'aria-hidden="true"' : '' ?>>
+          <?php foreach ($row as $item): if (is_string($item)): ?>
+            <article class="tcard-media"><img src="<?= $img($item) ?>" alt="" loading="lazy"></article>
+          <?php else: ?>
+            <article class="tcard">
+              <header class="tcard-head"><img class="tavatar" src="<?= $b ?>/assets/images/figma/<?= $item[2] ?>" alt="<?= htmlspecialchars($item[4]) ?> client avatar"><img src="<?= $b ?>/assets/images/brand-<?= $item[0] ?>.svg" alt="<?= htmlspecialchars($item[1]) ?>"></header>
+              <div class="stars" aria-label="5 out of 5 stars"><?php for ($i = 0; $i < 5; $i++): ?><svg viewBox="0 0 18 18" aria-hidden="true"><path d="M9 .9l2.4 5 5.5.7-4 3.9 1 5.4L9 13.4l-4.9 2.5 1-5.4-4-3.9 5.5-.7z"/></svg><?php endfor; ?></div>
+              <blockquote><?= htmlspecialchars($item[3]) ?></blockquote><footer class="who"><b><?= htmlspecialchars($item[4]) ?></b><span><?= htmlspecialchars($item[5]) ?></span></footer>
+            </article>
+          <?php endif; endforeach; ?></div><?php endfor; ?>
+      </div>
     </div>
+    <?php endforeach; ?>
   </div>
   <div class="recognition wrap">
     <h3>Featured and recognized:</h3>

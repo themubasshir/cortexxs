@@ -179,13 +179,18 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .testi .pill-label{height:39px}
 .testi .recognition{margin-top:43px;padding-top:16px}
 .testi{overflow:hidden}
-.testimonial-carousel{max-width:1240px}
-.testimonial-track{gap:20px;transition:transform .6s cubic-bezier(.16,1,.3,1)}
-.tcard{width:400px;flex-basis:400px;height:353px}
+.testimonials-viewport{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;display:flex;flex-direction:column;gap:43px}
+.testimonial-row{width:100%;overflow:hidden}
+.testimonial-track{display:flex;gap:20px;width:max-content;will-change:transform;animation:testimonial-left 34s linear infinite}
+.testimonial-row-2 .testimonial-track{animation-name:testimonial-right;animation-duration:38s}
+.testimonial-set{display:flex;gap:20px;flex:none}
+.tcard{width:400px;flex:0 0 400px;height:353px}
 .tcard-media{width:430px;flex:0 0 430px;height:353px;border-radius:18px;overflow:hidden;position:relative;background:#eef0f8}
 .tcard-media img{width:100%;height:100%;object-fit:cover}
 .tcard-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(13,45,206,.36))}
-@media(max-width:640px){.tcard{width:min(400px,calc(100vw - 48px));flex-basis:min(400px,calc(100vw - 48px));height:353px}.testimonial-carousel{padding-inline:24px}.testimonial-track{gap:20px}.tcard-media{display:none}}
+@keyframes testimonial-left{to{transform:translateX(calc(-50% - 10px))}}
+@keyframes testimonial-right{from{transform:translateX(calc(-50% - 10px))}to{transform:translateX(0)}}
+@media(max-width:640px){.testimonials-viewport{gap:20px}.testimonial-track{animation-duration:28s}.testimonial-row-2 .testimonial-track{animation-duration:32s}.tcard{width:calc(100vw - 48px);flex-basis:calc(100vw - 48px);height:353px}.tcard-media{width:calc(100vw - 48px);flex-basis:calc(100vw - 48px);height:353px}}
 .testi .arrows{display:flex;gap:16px;align-items:flex-end}
 .carousel-toggle{height:40px;padding:0 12px;border:1px solid #d8def8;border-radius:999px;background:#fff;color:#0d2dce;font-size:13px;font-weight:600}
 .carousel-toggle:hover{background:#e8efff}
