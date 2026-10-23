@@ -178,9 +178,9 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .testi .sec-head h2{margin-top:16px}
 .testi .pill-label{height:39px}
 .testi .recognition{margin-top:43px;padding-top:16px}
-.testi{overflow:hidden}
-.testimonials-viewport{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);overflow:hidden;display:flex;flex-direction:column;gap:43px}
-.testimonial-row{width:100%;overflow:hidden}
+.testi{overflow-x:clip;overflow-y:visible}
+.testimonials-viewport{width:100vw;max-width:100vw;margin-left:calc(50% - 50vw);overflow-x:clip;overflow-y:visible;display:flex;flex-direction:column;gap:43px}
+.testimonial-row{width:100%;overflow-x:clip;overflow-y:visible}
 .testimonial-track{display:flex;gap:20px;width:max-content;will-change:transform;animation:testimonial-left 34s linear infinite}
 .testimonial-row-2 .testimonial-track{animation-name:testimonial-right;animation-duration:38s}
 .testimonial-set{display:flex;gap:20px;flex:none}
@@ -188,9 +188,9 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .tcard-media{width:430px;flex:0 0 430px;height:353px;border-radius:18px;overflow:hidden;position:relative;background:#eef0f8}
 .tcard-media>img{width:100%;height:100%;object-fit:cover}
 .tcard-media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,13,35,.02) 18%,rgba(8,13,35,.18) 48%,rgba(8,13,35,.78) 100%);pointer-events:none}
-.tmedia-overlay{position:absolute;inset:0;z-index:1;padding:24px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;color:#fff;pointer-events:none}
+.tmedia-overlay{position:absolute;inset:0;z-index:1;width:100%;max-width:100%;min-width:0;padding:24px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;color:#fff;pointer-events:none}
 .tmedia-logo{width:116px!important;height:39px!important;object-fit:contain!important;object-position:left center;filter:brightness(0) invert(1)}
-.tmedia-overlay blockquote{max-width:382px;font-size:22px;line-height:32px;letter-spacing:-.72px;color:#fff}
+.tmedia-overlay blockquote{width:100%;max-width:100%;min-width:0;white-space:normal;overflow-wrap:anywhere;font-size:22px;line-height:32px;letter-spacing:-.72px;color:#fff}
 @media(max-width:640px){.tmedia-overlay{padding:24px}.tmedia-overlay blockquote{font-size:20px;line-height:29px}}
 @keyframes testimonial-left{to{transform:translateX(calc(-50% - 10px))}}
 @keyframes testimonial-right{from{transform:translateX(calc(-50% - 10px))}to{transform:translateX(0)}}
@@ -208,15 +208,15 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .testimonial-carousel{overflow:hidden;max-width:1240px;margin:0 auto;touch-action:pan-y}
 .testimonial-track{display:flex;gap:20px;transition:transform .4s cubic-bezier(.16,1,.3,1);cursor:grab;user-select:none}
 .testimonial-track.is-dragging{cursor:grabbing;transition:none}
-.tcard{width:400px;height:353px;flex:0 0 400px;background:#f2f2f2;border:1px solid #e9e5fa;border-radius:16px;box-shadow:0 10px 28px rgba(26,38,82,.07);padding:24px;display:flex;flex-direction:column;min-width:0}
+.tcard{width:400px;height:353px;flex:0 0 400px;background:#f2f2f2;border:1px solid #e9e5fa;border-radius:16px;box-shadow:0 10px 28px rgba(26,38,82,.07);padding:20px 24px;display:flex;flex-direction:column;min-width:0}
 .tcard-head{height:78px;display:flex;align-items:center;gap:18px;flex:none}
 .tcard-head img:not(.tavatar){width:151.2px;height:50.4px;object-fit:contain;object-position:left center}
 .tcard:first-child .tcard-head img:not(.tavatar){width:162px;height:60px}
 .tcard-head .tavatar{width:78px;height:78px;flex:none;border-radius:50%;object-fit:cover}
-.tcard>.stars{display:flex;gap:5px;width:140px;height:24px;margin-top:36px;flex:none}
+.tcard>.stars{display:flex;gap:5px;width:140px;height:24px;margin-top:12px;flex:none}
 .tcard>.stars svg{width:24px;height:24px;fill:#fda328}
-.tcard blockquote{font-size:22px;line-height:32px;letter-spacing:-.72px;color:var(--ink);margin-top:9px;flex:1}
-.tcard .who{display:flex;flex-direction:column;margin-top:16px;flex:none}
+.tcard blockquote{font-size:22px;line-height:32px;letter-spacing:-.72px;color:var(--ink);margin-top:8px;flex:none;min-width:0;overflow-wrap:break-word}
+.tcard .who{display:flex;flex-direction:column;margin-top:auto;padding-top:8px;flex:none;min-width:0}
 .tcard .who b{display:block;font-size:20px;line-height:24px;font-weight:600;color:var(--ink)}
 .tcard .who span{display:block;color:var(--muted);font-size:16px;line-height:24px}
 .recognition{margin-top:32px;padding-top:0;text-align:center}
@@ -325,14 +325,14 @@ button{font:inherit;border:0;background:none;cursor:pointer}
   .testi .arrow svg{width:20px;height:20px}
   .testimonial-carousel{margin-inline:24px}
   .testimonial-track{gap:20px}
-  .tcard{width:284px;height:262px;flex-basis:284px;padding:20px;background:#f2f2f2;border-color:#e9e5fa;box-shadow:0 8px 18px rgba(26,38,82,.06)}
+  .tcard{width:calc(100vw - 48px);height:353px;flex-basis:calc(100vw - 48px);padding:20px;background:#f2f2f2;border-color:#e9e5fa;box-shadow:0 8px 18px rgba(26,38,82,.06)}
   .tcard-head{height:52px;gap:10px}
   .tcard-head .tavatar{width:52px;height:52px}
   .tcard-head img:not(.tavatar){width:120px;height:40px}
-  .tcard>.stars{height:18px;margin-top:18px;gap:3px}
+  .tcard>.stars{height:18px;margin-top:12px;gap:3px}
   .tcard>.stars svg{width:18px;height:18px}
   .tcard blockquote{font-size:17px;line-height:26px;margin-top:7px}
-  .tcard .who{margin-top:8px}
+  .tcard .who{margin-top:auto}
   .tcard .who b{font-size:16px;line-height:20px}
   .tcard .who span{font-size:13px;line-height:18px}
   .recognition{margin-inline:24px;padding-inline:0}
