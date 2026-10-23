@@ -41,9 +41,11 @@
   let carouselFocused = false;
   let carouselDragging = false;
   let carouselPaused = reduceMotion;
+  let manualPause = reduceMotion;
   const carouselStep = () => (track?.querySelector('.tcard')?.getBoundingClientRect().width || 400) + 20;
   const carouselCanPlay = () => {
     if (!carousel) return false;
+    carouselPaused = manualPause || reduceMotion;
     const rect = carousel.getBoundingClientRect();
     carouselVisible = rect.bottom > 0 && rect.top < innerHeight;
     return carouselVisible && !carouselPaused && !carouselHover && !carouselFocused && !carouselDragging && !document.hidden;
@@ -84,7 +86,7 @@
     toggle.setAttribute('aria-label', carouselPaused ? 'Play testimonials' : 'Pause testimonials');
     toggle.setAttribute('aria-pressed', String(carouselPaused));
   };
-  toggle?.addEventListener('click', () => { carouselPaused = !carouselPaused; updateToggle(); scheduleCarousel(); });
+  toggle?.addEventListener('click', () => { manualPause = !manualPause; carouselPaused = manualPause || reduceMotion; updateToggle(); scheduleCarousel(); });
   document.getElementById('tPrev')?.addEventListener('click', () => manualCarousel('prev'));
   document.getElementById('tNext')?.addEventListener('click', () => manualCarousel('next'));
   if (carousel && track) {
