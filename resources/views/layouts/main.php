@@ -20,7 +20,7 @@ $content = str_replace($base . '/assets/', $assetPrefix . '/', $content);
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="<?= $assetPrefix ?>/css/app.css?v=carousel-layout-20261023">
+<link rel="stylesheet" href="<?= $assetPrefix ?>/css/app.css?v=carousel-layout-20261023b">
 </head>
 <body>
 <?= $content ?>

@@ -194,7 +194,7 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 @media(max-width:640px){.tmedia-overlay{padding:24px}.tmedia-overlay blockquote{font-size:20px;line-height:29px}}
 @keyframes testimonial-left{to{transform:translateX(calc(-50% - 10px))}}
 @keyframes testimonial-right{from{transform:translateX(calc(-50% - 10px))}to{transform:translateX(0)}}
-@media(max-width:640px){.testimonials-viewport{gap:20px}.testimonial-track{animation-duration:28s}.testimonial-row-2 .testimonial-track{animation-duration:32s}.tcard{width:calc(100vw - 48px);flex-basis:calc(100vw - 48px);height:353px}.tcard-media{width:calc(100vw - 48px);flex-basis:calc(100vw - 48px);height:353px}}
+@media(max-width:640px){.testimonials-viewport{gap:43px}.testimonial-track{animation-duration:28s}.testimonial-row-2 .testimonial-track{animation-duration:32s}.tcard{width:calc(100vw - 48px);flex-basis:calc(100vw - 48px);height:353px}.tcard-media{width:calc(100vw - 48px);flex-basis:calc(100vw - 48px);height:353px}}
 .testi .arrows{display:flex;gap:16px;align-items:flex-end}
 .carousel-toggle{height:40px;padding:0 12px;border:1px solid #d8def8;border-radius:999px;background:#fff;color:#0d2dce;font-size:13px;font-weight:600}
 .carousel-toggle:hover{background:#e8efff}
