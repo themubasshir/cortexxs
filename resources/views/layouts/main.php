@@ -20,10 +20,10 @@ $content = str_replace($base . '/assets/', $assetPrefix . '/', $content);
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="<?= $assetPrefix ?>/css/app.css?v=mobile-scroll-20261024a">
+<link rel="stylesheet" href="<?= $assetPrefix ?>/css/app.css?v=mobile-single-preview-20261024e">
 </head>
 <body>
 <?= $content ?>
-<script src="<?= $assetPrefix ?>/js/app.js?v=mobile-scroll-20261024a" defer></script>
+<script src="<?= $assetPrefix ?>/js/app.js?v=mobile-single-preview-20261024e" defer></script>
 </body>
 </html>

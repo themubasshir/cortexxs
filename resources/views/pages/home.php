@@ -147,15 +147,29 @@ ob_start();
       </article>
       <?php endforeach; ?>
     </div>
+    <?php $mobileServices = array_values(array_filter($services, fn($service) => !empty($service['active']))); ?>
     <div class="services-list mobile-services" data-services>
-      <?php foreach ($services as $index => $service): if (!$service['active']) continue; ?>
-      <a class="service-row reveal" href="<?= $b . htmlspecialchars($service['route']) ?>" data-service="<?= htmlspecialchars($service['slug']) ?>">
-        <span class="service-preview" aria-hidden="true"><img data-service-preview="<?= htmlspecialchars($service['slug']) ?>" src="<?= $img($service['image']) ?>" alt="" loading="lazy" decoding="async"></span>
-        <span class="service-icon" aria-hidden="true"><span><?= str_pad((string)($index + 1), 2, '0', STR_PAD_LEFT) ?></span></span>
-        <span class="service-copy"><strong><?= htmlspecialchars($service['title']) ?></strong><small><?= htmlspecialchars($service['description']) ?></small></span>
-        <span class="service-arrow" aria-hidden="true">↗</span>
-      </a>
-      <?php endforeach; ?>
+      <div class="services-composition">
+        <div class="service-preview" aria-hidden="true">
+          <?php foreach ($mobileServices as $index => $service): ?>
+          <img class="service-preview-image<?= $index === 0 ? ' is-active' : '' ?>" data-service-preview="<?= htmlspecialchars($service['slug']) ?>" src="<?= $img($service['image']) ?>" alt="" loading="lazy" decoding="async">
+          <?php endforeach; ?>
+        </div>
+        <div class="service-rows">
+          <?php foreach ($mobileServices as $index => $service): ?>
+          <a class="service-row<?= $index === 0 ? ' is-active' : '' ?>" href="<?= $b . htmlspecialchars($service['route']) ?>" data-service="<?= htmlspecialchars($service['slug']) ?>" aria-label="<?= htmlspecialchars($service['title'] . ' — ' . $service['description']) ?>">
+            <span class="service-icon" aria-hidden="true"><span><?= str_pad((string)($index + 1), 2, '0', STR_PAD_LEFT) ?></span></span>
+            <span class="service-copy"><strong><?= htmlspecialchars($service['title']) ?></strong></span>
+            <span class="service-arrow" aria-hidden="true">↗</span>
+          </a>
+          <?php endforeach; ?>
+        </div>
+        <div class="service-detail" aria-live="off">
+          <?php foreach ($mobileServices as $index => $service): ?>
+          <p class="<?= $index === 0 ? 'is-active' : '' ?>" data-service-description="<?= htmlspecialchars($service['slug']) ?>" aria-hidden="<?= $index === 0 ? 'false' : 'true' ?>"><?= htmlspecialchars($service['description']) ?></p>
+          <?php endforeach; ?>
+        </div>
+      </div>
     </div>
   </div>
 </section>

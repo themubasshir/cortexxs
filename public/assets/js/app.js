@@ -35,11 +35,20 @@
   const serviceList = document.querySelector('[data-services]');
   if (serviceList) {
     const rows = [...serviceList.querySelectorAll('[data-service]')];
+    const previews = [...serviceList.querySelectorAll('[data-service-preview]')];
+    const descriptions = [...serviceList.querySelectorAll('[data-service-description]')];
+    const composition = serviceList.querySelector('.services-composition');
     let current;
     const activate = slug => {
       if (!slug || slug === current) return;
       current = slug;
       rows.forEach(row => row.classList.toggle('is-active', row.dataset.service === slug));
+      previews.forEach(preview => preview.classList.toggle('is-active', preview.dataset.servicePreview === slug));
+      descriptions.forEach(description => {
+        const active = description.dataset.serviceDescription === slug;
+        description.classList.toggle('is-active', active);
+        description.setAttribute('aria-hidden', active ? 'false' : 'true');
+      });
     };
     rows.forEach(row => {
       row.addEventListener('mouseenter', () => activate(row.dataset.service));
@@ -49,13 +58,29 @@
     const chooseActive = () => {
       frame = 0;
       const headerHeight = header?.getBoundingClientRect().height || 0;
-      const activationLine = headerHeight + (innerHeight - headerHeight) * .5;
-      const candidates = rows.map(row => {
-        const copy = row.querySelector('.service-copy').getBoundingClientRect();
-        return { row, copy, distance: Math.abs(copy.top + copy.height / 2 - activationLine) };
-      }).filter(item => item.copy.bottom > headerHeight && item.copy.top < innerHeight);
-      candidates.sort((a, b) => a.distance - b.distance);
-      if (candidates[0]) activate(candidates[0].row.dataset.service);
+      const activationLine = headerHeight + (innerHeight - headerHeight) * .6;
+      const listRect = serviceList.getBoundingClientRect();
+      const compositionRect = composition.getBoundingClientRect();
+      if (listRect.top >= activationLine) return activate(rows[0]?.dataset.service);
+      if (listRect.bottom <= headerHeight) return activate(rows.at(-1)?.dataset.service);
+      const anchors = rows.map((row, index) => {
+        const heading = row.querySelector('.service-copy strong').getBoundingClientRect();
+        const center = heading.top + heading.height / 2;
+        return { index, center, distance: Math.abs(center - activationLine) };
+      });
+      const nearest = anchors.reduce((best, item) => item.distance < best.distance ? item : best, anchors[0]);
+      const stickyTop = 81;
+      const stickyTravel = listRect.height - compositionRect.height;
+      const sticky = getComputedStyle(composition).position === 'sticky' && stickyTravel > 1 && compositionRect.top <= stickyTop + 1;
+      if (!sticky) return activate(rows[nearest.index]?.dataset.service);
+      const startIndex = anchors.reduce((best, item) => {
+        const fixedCenter = item.center + stickyTop - compositionRect.top;
+        const distance = Math.abs(fixedCenter - activationLine);
+        return distance < best.distance ? { index: item.index, distance } : best;
+      }, { index: 0, distance: Infinity }).index;
+      const progress = Math.max(0, Math.min(1, (stickyTop - listRect.top) / stickyTravel));
+      const index = Math.min(rows.length - 1, startIndex + Math.floor(progress * (rows.length - startIndex)));
+      activate(rows[index]?.dataset.service);
     };
     const scheduleChoice = () => { if (!frame) frame = requestAnimationFrame(chooseActive); };
     addEventListener('scroll', scheduleChoice, {passive: true});

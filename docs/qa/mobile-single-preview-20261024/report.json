@@ -1,0 +1,326 @@
+{
+  "generatedAt": "2026-10-24T16:39:15.127Z",
+  "results": [
+    {
+      "width": 360,
+      "height": 780,
+      "reduced": false,
+      "gestures": 160,
+      "negative": 0,
+      "worstDelta": 0,
+      "documentHeights": [
+        5804
+      ],
+      "sectionHeights": [
+        967
+      ],
+      "preview": {
+        "x": 97,
+        "top": 782,
+        "bottom": 949,
+        "width": 241,
+        "height": 167
+      },
+      "activationsDown": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "activationsUp": [
+        "ui-ux-design",
+        "ai-automation",
+        "software",
+        "web-development"
+      ],
+      "maxActiveCount": 1,
+      "minActiveCount": 1,
+      "imagesLoaded": true,
+      "detailFits": true,
+      "blockedHeadings": 0,
+      "overflow": 0,
+      "screenshots": [],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "reduced": false,
+      "gestures": 161,
+      "negative": 0,
+      "worstDelta": 0,
+      "documentHeights": [
+        5849
+      ],
+      "sectionHeights": [
+        943
+      ],
+      "preview": {
+        "x": 127,
+        "top": 796,
+        "bottom": 963,
+        "width": 241,
+        "height": 167
+      },
+      "activationsDown": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "activationsUp": [
+        "ui-ux-design",
+        "ai-automation",
+        "software",
+        "web-development"
+      ],
+      "maxActiveCount": 1,
+      "minActiveCount": 1,
+      "imagesLoaded": true,
+      "detailFits": true,
+      "blockedHeadings": 0,
+      "overflow": 0,
+      "screenshots": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "errors": []
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "reduced": false,
+      "gestures": 170,
+      "negative": 0,
+      "worstDelta": 0,
+      "documentHeights": [
+        5943
+      ],
+      "sectionHeights": [
+        943
+      ],
+      "preview": {
+        "x": 167,
+        "top": 835,
+        "bottom": 1002,
+        "width": 241,
+        "height": 167
+      },
+      "activationsDown": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "activationsUp": [
+        "ui-ux-design",
+        "ai-automation",
+        "software",
+        "web-development"
+      ],
+      "maxActiveCount": 1,
+      "minActiveCount": 1,
+      "imagesLoaded": true,
+      "detailFits": true,
+      "blockedHeadings": 0,
+      "overflow": 0,
+      "screenshots": [],
+      "errors": []
+    },
+    {
+      "width": 360,
+      "height": 780,
+      "reduced": true,
+      "gestures": 160,
+      "negative": 0,
+      "worstDelta": 0,
+      "documentHeights": [
+        5804
+      ],
+      "sectionHeights": [
+        967
+      ],
+      "preview": {
+        "x": 97,
+        "top": 782,
+        "bottom": 949,
+        "width": 241,
+        "height": 167
+      },
+      "activationsDown": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "activationsUp": [
+        "ui-ux-design",
+        "ai-automation",
+        "software",
+        "web-development"
+      ],
+      "maxActiveCount": 1,
+      "minActiveCount": 1,
+      "imagesLoaded": true,
+      "detailFits": true,
+      "blockedHeadings": 0,
+      "overflow": 0,
+      "screenshots": [],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "reduced": true,
+      "gestures": 161,
+      "negative": 0,
+      "worstDelta": 0,
+      "documentHeights": [
+        5849
+      ],
+      "sectionHeights": [
+        943
+      ],
+      "preview": {
+        "x": 127,
+        "top": 796,
+        "bottom": 963,
+        "width": 241,
+        "height": 167
+      },
+      "activationsDown": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "activationsUp": [
+        "ui-ux-design",
+        "ai-automation",
+        "software",
+        "web-development"
+      ],
+      "maxActiveCount": 1,
+      "minActiveCount": 1,
+      "imagesLoaded": true,
+      "detailFits": true,
+      "blockedHeadings": 0,
+      "overflow": 0,
+      "screenshots": [],
+      "errors": []
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "reduced": true,
+      "gestures": 170,
+      "negative": 0,
+      "worstDelta": 0,
+      "documentHeights": [
+        5943
+      ],
+      "sectionHeights": [
+        943
+      ],
+      "preview": {
+        "x": 167,
+        "top": 835,
+        "bottom": 1002,
+        "width": 241,
+        "height": 167
+      },
+      "activationsDown": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "activationsUp": [
+        "ui-ux-design",
+        "ai-automation",
+        "software",
+        "web-development"
+      ],
+      "maxActiveCount": 1,
+      "minActiveCount": 1,
+      "imagesLoaded": true,
+      "detailFits": true,
+      "blockedHeadings": 0,
+      "overflow": 0,
+      "screenshots": [],
+      "errors": []
+    }
+  ],
+  "routes": [
+    {
+      "slug": "web-development",
+      "destination": "/cortexx/services/web-development"
+    },
+    {
+      "slug": "software",
+      "destination": "/cortexx/services/software"
+    },
+    {
+      "slug": "ai-automation",
+      "destination": "/cortexx/services/ai-automation"
+    },
+    {
+      "slug": "ui-ux-design",
+      "destination": "/cortexx/services/ui-ux-design"
+    }
+  ],
+  "desktops": [
+    {
+      "width": 1280,
+      "cards": [
+        {
+          "width": 281,
+          "height": 190
+        },
+        {
+          "width": 281,
+          "height": 190
+        },
+        {
+          "width": 281,
+          "height": 190
+        },
+        {
+          "width": 281,
+          "height": 190
+        }
+      ],
+      "desktopDisplay": "grid",
+      "mobileDisplay": "none",
+      "overflow": 0,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "cards": [
+        {
+          "width": 293,
+          "height": 190
+        },
+        {
+          "width": 293,
+          "height": 190
+        },
+        {
+          "width": 293,
+          "height": 190
+        },
+        {
+          "width": 293,
+          "height": 190
+        }
+      ],
+      "desktopDisplay": "grid",
+      "mobileDisplay": "none",
+      "overflow": 0,
+      "errors": []
+    }
+  ]
+}
