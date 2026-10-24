@@ -152,7 +152,7 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 @media(max-width:1024px){
   .desktop-services{display:none}
   .mobile-services{display:block;border-top:1px solid var(--line)}
-  .service-row{position:relative;display:grid;grid-template-columns:32px minmax(0,1fr) 40px;gap:18px;align-items:center;min-height:88px;padding:16px 0;border-bottom:1px solid var(--line);color:var(--ink);transition:color .3s}
+  .service-row{position:relative;display:grid;grid-template-columns:32px minmax(0,1fr) 40px;gap:18px;align-items:center;min-height:88px;padding:16px 0;border-bottom:1px solid var(--line);color:var(--ink);transition:color .3s;scroll-margin-top:calc(69px + 24px)}
   .service-icon{font-size:14px;color:var(--blue);font-weight:700}
   .service-copy{display:block;min-width:0}
   .service-copy strong{display:block;font-size:30px;line-height:1.1;font-weight:700}

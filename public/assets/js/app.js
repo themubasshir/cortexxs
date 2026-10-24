@@ -47,23 +47,25 @@
       row.addEventListener('focusin', () => activate(row.dataset.service));
     });
     if (!reduceMotion) {
-      const ratios = new Map(rows.map(row => [row, 0]));
-      const serviceObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => ratios.set(entry.target, entry.intersectionRatio));
-        const activationTop = innerHeight * .25;
-        const activationBottom = innerHeight * .75;
-        const currentRow = rows.find(row => row.dataset.service === current);
-        const currentCopy = currentRow?.querySelector('.service-copy')?.getBoundingClientRect();
-        if (currentCopy && currentCopy.bottom > activationTop && currentCopy.top < activationBottom) return;
-        const visible = rows.map(row => ({
-          row,
-          rect: row.querySelector('.service-copy').getBoundingClientRect(),
-          ratio: ratios.get(row) || 0
-        })).filter(item => item.ratio > 0 && item.rect.bottom > activationTop && item.rect.top < activationBottom);
-        visible.sort((a, b) => Math.abs(a.rect.top + a.rect.height / 2 - innerHeight / 2) - Math.abs(b.rect.top + b.rect.height / 2 - innerHeight / 2));
-        if (visible[0]) activate(visible[0].row.dataset.service);
-      }, {threshold: [0, .25, .5, .75, 1], rootMargin: '-28% 0px -28% 0px'});
-      rows.forEach(row => serviceObserver.observe(row));
+      let frame = 0;
+      const chooseActive = () => {
+        frame = 0;
+        const headerHeight = document.getElementById('header')?.getBoundingClientRect().height || 0;
+        const activationLine = headerHeight + (innerHeight - headerHeight) * .5;
+        const candidates = rows.map(row => {
+          const copy = row.querySelector('.service-copy').getBoundingClientRect();
+          return { row, copy, distance: Math.abs(copy.top + copy.height / 2 - activationLine) };
+        }).filter(item => item.copy.bottom > headerHeight && item.copy.top < innerHeight);
+        candidates.sort((a, b) => a.distance - b.distance);
+        if (candidates[0]) activate(candidates[0].row.dataset.service);
+      };
+      const scheduleChoice = () => { if (!frame) frame = requestAnimationFrame(chooseActive); };
+      addEventListener('scroll', scheduleChoice, {passive: true});
+      addEventListener('resize', scheduleChoice, {passive: true});
+      const serviceObserver = new IntersectionObserver(scheduleChoice, {threshold: [0, .25, .5, .75, 1]});
+      const serviceLayout = new ResizeObserver(scheduleChoice);
+      rows.forEach(row => { serviceObserver.observe(row); serviceLayout.observe(row); });
+      scheduleChoice();
     } else activate(rows[0]?.dataset.service);
   }
 
