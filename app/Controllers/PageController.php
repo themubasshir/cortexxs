@@ -15,6 +15,7 @@ class PageController
         $csrf = $req->getAttribute('csrf_token', '');
         $base = $this->base;
         $config = $this->config;
+        $services = require ROOT . '/config/services.php';
         require $view;
         $res->getBody()->write(ob_get_clean());
         return $res;

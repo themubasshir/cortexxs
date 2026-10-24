@@ -31,6 +31,28 @@
     document.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
   }
 
+  /* service previews: hover/focus on fine pointers, viewport activation on touch */
+  const serviceList = document.querySelector('[data-services]');
+  if (serviceList) {
+    const rows = [...serviceList.querySelectorAll('[data-service]')];
+    const previews = [...serviceList.querySelectorAll('[data-service-preview]')];
+    const activate = slug => {
+      rows.forEach(row => row.classList.toggle('is-active', row.dataset.service === slug));
+      previews.forEach(image => image.classList.toggle('is-visible', image.dataset.servicePreview === slug));
+    };
+    rows.forEach(row => {
+      row.addEventListener('mouseenter', () => activate(row.dataset.service));
+      row.addEventListener('focusin', () => activate(row.dataset.service));
+    });
+    if (!reduceMotion) {
+      const serviceObserver = new IntersectionObserver(entries => {
+        const active = entries.filter(entry => entry.isIntersecting).sort((a, b) => Math.abs(a.boundingClientRect.top - innerHeight / 2) - Math.abs(b.boundingClientRect.top - innerHeight / 2))[0];
+        if (active) activate(active.target.dataset.service);
+      }, {threshold: 0.45, rootMargin: '-20% 0px -20% 0px'});
+      rows.forEach(row => serviceObserver.observe(row));
+    } else activate(rows[0]?.dataset.service);
+  }
+
   /* testimonial carousel */
   const carousel = document.getElementById('testimonialCarousel');
   const tracks = carousel ? [...carousel.querySelectorAll('.testimonial-track')] : [];

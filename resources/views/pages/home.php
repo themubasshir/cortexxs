@@ -130,22 +130,18 @@ ob_start();
       </div>
     </div>
     <div class="svc-grid">
-      <?php
-      $svcs = [
-        ['Software','Systems built to simplify and scale.','<rect x="5" y="4" width="22" height="18" rx="2"/><path d="M5 9h22M9 4v5"/>'],
-        ['Websites','Digital experiences that attract and convert','<path d="M4 6h24M8 6v14a2 2 0 002 2h4a2 2 0 002-2V6"/><rect x="4" y="4" width="24" height="4" rx="1"/>'],
-        ['Apps','Useful products designed around real users.','<rect x="6" y="4" width="20" height="24" rx="3"/><path d="M12 24h8"/><circle cx="16" cy="10" r="2"/>'],
-        ['AI & Automation','Smarter workflows that save time','<circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M8 8l2.5 2.5M24 8l-2.5 2.5M8 24l2.5-2.5M24 24l-2.5-2.5"/>'],
-      ];
-      foreach ($svcs as $s): ?>
-      <article class="svc-card reveal">
-        <div class="svc-top">
-          <span class="svc-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><?= $s[2] ?></svg></span>
-          <span class="svc-go"><svg viewBox="0 0 14 14"><path d="M2 12L12 2M4 2h8v8"/></svg></span>
+      <div class="services-list" data-services>
+        <div class="service-preview" aria-hidden="true">
+          <?php foreach ($services as $service): ?><img data-service-preview="<?= htmlspecialchars($service['slug']) ?>" src="<?= $img($service['image']) ?>" alt="" loading="lazy"><?php endforeach; ?>
         </div>
-        <div><h3><?= htmlspecialchars($s[0]) ?></h3><p><?= htmlspecialchars($s[1]) ?></p></div>
-      </article>
-      <?php endforeach; ?>
+        <?php foreach ($services as $index => $service): if (!$service['active']) continue; ?>
+        <a class="service-row reveal" href="<?= $b . htmlspecialchars($service['route']) ?>" data-service="<?= htmlspecialchars($service['slug']) ?>">
+          <span class="service-icon" aria-hidden="true"><span><?= str_pad((string)($index + 1), 2, '0', STR_PAD_LEFT) ?></span></span>
+          <span class="service-copy"><strong><?= htmlspecialchars($service['title']) ?></strong><small><?= htmlspecialchars($service['description']) ?></small></span>
+          <span class="service-arrow" aria-hidden="true">↗</span>
+        </a>
+        <?php endforeach; ?>
+      </div>
     </div>
   </div>
 </section>
