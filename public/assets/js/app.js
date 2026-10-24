@@ -35,20 +35,29 @@
   const serviceList = document.querySelector('[data-services]');
   if (serviceList) {
     const rows = [...serviceList.querySelectorAll('[data-service]')];
-    const previews = [...serviceList.querySelectorAll('[data-service-preview]')];
+    let current;
     const activate = slug => {
+      if (!slug || slug === current) return;
+      current = slug;
       rows.forEach(row => row.classList.toggle('is-active', row.dataset.service === slug));
-      previews.forEach(image => image.classList.toggle('is-visible', image.dataset.servicePreview === slug));
+      rows.forEach(row => row.querySelector('[data-service-preview]')?.querySelector('img')?.decode?.().catch(() => {}));
     };
     rows.forEach(row => {
       row.addEventListener('mouseenter', () => activate(row.dataset.service));
       row.addEventListener('focusin', () => activate(row.dataset.service));
     });
     if (!reduceMotion) {
+      const ratios = new Map(rows.map(row => [row, 0]));
       const serviceObserver = new IntersectionObserver(entries => {
-        const active = entries.filter(entry => entry.isIntersecting).sort((a, b) => Math.abs(a.boundingClientRect.top - innerHeight / 2) - Math.abs(b.boundingClientRect.top - innerHeight / 2))[0];
-        if (active) activate(active.target.dataset.service);
-      }, {threshold: 0.45, rootMargin: '-20% 0px -20% 0px'});
+        entries.forEach(entry => ratios.set(entry.target, entry.intersectionRatio));
+        const visible = rows.map(row => ({
+          row,
+          rect: row.getBoundingClientRect(),
+          ratio: ratios.get(row) || 0
+        })).filter(item => item.ratio > 0);
+        visible.sort((a, b) => Math.abs(a.rect.top + a.rect.height / 2 - innerHeight / 2) - Math.abs(b.rect.top + b.rect.height / 2 - innerHeight / 2));
+        if (visible[0]) activate(visible[0].row.dataset.service);
+      }, {threshold: [0, .25, .5, .75, 1], rootMargin: '-28% 0px -28% 0px'});
       rows.forEach(row => serviceObserver.observe(row));
     } else activate(rows[0]?.dataset.service);
   }

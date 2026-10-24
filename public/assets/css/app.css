@@ -145,22 +145,32 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .svc-card h3{font-size:24px;font-weight:700;letter-spacing:-.72px;color:var(--ink);line-height:32px}
 .svc-card p{font-size:18px;line-height:28px;letter-spacing:-.18px;color:var(--muted)}
 
-/* ---------- interactive services ---------- */
-.services-list{position:relative;border-top:1px solid var(--line)}
-.service-row{position:relative;display:grid;grid-template-columns:48px minmax(0,1fr) 48px;gap:18px;align-items:center;min-height:108px;padding:20px 0;border-bottom:1px solid var(--line);color:var(--ink);transition:color .3s,background .3s}
-.service-icon{font-size:14px;color:var(--blue);font-weight:700}
-.service-copy{display:flex;align-items:baseline;justify-content:space-between;gap:24px;min-width:0}
-.service-copy strong{font-size:30px;line-height:1.1;font-weight:700}
-.service-copy small{max-width:390px;color:var(--muted);font-size:16px;line-height:1.5}
-.service-arrow{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:22px;transition:background .3s,color .3s,transform .3s}
-.service-row:hover,.service-row:focus-visible,.service-row.is-active{color:var(--blue)}
-.service-row:hover .service-arrow,.service-row:focus-visible .service-arrow,.service-row.is-active .service-arrow{background:var(--blue);color:#fff;transform:rotate(45deg)}
-.service-preview{position:absolute;right:12%;top:50%;width:312px;aspect-ratio:312/216;transform:translateY(-50%);z-index:3;pointer-events:none;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(13,45,206,.2);opacity:0;visibility:hidden}
-.service-preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(.97) translateY(10px);transition:opacity .35s,transform .35s}
-.service-preview img.is-visible{opacity:1;transform:none}
-@media (hover:hover) and (pointer:fine){.service-row:hover~.service-preview{} .services-list:has(.service-row:hover) .service-preview{opacity:1;visibility:visible}}
+/* ---------- services ---------- */
+.mobile-services{display:none}
 .service-page{min-height:60vh;padding:160px 24px;text-align:center;font-size:24px}
 .service-page a{color:var(--blue);display:block;margin-top:20px}
+@media(max-width:1024px){
+  .desktop-services{display:none}
+  .mobile-services{display:block;border-top:1px solid var(--line)}
+  .service-row{position:relative;display:grid;grid-template-columns:32px minmax(0,1fr) 40px;gap:18px;align-items:center;min-height:88px;padding:16px 0;border-bottom:1px solid var(--line);color:var(--ink);transition:color .3s}
+  .service-icon{font-size:14px;color:var(--blue);font-weight:700}
+  .service-copy{display:block;min-width:0}
+  .service-copy strong{display:block;font-size:30px;line-height:1.1;font-weight:700}
+  .service-copy small{display:block;margin-top:8px;max-width:390px;color:var(--muted);font-size:16px;line-height:1.5}
+  .service-arrow{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:22px;transition:background .3s,color .3s,transform .3s}
+  .service-row:focus-visible,.service-row.is-active{color:var(--blue)}
+  .service-row:focus-visible .service-arrow,.service-row.is-active .service-arrow{background:var(--blue);color:#fff;transform:rotate(45deg)}
+  .service-preview{grid-column:1 / -1;display:none;width:100%;aspect-ratio:350 / 242;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(13,45,206,.16);pointer-events:none}
+  .service-row.is-active .service-preview{display:block}
+  .service-preview img{display:block;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(.98) translateY(8px);transition:opacity .35s,transform .35s}
+  .service-row.is-active .service-preview img{opacity:1;transform:none}
+}
+@media (hover:hover) and (pointer:fine) and (max-width:1024px){
+  .service-row:hover{color:var(--blue)}
+  .service-row:hover .service-arrow{background:var(--blue);color:#fff;transform:rotate(45deg)}
+}
+@media (prefers-reduced-motion:reduce){.service-preview img{transition:none}}
+
 
 /* ---------- case study stack ---------- */
 .stack{position:relative}
@@ -316,7 +326,6 @@ button{font:inherit;border:0;background:none;cursor:pointer}
   .hero h1{font-size:46px}
   .video-card{width:100%}
   .svc-grid{grid-template-columns:1fr 1fr}
-  .service-preview{right:4%}
   .case-card{grid-template-columns:1fr;min-height:0;padding:40px 28px}
   .case-title h3{font-size:44px}
   .work-grid{grid-template-columns:1fr}
@@ -343,13 +352,6 @@ button{font:inherit;border:0;background:none;cursor:pointer}
   .work-card h3{font-size:32px;line-height:32px}
   .svc-grid{grid-template-columns:1fr}
   .service-row{min-height:88px}
-  .svc-grid{grid-template-columns:1fr}
-  .service-row{grid-template-columns:32px minmax(0,1fr) 40px;min-height:88px;padding:16px 0}
-  .service-copy{display:block}
-  .service-copy strong{display:block;font-size:30px}
-  .service-copy small{display:block;margin-top:8px;font-size:16px}
-  .service-preview{position:relative;right:auto;top:auto;width:100%;transform:none;order:-1;margin-bottom:12px}
-  .service-preview:has(img.is-visible){opacity:1;visibility:visible}
   .work-card h3{font-size:24px}
   .sec-head h2{font-size:32px}
   .testi{padding-top:0}
