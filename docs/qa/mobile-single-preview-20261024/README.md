@@ -13,6 +13,8 @@ Source: `mobile_updated.fig`, 390px canvas. This is a local review only; nothing
 
 The 110px section-height difference comes from giving the shared image and active description their own non-overlapping, fixed-height space. Figma layers the image over the row area. Reproducing that overlap would obstruct service text while the image switches. At 360px the local section is 967px because the fixed description area needs one more line.
 
+Final 390px visual review: the Web Development title now fits on one line with tighter mobile-only letter spacing. The four refreshed screenshots show the preview clear of every service row and the active title, arrow, and description visible. The section remains 110px taller than Figma; reducing it to 833px with this composition would require the shared image to occupy service-row space and obscure headings.
+
 ## Results
 
 - Three downward/upward cycles and rapid scrolling at 360×780, 390×844, and 430×932, in normal and reduced-motion modes.

@@ -162,7 +162,7 @@ button{font:inherit;border:0;background:none;cursor:pointer}
   .service-row{position:relative;display:grid;grid-template-columns:30px minmax(0,1fr) 40px;gap:10px;align-items:center;height:88px;padding:8px 0;border-bottom:1px solid var(--line);color:var(--ink);transition:color .3s;scroll-margin-top:calc(69px + 24px)}
   .service-icon{font-size:14px;color:var(--blue);font-weight:700}
   .service-copy{display:block;min-width:0}
-  .service-copy strong{display:block;font-size:30px;line-height:1.1;font-weight:700}
+  .service-copy strong{display:block;font-size:30px;line-height:1.1;font-weight:700;letter-spacing:-.025em}
   .service-arrow{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:22px;transition:background .3s,color .3s,transform .3s}
   .service-row:focus-visible,.service-row.is-active{color:var(--blue)}
   .service-row:focus-visible .service-arrow,.service-row.is-active .service-arrow{background:var(--blue);color:#fff;transform:rotate(45deg)}
