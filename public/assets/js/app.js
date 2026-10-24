@@ -50,11 +50,16 @@
       const ratios = new Map(rows.map(row => [row, 0]));
       const serviceObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => ratios.set(entry.target, entry.intersectionRatio));
+        const activationTop = innerHeight * .25;
+        const activationBottom = innerHeight * .75;
+        const currentRow = rows.find(row => row.dataset.service === current);
+        const currentCopy = currentRow?.querySelector('.service-copy')?.getBoundingClientRect();
+        if (currentCopy && currentCopy.bottom > activationTop && currentCopy.top < activationBottom) return;
         const visible = rows.map(row => ({
           row,
-          rect: row.getBoundingClientRect(),
+          rect: row.querySelector('.service-copy').getBoundingClientRect(),
           ratio: ratios.get(row) || 0
-        })).filter(item => item.ratio > 0);
+        })).filter(item => item.ratio > 0 && item.rect.bottom > activationTop && item.rect.top < activationBottom);
         visible.sort((a, b) => Math.abs(a.rect.top + a.rect.height / 2 - innerHeight / 2) - Math.abs(b.rect.top + b.rect.height / 2 - innerHeight / 2));
         if (visible[0]) activate(visible[0].row.dataset.service);
       }, {threshold: [0, .25, .5, .75, 1], rootMargin: '-28% 0px -28% 0px'});
