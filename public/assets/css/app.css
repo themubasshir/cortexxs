@@ -160,10 +160,9 @@ button{font:inherit;border:0;background:none;cursor:pointer}
   .service-arrow{width:40px;height:40px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:22px;transition:background .3s,color .3s,transform .3s}
   .service-row:focus-visible,.service-row.is-active{color:var(--blue)}
   .service-row:focus-visible .service-arrow,.service-row.is-active .service-arrow{background:var(--blue);color:#fff;transform:rotate(45deg)}
-  .service-preview{grid-column:1 / -1;display:none;width:100%;aspect-ratio:350 / 242;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(13,45,206,.16);pointer-events:none}
-  .service-row.is-active .service-preview{display:block}
-  .service-preview img{display:block;width:100%;height:100%;object-fit:cover;opacity:0;transform:scale(.98) translateY(8px);transition:opacity .35s,transform .35s}
-  .service-row.is-active .service-preview img{opacity:1;transform:none}
+  .service-preview{grid-column:1 / -1;display:block;width:100%;aspect-ratio:350 / 242;border-radius:18px;overflow:hidden;box-shadow:0 20px 60px rgba(13,45,206,.16);pointer-events:none}
+  .service-preview img{display:block;width:100%;height:100%;object-fit:cover;opacity:.68;filter:saturate(.65);transition:opacity .35s,filter .35s}
+  .service-row.is-active .service-preview img{opacity:1;filter:none}
 }
 @media (hover:hover) and (pointer:fine) and (max-width:1024px){
   .service-row:hover{color:var(--blue)}

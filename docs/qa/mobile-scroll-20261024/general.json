@@ -1,0 +1,65 @@
+{
+  "routes": [
+    {
+      "slug": "web-development",
+      "before": {
+        "name": "01\nWeb Development\nDigital experiences that attract and convert.\n↗",
+        "href": "/cortexx/services/web-development",
+        "image": "/cortexx/assets/images/figma/d3c53b83709170a47e8bf41dffb3ccbf8e389447.png",
+        "decorative": "true"
+      },
+      "focusable": true,
+      "destination": "/cortexx/services/web-development"
+    },
+    {
+      "slug": "software",
+      "before": {
+        "name": "02\nSoftware\nSystems built to simplify and scale.\n↗",
+        "href": "/cortexx/services/software",
+        "image": "/cortexx/assets/images/figma/7b43ef8e85bdd82bf7b827210a5bd65b6bb8d3d6.png",
+        "decorative": "true"
+      },
+      "focusable": true,
+      "destination": "/cortexx/services/software"
+    },
+    {
+      "slug": "ai-automation",
+      "before": {
+        "name": "03\nAI & Automation\nSmarter workflows that save time, boost productivity, and simplify everyday business operations.\n↗",
+        "href": "/cortexx/services/ai-automation",
+        "image": "/cortexx/assets/images/figma/4d8cad707a52e7c0b60672844dd372c8f6960f67.png",
+        "decorative": "true"
+      },
+      "focusable": true,
+      "destination": "/cortexx/services/ai-automation"
+    },
+    {
+      "slug": "ui-ux-design",
+      "before": {
+        "name": "04\nUI/UX Design\nUseful products designed around real users.\n↗",
+        "href": "/cortexx/services/ui-ux-design",
+        "image": "/cortexx/assets/images/figma/7af8f62724334a5fe91653d7c11017f48534a962.png",
+        "decorative": "true"
+      },
+      "focusable": true,
+      "destination": "/cortexx/services/ui-ux-design"
+    }
+  ],
+  "carousel": {
+    "moved": true,
+    "paused": "paused",
+    "resumed": "running"
+  },
+  "footer": {
+    "entered": true,
+    "left": false,
+    "reentered": true
+  },
+  "newsletter": "Please enter a valid email.",
+  "overflow": 0,
+  "reducedState": {
+    "previewTransition": "0.001s",
+    "carouselToggle": "true"
+  },
+  "errors": []
+}

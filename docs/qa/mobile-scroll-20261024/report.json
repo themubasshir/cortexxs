@@ -1,0 +1,218 @@
+{
+  "generatedAt": "2026-10-24T15:51:59.414Z",
+  "results": [
+    {
+      "width": 390,
+      "height": 844,
+      "reduced": false,
+      "baseline": true,
+      "gestures": 130,
+      "negative": 6,
+      "worstDelta": -175,
+      "activations": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "documentHeights": [
+        5823,
+        6077
+      ],
+      "scrollCalls": 0,
+      "screenshots": [],
+      "errors": []
+    },
+    {
+      "width": 360,
+      "height": 780,
+      "reduced": false,
+      "baseline": false,
+      "gestures": 169,
+      "negative": 0,
+      "worstDelta": 0,
+      "activations": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "documentHeights": [
+        6781
+      ],
+      "scrollCalls": 0,
+      "screenshots": [],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "reduced": false,
+      "baseline": false,
+      "gestures": 177,
+      "negative": 0,
+      "worstDelta": 0,
+      "activations": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "documentHeights": [
+        6841
+      ],
+      "scrollCalls": 0,
+      "screenshots": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "errors": []
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "reduced": false,
+      "baseline": false,
+      "gestures": 184,
+      "negative": 0,
+      "worstDelta": 0,
+      "activations": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "documentHeights": [
+        6965
+      ],
+      "scrollCalls": 0,
+      "screenshots": [],
+      "errors": []
+    },
+    {
+      "width": 360,
+      "height": 780,
+      "reduced": true,
+      "baseline": false,
+      "gestures": 169,
+      "negative": 0,
+      "worstDelta": 0,
+      "activations": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "documentHeights": [
+        6781
+      ],
+      "scrollCalls": 0,
+      "screenshots": [],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "reduced": true,
+      "baseline": false,
+      "gestures": 177,
+      "negative": 0,
+      "worstDelta": 0,
+      "activations": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "documentHeights": [
+        6841
+      ],
+      "scrollCalls": 0,
+      "screenshots": [],
+      "errors": []
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "reduced": true,
+      "baseline": false,
+      "gestures": 184,
+      "negative": 0,
+      "worstDelta": 0,
+      "activations": [
+        "web-development",
+        "software",
+        "ai-automation",
+        "ui-ux-design"
+      ],
+      "documentHeights": [
+        6965
+      ],
+      "scrollCalls": 0,
+      "screenshots": [],
+      "errors": []
+    }
+  ],
+  "desktops": [
+    {
+      "width": 1280,
+      "initial": {
+        "cards": [
+          {
+            "width": 281,
+            "height": 190
+          },
+          {
+            "width": 281,
+            "height": 190
+          },
+          {
+            "width": 281,
+            "height": 190
+          },
+          {
+            "width": 281,
+            "height": 190
+          }
+        ],
+        "desktop": "grid",
+        "mobile": "none",
+        "overflow": 0,
+        "arrow": "rgb(232, 239, 255)"
+      },
+      "hoverArrow": "rgb(183, 196, 244)",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "initial": {
+        "cards": [
+          {
+            "width": 293,
+            "height": 190
+          },
+          {
+            "width": 293,
+            "height": 190
+          },
+          {
+            "width": 293,
+            "height": 190
+          },
+          {
+            "width": 293,
+            "height": 190
+          }
+        ],
+        "desktop": "grid",
+        "mobile": "none",
+        "overflow": 0,
+        "arrow": "rgb(232, 239, 255)"
+      },
+      "hoverArrow": "rgb(184, 196, 244)",
+      "errors": []
+    }
+  ]
+}

@@ -40,33 +40,29 @@
       if (!slug || slug === current) return;
       current = slug;
       rows.forEach(row => row.classList.toggle('is-active', row.dataset.service === slug));
-      rows.forEach(row => row.querySelector('[data-service-preview]')?.querySelector('img')?.decode?.().catch(() => {}));
     };
     rows.forEach(row => {
       row.addEventListener('mouseenter', () => activate(row.dataset.service));
       row.addEventListener('focusin', () => activate(row.dataset.service));
     });
-    if (!reduceMotion) {
-      let frame = 0;
-      const chooseActive = () => {
-        frame = 0;
-        const headerHeight = document.getElementById('header')?.getBoundingClientRect().height || 0;
-        const activationLine = headerHeight + (innerHeight - headerHeight) * .5;
-        const candidates = rows.map(row => {
-          const copy = row.querySelector('.service-copy').getBoundingClientRect();
-          return { row, copy, distance: Math.abs(copy.top + copy.height / 2 - activationLine) };
-        }).filter(item => item.copy.bottom > headerHeight && item.copy.top < innerHeight);
-        candidates.sort((a, b) => a.distance - b.distance);
-        if (candidates[0]) activate(candidates[0].row.dataset.service);
-      };
-      const scheduleChoice = () => { if (!frame) frame = requestAnimationFrame(chooseActive); };
-      addEventListener('scroll', scheduleChoice, {passive: true});
-      addEventListener('resize', scheduleChoice, {passive: true});
-      const serviceObserver = new IntersectionObserver(scheduleChoice, {threshold: [0, .25, .5, .75, 1]});
-      const serviceLayout = new ResizeObserver(scheduleChoice);
-      rows.forEach(row => { serviceObserver.observe(row); serviceLayout.observe(row); });
-      scheduleChoice();
-    } else activate(rows[0]?.dataset.service);
+    let frame = 0;
+    const chooseActive = () => {
+      frame = 0;
+      const headerHeight = header?.getBoundingClientRect().height || 0;
+      const activationLine = headerHeight + (innerHeight - headerHeight) * .5;
+      const candidates = rows.map(row => {
+        const copy = row.querySelector('.service-copy').getBoundingClientRect();
+        return { row, copy, distance: Math.abs(copy.top + copy.height / 2 - activationLine) };
+      }).filter(item => item.copy.bottom > headerHeight && item.copy.top < innerHeight);
+      candidates.sort((a, b) => a.distance - b.distance);
+      if (candidates[0]) activate(candidates[0].row.dataset.service);
+    };
+    const scheduleChoice = () => { if (!frame) frame = requestAnimationFrame(chooseActive); };
+    addEventListener('scroll', scheduleChoice, {passive: true});
+    addEventListener('resize', scheduleChoice, {passive: true});
+    const serviceObserver = new IntersectionObserver(scheduleChoice, {threshold: [0, .25, .5, .75, 1]});
+    rows.forEach(row => serviceObserver.observe(row));
+    scheduleChoice();
   }
 
   /* testimonial carousel */
