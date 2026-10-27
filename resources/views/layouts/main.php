@@ -11,7 +11,7 @@ $content = str_replace($base . '/assets/', $assetPrefix . '/', $content);
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?= htmlspecialchars($title ?? 'Cortexx — We Build Software, Websites, Apps and AI') ?></title>
 <meta name="description" content="<?= htmlspecialchars($description ?? 'Cortexx combines strategy, design and engineering under one team to create digital products people actually want to use.') ?>">
-<link rel="canonical" href="<?= htmlspecialchars(($config['app']['url'] ?? '') . $base . '/') ?>">
+<link rel="canonical" href="<?= htmlspecialchars(($config['app']['url'] ?? '') . $base . ($canonicalPath ?? '/')) ?>">
 <meta property="og:type" content="website">
 <meta property="og:title" content="<?= htmlspecialchars($title ?? 'Cortexx') ?>">
 <meta property="og:description" content="<?= htmlspecialchars($description ?? '') ?>">
@@ -21,9 +21,11 @@ $content = str_replace($base . '/assets/', $assetPrefix . '/', $content);
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="<?= $assetPrefix ?>/css/app.css?v=mobile-single-preview-20261024f">
+<?php if (!empty($pageStyles)): ?><link rel="stylesheet" href="<?= $assetPrefix ?>/css/<?= htmlspecialchars($pageStyles) ?>"><?php endif; ?>
 </head>
 <body>
 <?= $content ?>
-<script src="<?= $assetPrefix ?>/js/app.js?v=mobile-single-preview-20261024f" defer></script>
+<?php if (empty($skipAppJs)): ?><script src="<?= $assetPrefix ?>/js/app.js?v=mobile-single-preview-20261024f" defer></script><?php endif; ?>
+<?php if (!empty($pageScripts)): ?><script src="<?= $assetPrefix ?>/js/<?= htmlspecialchars($pageScripts) ?>" defer></script><?php endif; ?>
 </body>
 </html>

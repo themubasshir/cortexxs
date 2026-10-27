@@ -20,4 +20,15 @@ class PageController
         $res->getBody()->write(ob_get_clean());
         return $res;
     }
+
+    public function aiAutomation(Q $req, R $res): R
+    {
+        ob_start();
+        $csrf = $req->getAttribute('csrf_token', '');
+        $base = $this->base;
+        $config = $this->config;
+        require ROOT . '/resources/views/pages/ai-automation.php';
+        $res->getBody()->write(ob_get_clean());
+        return $res;
+    }
 }

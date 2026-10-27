@@ -16,7 +16,12 @@ return function (App $app, array $config, string $base) {
         return (new NewsletterController($config))->subscribe($req, $res);
     });
 
+    $app->get('/services/ai-automation', function ($req, $res) use ($config, $base) {
+        return (new PageController($config, $base))->aiAutomation($req, $res);
+    })->add($csrf);
+
     foreach (require ROOT . '/config/services.php' as $service) {
+        if ($service['slug'] === 'ai-automation') continue;
         $app->get($service['route'], function ($req, $res) use ($base, $service) {
             $res->getBody()->write('<main class="service-page"><p>Service page for ' . htmlspecialchars($service['title'], ENT_QUOTES, 'UTF-8') . ' is coming soon.</p><a href="' . $base . '/">Return home</a></main>');
             return $res;

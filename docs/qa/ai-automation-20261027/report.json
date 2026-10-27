@@ -1,0 +1,502 @@
+{
+  "base": "http://localhost/cortexx",
+  "ai": {
+    "response": 200,
+    "finalUrl": "http://localhost/cortexx/services/ai-automation",
+    "title": "AI & Automation Services | Cortexx",
+    "heading": "Smarter Systems For The Work That Drives Growth.",
+    "artwork": 1,
+    "stylesheet": "/cortexx/assets/css/ai-automation.css?v=1",
+    "script": "/cortexx/assets/js/ai-automation.js?v=1",
+    "initiallyDeferredImages": 8,
+    "heightInitial": 6478,
+    "animationInitial": "ai-workflow is-playing",
+    "animationMid": "ai-workflow is-playing",
+    "heightMid": 6478,
+    "animationSettled": "ai-workflow is-settled",
+    "heightSettled": 6478,
+    "heroGeometry": {
+      "hero": {
+        "x": 0,
+        "y": 0,
+        "width": 1440,
+        "height": 900
+      },
+      "heading": {
+        "x": 100,
+        "y": 287,
+        "width": 500,
+        "height": 198
+      },
+      "workflow": {
+        "x": 723,
+        "y": 196,
+        "width": 617,
+        "height": 647
+      },
+      "buttons": [
+        {
+          "x": 100,
+          "y": 646.65625,
+          "width": 181.609375,
+          "height": 50
+        },
+        {
+          "x": 293.609375,
+          "y": 646.65625,
+          "width": 163.015625,
+          "height": 50
+        }
+      ]
+    },
+    "heroOverlapsCtas": false,
+    "motionFrames": {
+      "sampled": 89,
+      "maxGapMs": 17,
+      "meanGapMs": 17
+    },
+    "offscreenClass": "ai-workflow",
+    "returnClass": "ai-workflow is-settled",
+    "brokenImages": [],
+    "reducedMotion": {
+      "media": true,
+      "workflowClass": "ai-workflow",
+      "cards": [
+        {
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        {
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        {
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        {
+          "opacity": "1",
+          "visibility": "visible"
+        },
+        {
+          "opacity": "1",
+          "visibility": "visible"
+        }
+      ],
+      "status": "1"
+    },
+    "menuOpened": true,
+    "menuClosed": true
+  },
+  "responsive": {
+    "360": {
+      "viewport": 360,
+      "scrollWidth": 360,
+      "scrollHeight": 9719,
+      "h1Size": "42px",
+      "h1Rect": {
+        "x": 16,
+        "y": 172,
+        "width": 328,
+        "height": 141.09375,
+        "top": 172,
+        "right": 344,
+        "bottom": 313.09375,
+        "left": 16
+      },
+      "artworkRect": {
+        "x": 16,
+        "y": 626.65625,
+        "width": 328,
+        "height": 343.9375,
+        "top": 626.65625,
+        "right": 344,
+        "bottom": 970.59375,
+        "left": 16
+      },
+      "ctaRects": [
+        {
+          "x": 16,
+          "y": 470.65625,
+          "width": 137.65625,
+          "height": 46,
+          "top": 470.65625,
+          "right": 153.65625,
+          "bottom": 516.65625,
+          "left": 16
+        },
+        {
+          "x": 161.65625,
+          "y": 470.65625,
+          "width": 121.640625,
+          "height": 46,
+          "top": 470.65625,
+          "right": 283.296875,
+          "bottom": 516.65625,
+          "left": 161.65625
+        }
+      ],
+      "sectionOrder": [
+        "ai-hero",
+        "ai-challenges",
+        "ai-capabilities",
+        "ai-process",
+        "ai-case",
+        "ai-testimonials"
+      ]
+    },
+    "390": {
+      "viewport": 390,
+      "scrollWidth": 390,
+      "scrollHeight": 9552,
+      "h1Size": "42px",
+      "h1Rect": {
+        "x": 16,
+        "y": 172,
+        "width": 358,
+        "height": 141.09375,
+        "top": 172,
+        "right": 374,
+        "bottom": 313.09375,
+        "left": 16
+      },
+      "artworkRect": {
+        "x": 16,
+        "y": 600.265625,
+        "width": 358,
+        "height": 375.40625,
+        "top": 600.265625,
+        "right": 374,
+        "bottom": 975.671875,
+        "left": 16
+      },
+      "ctaRects": [
+        {
+          "x": 16,
+          "y": 444.265625,
+          "width": 137.65625,
+          "height": 46,
+          "top": 444.265625,
+          "right": 153.65625,
+          "bottom": 490.265625,
+          "left": 16
+        },
+        {
+          "x": 161.65625,
+          "y": 444.265625,
+          "width": 121.640625,
+          "height": 46,
+          "top": 444.265625,
+          "right": 283.296875,
+          "bottom": 490.265625,
+          "left": 161.65625
+        }
+      ],
+      "sectionOrder": [
+        "ai-hero",
+        "ai-challenges",
+        "ai-capabilities",
+        "ai-process",
+        "ai-case",
+        "ai-testimonials"
+      ]
+    },
+    "430": {
+      "viewport": 430,
+      "scrollWidth": 430,
+      "scrollHeight": 9378,
+      "h1Size": "42px",
+      "h1Rect": {
+        "x": 16,
+        "y": 172,
+        "width": 398,
+        "height": 141.09375,
+        "top": 172,
+        "right": 414,
+        "bottom": 313.09375,
+        "left": 16
+      },
+      "artworkRect": {
+        "x": 16,
+        "y": 600.265625,
+        "width": 398,
+        "height": 417.34375,
+        "top": 600.265625,
+        "right": 414,
+        "bottom": 1017.609375,
+        "left": 16
+      },
+      "ctaRects": [
+        {
+          "x": 16,
+          "y": 444.265625,
+          "width": 137.65625,
+          "height": 46,
+          "top": 444.265625,
+          "right": 153.65625,
+          "bottom": 490.265625,
+          "left": 16
+        },
+        {
+          "x": 161.65625,
+          "y": 444.265625,
+          "width": 121.640625,
+          "height": 46,
+          "top": 444.265625,
+          "right": 283.296875,
+          "bottom": 490.265625,
+          "left": 161.65625
+        }
+      ],
+      "sectionOrder": [
+        "ai-hero",
+        "ai-challenges",
+        "ai-capabilities",
+        "ai-process",
+        "ai-case",
+        "ai-testimonials"
+      ]
+    },
+    "768": {
+      "viewport": 768,
+      "scrollWidth": 768,
+      "scrollHeight": 8621,
+      "h1Size": "60px",
+      "h1Rect": {
+        "x": 74,
+        "y": 178,
+        "width": 510,
+        "height": 205.171875,
+        "top": 178,
+        "right": 584,
+        "bottom": 383.171875,
+        "left": 74
+      },
+      "artworkRect": {
+        "x": 75.5,
+        "y": 685.3125,
+        "width": 617,
+        "height": 647,
+        "top": 685.3125,
+        "right": 692.5,
+        "bottom": 1332.3125,
+        "left": 75.5
+      },
+      "ctaRects": [
+        {
+          "x": 74,
+          "y": 519.3125,
+          "width": 181.609375,
+          "height": 50,
+          "top": 519.3125,
+          "right": 255.609375,
+          "bottom": 569.3125,
+          "left": 74
+        },
+        {
+          "x": 267.609375,
+          "y": 519.3125,
+          "width": 163.015625,
+          "height": 50,
+          "top": 519.3125,
+          "right": 430.625,
+          "bottom": 569.3125,
+          "left": 267.609375
+        }
+      ],
+      "sectionOrder": [
+        "ai-hero",
+        "ai-challenges",
+        "ai-capabilities",
+        "ai-process",
+        "ai-case",
+        "ai-testimonials"
+      ]
+    },
+    "1280": {
+      "viewport": 1280,
+      "scrollWidth": 1280,
+      "scrollHeight": 6378,
+      "h1Size": "58px",
+      "h1Rect": {
+        "x": 24,
+        "y": 287.328125,
+        "width": 500,
+        "height": 198.328125,
+        "top": 287.328125,
+        "right": 524,
+        "bottom": 485.65625,
+        "left": 24
+      },
+      "artworkRect": {
+        "x": 639,
+        "y": 195.5,
+        "width": 617,
+        "height": 647,
+        "top": 195.5,
+        "right": 1256,
+        "bottom": 842.5,
+        "left": 639
+      },
+      "ctaRects": [
+        {
+          "x": 24,
+          "y": 646.65625,
+          "width": 181.609375,
+          "height": 50,
+          "top": 646.65625,
+          "right": 205.609375,
+          "bottom": 696.65625,
+          "left": 24
+        },
+        {
+          "x": 217.609375,
+          "y": 646.65625,
+          "width": 163.015625,
+          "height": 50,
+          "top": 646.65625,
+          "right": 380.625,
+          "bottom": 696.65625,
+          "left": 217.609375
+        }
+      ],
+      "sectionOrder": [
+        "ai-hero",
+        "ai-challenges",
+        "ai-capabilities",
+        "ai-process",
+        "ai-case",
+        "ai-testimonials"
+      ]
+    },
+    "1440": {
+      "viewport": 1440,
+      "scrollWidth": 1440,
+      "scrollHeight": 6478,
+      "h1Size": "58px",
+      "h1Rect": {
+        "x": 100,
+        "y": 287.328125,
+        "width": 500,
+        "height": 198.328125,
+        "top": 287.328125,
+        "right": 600,
+        "bottom": 485.65625,
+        "left": 100
+      },
+      "artworkRect": {
+        "x": 723,
+        "y": 195.5,
+        "width": 617,
+        "height": 647,
+        "top": 195.5,
+        "right": 1340,
+        "bottom": 842.5,
+        "left": 723
+      },
+      "ctaRects": [
+        {
+          "x": 100,
+          "y": 646.65625,
+          "width": 181.609375,
+          "height": 50,
+          "top": 646.65625,
+          "right": 281.609375,
+          "bottom": 696.65625,
+          "left": 100
+        },
+        {
+          "x": 293.609375,
+          "y": 646.65625,
+          "width": 163.015625,
+          "height": 50,
+          "top": 646.65625,
+          "right": 456.625,
+          "bottom": 696.65625,
+          "left": 293.609375
+        }
+      ],
+      "sectionOrder": [
+        "ai-hero",
+        "ai-challenges",
+        "ai-capabilities",
+        "ai-process",
+        "ai-case",
+        "ai-testimonials"
+      ]
+    }
+  },
+  "homepage": {
+    "response": 200,
+    "heading": "We Build Software,\nWebsites, App\nand AI.",
+    "desktopCards": 4,
+    "links": [
+      {
+        "href": "/cortexx/services/web-development",
+        "text": "\n            01\n            Web Development\n            ↗\n          "
+      },
+      {
+        "href": "/cortexx/services/software",
+        "text": "\n            02\n            Software\n            ↗\n          "
+      },
+      {
+        "href": "/cortexx/services/ai-automation",
+        "text": "\n            03\n            AI & Automation\n            ↗\n          "
+      },
+      {
+        "href": "/cortexx/services/ui-ux-design",
+        "text": "\n            04\n            UI/UX Design\n            ↗\n          "
+      }
+    ],
+    "carousel": 1,
+    "carouselTransformDuringClick": "matrix(1, 0, 0, 1, -223.931, 0)",
+    "carouselMoved": true,
+    "footer": 1,
+    "footerRevealed": true,
+    "newsletterInvalid": false,
+    "newsletterMessage": "Please enter a valid email.",
+    "mobileMenuOpened": true,
+    "mobileMenuClosed": true,
+    "mobileServices": 4,
+    "mobileActiveBefore": "ui-ux-design",
+    "mobileActiveAfter": "ai-automation",
+    "mobileOverflow": false,
+    "mobileScrollHeightBefore": 5849,
+    "mobileScrollPositions": [
+      3174,
+      3354,
+      3534,
+      3714,
+      3894,
+      4074,
+      4254,
+      4434,
+      4614,
+      4794
+    ],
+    "mobileScrollHeightAfter": 5849
+  },
+  "services": {
+    "web-development": {
+      "status": 200,
+      "finalUrl": "http://localhost/cortexx/services/web-development",
+      "body": "Service page for Web Development is coming soon.\n\nReturn home"
+    },
+    "software": {
+      "status": 200,
+      "finalUrl": "http://localhost/cortexx/services/software",
+      "body": "Service page for Software is coming soon.\n\nReturn home"
+    },
+    "ai-automation": {
+      "status": 200,
+      "finalUrl": "http://localhost/cortexx/services/ai-automation",
+      "body": "AI\nAutomation\nIntegration\nSmarter Systems For The Work That Drives Growth.\n\nWe t"
+    },
+    "ui-ux-design": {
+      "status": 200,
+      "finalUrl": "http://localhost/cortexx/services/ui-ux-design",
+      "body": "Service page for UI/UX Design is coming soon.\n\nReturn home"
+    }
+  },
+  "errors": []
+}
