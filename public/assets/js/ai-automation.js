@@ -3,30 +3,16 @@
   const page = document.querySelector('.ai-page');
   if (!page) return;
 
-  const menuButton = page.querySelector('.ai-menu-button');
-  const mobileNav = page.querySelector('.ai-mobile-nav');
-  const closeMenu = () => {
-    mobileNav.hidden = true;
-    menuButton.setAttribute('aria-expanded', 'false');
-    menuButton.setAttribute('aria-label', 'Open menu');
-  };
-  menuButton.addEventListener('click', () => {
-    const opening = mobileNav.hidden;
-    mobileNav.hidden = !opening;
-    menuButton.setAttribute('aria-expanded', String(opening));
-    menuButton.setAttribute('aria-label', opening ? 'Close menu' : 'Open menu');
-  });
-  mobileNav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
-
   const workflow = page.querySelector('.ai-workflow');
   const motion = matchMedia('(prefers-reduced-motion: reduce)');
   let visible = false;
   let played = false;
+  let paused = false;
+  const toggle = page.querySelector('.ai-motion-toggle');
   let settleTimer;
   const syncMotion = () => {
     clearTimeout(settleTimer);
-    if (motion.matches || !visible || document.hidden) {
+    if (motion.matches || !visible || document.hidden || paused) {
       workflow.classList.remove('is-playing', 'is-settled');
       return;
     }
@@ -47,6 +33,13 @@
       syncMotion();
     }, { threshold: 0.05 }).observe(workflow);
   } else { visible = true; syncMotion(); }
+  toggle.addEventListener('click', () => {
+    paused = !paused;
+    toggle.setAttribute('aria-pressed', String(paused));
+    toggle.setAttribute('aria-label', paused ? 'Play animation' : 'Pause animation');
+    toggle.querySelector('span').textContent = paused ? '▶' : 'Ⅱ';
+    syncMotion();
+  });
   motion.addEventListener?.('change', syncMotion);
   document.addEventListener('visibilitychange', syncMotion);
 
@@ -55,22 +48,4 @@
   page.querySelector('[data-testimonial-prev]').addEventListener('click', () => track.scrollBy({ left: -step(), behavior: motion.matches ? 'instant' : 'smooth' }));
   page.querySelector('[data-testimonial-next]').addEventListener('click', () => track.scrollBy({ left: step(), behavior: motion.matches ? 'instant' : 'smooth' }));
 
-  const form = page.querySelector('.news-form');
-  const message = page.querySelector('#newsMsg');
-  form.addEventListener('submit', async event => {
-    event.preventDefault();
-    const email = form.querySelector('input[name=email]')?.value.trim() || '';
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      message.textContent = 'Please enter a valid email.';
-      return;
-    }
-    try {
-      const response = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'X-Requested-With': 'fetch' } });
-      const result = await response.json();
-      message.textContent = result.message || (response.ok ? 'Thanks — we’ll be in touch.' : 'Something went wrong.');
-      if (response.ok) form.reset();
-    } catch {
-      message.textContent = 'Network error — try again.';
-    }
-  });
 })();

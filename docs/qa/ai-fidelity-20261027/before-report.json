@@ -1,0 +1,699 @@
+{
+  "phase": "before",
+  "base": "http://localhost/cortexx",
+  "widths": {
+    "390": {
+      "home": {
+        "headerHash": "421c4777bf8a2db1308e1f9d9ef646c7b6563618fd03e359fd153497b99b75ca",
+        "footerHash": "7a45becbf2d6aa48e9c3dbf74a7b4436529eca103589220a2e63c614b137964c",
+        "headerRect": {
+          "x": 16,
+          "y": 12,
+          "w": 358,
+          "h": 69
+        },
+        "footerRect": {
+          "w": 390,
+          "h": 593.765625
+        }
+      },
+      "ai": {
+        "responseTitle": "AI & Automation Services | Cortexx",
+        "geometry": {
+          "header": [
+            {
+              "x": 16,
+              "y": 16,
+              "w": 358,
+              "h": 68,
+              "fontSize": "16px"
+            }
+          ],
+          "hero": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 390,
+              "h": 1041,
+              "fontSize": "16px"
+            }
+          ],
+          "heroTitle": [
+            {
+              "x": 16,
+              "y": 172,
+              "w": 358,
+              "h": 141,
+              "fontSize": "42px"
+            }
+          ],
+          "heroDescription": [
+            {
+              "x": 16,
+              "y": 333,
+              "w": 358,
+              "h": 79,
+              "fontSize": "16px"
+            }
+          ],
+          "heroArt": [
+            {
+              "x": 16,
+              "y": 600,
+              "w": 358,
+              "h": 375,
+              "fontSize": "16px"
+            }
+          ],
+          "challenges": [
+            {
+              "x": 0,
+              "y": 1041,
+              "w": 390,
+              "h": 1396,
+              "fontSize": "16px"
+            }
+          ],
+          "challengesTitle": [
+            {
+              "x": 16,
+              "y": 1171,
+              "w": 358,
+              "h": 122,
+              "fontSize": "38px"
+            }
+          ],
+          "challengeRows": [
+            {
+              "x": 16,
+              "y": 1662,
+              "w": 358,
+              "h": 176,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 1838,
+              "w": 358,
+              "h": 176,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 2013,
+              "w": 358,
+              "h": 176,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 2189,
+              "w": 358,
+              "h": 176,
+              "fontSize": "16px"
+            }
+          ],
+          "capabilities": [
+            {
+              "x": 0,
+              "y": 2436,
+              "w": 390,
+              "h": 2477,
+              "fontSize": "16px"
+            }
+          ],
+          "capabilityTitle": [
+            {
+              "x": 16,
+              "y": 2566,
+              "w": 358,
+              "h": 81,
+              "fontSize": "38px"
+            }
+          ],
+          "capabilityCards": [
+            {
+              "x": 16,
+              "y": 2696,
+              "w": 358,
+              "h": 409,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 3124,
+              "w": 358,
+              "h": 409,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 3553,
+              "w": 358,
+              "h": 432,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 4004,
+              "w": 358,
+              "h": 409,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 4433,
+              "w": 358,
+              "h": 409,
+              "fontSize": "16px"
+            }
+          ],
+          "process": [
+            {
+              "x": 0,
+              "y": 4913,
+              "w": 390,
+              "h": 1501,
+              "fontSize": "16px"
+            }
+          ],
+          "processTitle": [
+            {
+              "x": 16,
+              "y": 5043,
+              "w": 358,
+              "h": 81,
+              "fontSize": "38px"
+            }
+          ],
+          "steps": [
+            {
+              "x": 16,
+              "y": 5655,
+              "w": 358,
+              "h": 115,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 5770,
+              "w": 358,
+              "h": 115,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 5884,
+              "w": 358,
+              "h": 115,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 5999,
+              "w": 358,
+              "h": 115,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 6114,
+              "w": 358,
+              "h": 115,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 6228,
+              "w": 358,
+              "h": 115,
+              "fontSize": "16px"
+            }
+          ],
+          "caseStudy": [
+            {
+              "x": 0,
+              "y": 6415,
+              "w": 390,
+              "h": 1343,
+              "fontSize": "16px"
+            }
+          ],
+          "caseTitle": [
+            {
+              "x": 16,
+              "y": 6545,
+              "w": 358,
+              "h": 41,
+              "fontSize": "38px"
+            }
+          ],
+          "caseCard": [
+            {
+              "x": 16,
+              "y": 6487,
+              "w": 358,
+              "h": 1199,
+              "fontSize": "16px"
+            }
+          ],
+          "testimonials": [
+            {
+              "x": 0,
+              "y": 7758,
+              "w": 390,
+              "h": 1019,
+              "fontSize": "16px"
+            }
+          ],
+          "testimonialCards": [
+            {
+              "x": 16,
+              "y": 8093,
+              "w": 308,
+              "h": 277,
+              "fontSize": "16px"
+            },
+            {
+              "x": 344,
+              "y": 8093,
+              "w": 308,
+              "h": 277,
+              "fontSize": "16px"
+            },
+            {
+              "x": 672,
+              "y": 8093,
+              "w": 308,
+              "h": 277,
+              "fontSize": "16px"
+            }
+          ],
+          "recognitionTiles": [
+            {
+              "x": 16,
+              "y": 8508,
+              "w": 171,
+              "h": 55,
+              "fontSize": "16px"
+            },
+            {
+              "x": 203,
+              "y": 8508,
+              "w": 171,
+              "h": 55,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 8579,
+              "w": 171,
+              "h": 55,
+              "fontSize": "16px"
+            },
+            {
+              "x": 203,
+              "y": 8579,
+              "w": 171,
+              "h": 55,
+              "fontSize": "16px"
+            },
+            {
+              "x": 16,
+              "y": 8650,
+              "w": 171,
+              "h": 55,
+              "fontSize": "16px"
+            },
+            {
+              "x": 203,
+              "y": 8650,
+              "w": 171,
+              "h": 55,
+              "fontSize": "16px"
+            }
+          ],
+          "footer": [
+            {
+              "x": 0,
+              "y": 8777,
+              "w": 390,
+              "h": 775,
+              "fontSize": "16px"
+            }
+          ]
+        },
+        "scrollWidth": 390,
+        "scrollHeight": 9552,
+        "brokenImages": []
+      }
+    },
+    "1440": {
+      "home": {
+        "headerHash": "ac25224aeac8bb165adbc12c73b14039fbc3e75db3ebea2831462031e3283cb9",
+        "footerHash": "eb1d42101b0bb841a0a2c8d27f6a5e3b4c2593093d6d701928b7cbacf4dc2602",
+        "headerRect": {
+          "x": 220,
+          "y": 12,
+          "w": 1000,
+          "h": 77
+        },
+        "footerRect": {
+          "w": 1440,
+          "h": 751.671875
+        }
+      },
+      "ai": {
+        "responseTitle": "AI & Automation Services | Cortexx",
+        "geometry": {
+          "header": [
+            {
+              "x": 220,
+              "y": 24,
+              "w": 1000,
+              "h": 72,
+              "fontSize": "16px"
+            }
+          ],
+          "hero": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 1440,
+              "h": 900,
+              "fontSize": "16px"
+            }
+          ],
+          "heroTitle": [
+            {
+              "x": 100,
+              "y": 287,
+              "w": 500,
+              "h": 198,
+              "fontSize": "58px"
+            }
+          ],
+          "heroDescription": [
+            {
+              "x": 100,
+              "y": 510,
+              "w": 500,
+              "h": 105,
+              "fontSize": "20px"
+            }
+          ],
+          "heroArt": [
+            {
+              "x": 723,
+              "y": 196,
+              "w": 617,
+              "h": 647,
+              "fontSize": "16px"
+            }
+          ],
+          "challenges": [
+            {
+              "x": 0,
+              "y": 900,
+              "w": 1440,
+              "h": 777,
+              "fontSize": "16px"
+            }
+          ],
+          "challengesTitle": [
+            {
+              "x": 100,
+              "y": 1058,
+              "w": 521,
+              "h": 205,
+              "fontSize": "64px"
+            }
+          ],
+          "challengeRows": [
+            {
+              "x": 752,
+              "y": 1001,
+              "w": 588,
+              "h": 134,
+              "fontSize": "16px"
+            },
+            {
+              "x": 752,
+              "y": 1135,
+              "w": 588,
+              "h": 134,
+              "fontSize": "16px"
+            },
+            {
+              "x": 752,
+              "y": 1269,
+              "w": 588,
+              "h": 134,
+              "fontSize": "16px"
+            },
+            {
+              "x": 752,
+              "y": 1403,
+              "w": 588,
+              "h": 134,
+              "fontSize": "16px"
+            }
+          ],
+          "capabilities": [
+            {
+              "x": 0,
+              "y": 1677,
+              "w": 1440,
+              "h": 1413,
+              "fontSize": "16px"
+            }
+          ],
+          "capabilityTitle": [
+            {
+              "x": 100,
+              "y": 1835,
+              "w": 1240,
+              "h": 137,
+              "fontSize": "64px"
+            }
+          ],
+          "capabilityCards": [
+            {
+              "x": 100,
+              "y": 2020,
+              "w": 610,
+              "h": 463,
+              "fontSize": "16px"
+            },
+            {
+              "x": 730,
+              "y": 2020,
+              "w": 610,
+              "h": 463,
+              "fontSize": "16px"
+            },
+            {
+              "x": 100,
+              "y": 2504,
+              "w": 400,
+              "h": 487,
+              "fontSize": "16px"
+            },
+            {
+              "x": 520,
+              "y": 2504,
+              "w": 400,
+              "h": 487,
+              "fontSize": "16px"
+            },
+            {
+              "x": 940,
+              "y": 2504,
+              "w": 400,
+              "h": 487,
+              "fontSize": "16px"
+            }
+          ],
+          "process": [
+            {
+              "x": 0,
+              "y": 3090,
+              "w": 1440,
+              "h": 960,
+              "fontSize": "16px"
+            }
+          ],
+          "processTitle": [
+            {
+              "x": 100,
+              "y": 3248,
+              "w": 568,
+              "h": 137,
+              "fontSize": "64px"
+            }
+          ],
+          "steps": [
+            {
+              "x": 804,
+              "y": 3191,
+              "w": 536,
+              "h": 92,
+              "fontSize": "16px"
+            },
+            {
+              "x": 804,
+              "y": 3283,
+              "w": 536,
+              "h": 92,
+              "fontSize": "16px"
+            },
+            {
+              "x": 804,
+              "y": 3375,
+              "w": 536,
+              "h": 92,
+              "fontSize": "16px"
+            },
+            {
+              "x": 804,
+              "y": 3467,
+              "w": 536,
+              "h": 92,
+              "fontSize": "16px"
+            },
+            {
+              "x": 804,
+              "y": 3559,
+              "w": 536,
+              "h": 92,
+              "fontSize": "16px"
+            },
+            {
+              "x": 804,
+              "y": 3652,
+              "w": 536,
+              "h": 92,
+              "fontSize": "16px"
+            }
+          ],
+          "caseStudy": [
+            {
+              "x": 0,
+              "y": 4050,
+              "w": 1440,
+              "h": 802,
+              "fontSize": "16px"
+            }
+          ],
+          "caseTitle": [
+            {
+              "x": 100,
+              "y": 4208,
+              "w": 568,
+              "h": 68,
+              "fontSize": "64px"
+            }
+          ],
+          "caseCard": [
+            {
+              "x": 100,
+              "y": 4150,
+              "w": 1240,
+              "h": 602,
+              "fontSize": "16px"
+            }
+          ],
+          "testimonials": [
+            {
+              "x": 0,
+              "y": 4852,
+              "w": 1440,
+              "h": 934,
+              "fontSize": "16px"
+            }
+          ],
+          "testimonialCards": [
+            {
+              "x": 100,
+              "y": 5189,
+              "w": 400,
+              "h": 277,
+              "fontSize": "16px"
+            },
+            {
+              "x": 520,
+              "y": 5189,
+              "w": 400,
+              "h": 277,
+              "fontSize": "16px"
+            },
+            {
+              "x": 940,
+              "y": 5189,
+              "w": 400,
+              "h": 277,
+              "fontSize": "16px"
+            }
+          ],
+          "recognitionTiles": [
+            {
+              "x": 100,
+              "y": 5631,
+              "w": 193,
+              "h": 55,
+              "fontSize": "16px"
+            },
+            {
+              "x": 309,
+              "y": 5631,
+              "w": 193,
+              "h": 55,
+              "fontSize": "16px"
+            },
+            {
+              "x": 519,
+              "y": 5631,
+              "w": 193,
+              "h": 55,
+              "fontSize": "16px"
+            },
+            {
+              "x": 728,
+              "y": 5631,
+              "w": 193,
+              "h": 55,
+              "fontSize": "16px"
+            },
+            {
+              "x": 937,
+              "y": 5631,
+              "w": 193,
+              "h": 55,
+              "fontSize": "16px"
+            },
+            {
+              "x": 1147,
+              "y": 5631,
+              "w": 193,
+              "h": 55,
+              "fontSize": "16px"
+            }
+          ],
+          "footer": [
+            {
+              "x": 0,
+              "y": 5786,
+              "w": 1440,
+              "h": 692,
+              "fontSize": "16px"
+            }
+          ]
+        },
+        "scrollWidth": 1440,
+        "scrollHeight": 6478,
+        "brokenImages": []
+      }
+    }
+  },
+  "browserErrors": []
+}

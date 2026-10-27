@@ -8,13 +8,13 @@
     "artwork": 1,
     "stylesheet": "/cortexx/assets/css/ai-automation.css?v=1",
     "script": "/cortexx/assets/js/ai-automation.js?v=1",
-    "initiallyDeferredImages": 8,
-    "heightInitial": 6478,
+    "initiallyDeferredImages": 14,
+    "heightInitial": 6373,
     "animationInitial": "ai-workflow is-playing",
     "animationMid": "ai-workflow is-playing",
-    "heightMid": 6478,
+    "heightMid": 6373,
     "animationSettled": "ai-workflow is-settled",
-    "heightSettled": 6478,
+    "heightSettled": 6373,
     "heroGeometry": {
       "hero": {
         "x": 0,
@@ -24,7 +24,7 @@
       },
       "heading": {
         "x": 100,
-        "y": 287,
+        "y": 340,
         "width": 500,
         "height": 198
       },
@@ -37,18 +37,21 @@
       "buttons": [
         {
           "x": 100,
-          "y": 646.65625,
+          "y": 698.125,
           "width": 181.609375,
           "height": 50
         },
         {
           "x": 293.609375,
-          "y": 646.65625,
+          "y": 698.125,
           "width": 163.015625,
           "height": 50
         }
       ]
     },
+    "pausedClass": "ai-workflow",
+    "pauseLabel": "Play animation",
+    "resumedClass": "ai-workflow is-settled",
     "heroOverlapsCtas": false,
     "motionFrames": {
       "sampled": 89,
@@ -58,6 +61,8 @@
     "offscreenClass": "ai-workflow",
     "returnClass": "ai-workflow is-settled",
     "brokenImages": [],
+    "footerRevealed": true,
+    "newsletterMessage": "Please enter a valid email.",
     "reducedMotion": {
       "media": true,
       "workflowClass": "ai-workflow",
@@ -82,17 +87,17 @@
           "opacity": "1",
           "visibility": "visible"
         }
-      ],
-      "status": "1"
+      ]
     },
     "menuOpened": true,
-    "menuClosed": true
+    "menuClosed": true,
+    "testimonialAdvanced": true
   },
   "responsive": {
     "360": {
       "viewport": 360,
       "scrollWidth": 360,
-      "scrollHeight": 9719,
+      "scrollHeight": 9508,
       "h1Size": "42px",
       "h1Rect": {
         "x": 16,
@@ -148,7 +153,7 @@
     "390": {
       "viewport": 390,
       "scrollWidth": 390,
-      "scrollHeight": 9552,
+      "scrollHeight": 9362,
       "h1Size": "42px",
       "h1Rect": {
         "x": 16,
@@ -204,7 +209,7 @@
     "430": {
       "viewport": 430,
       "scrollWidth": 430,
-      "scrollHeight": 9378,
+      "scrollHeight": 9179,
       "h1Size": "42px",
       "h1Rect": {
         "x": 16,
@@ -260,7 +265,7 @@
     "768": {
       "viewport": 768,
       "scrollWidth": 768,
-      "scrollHeight": 8621,
+      "scrollHeight": 8957,
       "h1Size": "60px",
       "h1Rect": {
         "x": 74,
@@ -316,16 +321,16 @@
     "1280": {
       "viewport": 1280,
       "scrollWidth": 1280,
-      "scrollHeight": 6378,
-      "h1Size": "58px",
+      "scrollHeight": 6373,
+      "h1Size": "60px",
       "h1Rect": {
         "x": 24,
-        "y": 287.328125,
+        "y": 339.875,
         "width": 500,
-        "height": 198.328125,
-        "top": 287.328125,
+        "height": 198,
+        "top": 339.875,
         "right": 524,
-        "bottom": 485.65625,
+        "bottom": 537.875,
         "left": 24
       },
       "artworkRect": {
@@ -341,22 +346,22 @@
       "ctaRects": [
         {
           "x": 24,
-          "y": 646.65625,
+          "y": 698.125,
           "width": 181.609375,
           "height": 50,
-          "top": 646.65625,
+          "top": 698.125,
           "right": 205.609375,
-          "bottom": 696.65625,
+          "bottom": 748.125,
           "left": 24
         },
         {
           "x": 217.609375,
-          "y": 646.65625,
+          "y": 698.125,
           "width": 163.015625,
           "height": 50,
-          "top": 646.65625,
+          "top": 698.125,
           "right": 380.625,
-          "bottom": 696.65625,
+          "bottom": 748.125,
           "left": 217.609375
         }
       ],
@@ -372,16 +377,16 @@
     "1440": {
       "viewport": 1440,
       "scrollWidth": 1440,
-      "scrollHeight": 6478,
-      "h1Size": "58px",
+      "scrollHeight": 6373,
+      "h1Size": "60px",
       "h1Rect": {
         "x": 100,
-        "y": 287.328125,
+        "y": 339.875,
         "width": 500,
-        "height": 198.328125,
-        "top": 287.328125,
+        "height": 198,
+        "top": 339.875,
         "right": 600,
-        "bottom": 485.65625,
+        "bottom": 537.875,
         "left": 100
       },
       "artworkRect": {
@@ -397,22 +402,22 @@
       "ctaRects": [
         {
           "x": 100,
-          "y": 646.65625,
+          "y": 698.125,
           "width": 181.609375,
           "height": 50,
-          "top": 646.65625,
+          "top": 698.125,
           "right": 281.609375,
-          "bottom": 696.65625,
+          "bottom": 748.125,
           "left": 100
         },
         {
           "x": 293.609375,
-          "y": 646.65625,
+          "y": 698.125,
           "width": 163.015625,
           "height": 50,
-          "top": 646.65625,
+          "top": 698.125,
           "right": 456.625,
-          "bottom": 696.65625,
+          "bottom": 748.125,
           "left": 293.609375
         }
       ],
@@ -449,7 +454,6 @@
       }
     ],
     "carousel": 1,
-    "carouselTransformDuringClick": "matrix(1, 0, 0, 1, -223.931, 0)",
     "carouselMoved": true,
     "footer": 1,
     "footerRevealed": true,
@@ -490,7 +494,7 @@
     "ai-automation": {
       "status": 200,
       "finalUrl": "http://localhost/cortexx/services/ai-automation",
-      "body": "AI\nAutomation\nIntegration\nSmarter Systems For The Work That Drives Growth.\n\nWe t"
+      "body": "Let’s Talk\nAI\nAutomation\nIntegration\nSmarter Systems For The Work That Drives Gr"
     },
     "ui-ux-design": {
       "status": 200,

@@ -33,10 +33,10 @@ The page also reuses the existing Cortexx logo, three Figma trust avatars, six r
 
 Observed in a real browser at <https://www.publicissapient.com/platforms/bodhi> on 27 October 2026. The reference hero uses a Lottie-generated SVG (`.lf-player-container #lottie`), not a video or canvas. Its artwork shows workflow cards and dotted connection paths; path dash patterns and card transforms change over time. A Pause control is present in the hero. The mobile browser view stacks the text above the art. The reference inspection did not establish pointer-responsive motion, scroll-responsive transformations, a precise loop duration or its reduced-motion behavior, so the Cortexx implementation does not assume those effects.
 
-The Cortexx animation uses a 0.7-second staggered card entrance, 0.9-second connection reveal, a completion state at 1.65 seconds, then a restrained CSS-only loop. `IntersectionObserver` stops ambient motion outside the viewport. The reduced-motion view displays the complete static artwork.
+The Cortexx animation uses a 0.7-second staggered card entrance, 0.9-second connection reveal, then a restrained CSS-only loop after the entrance. `IntersectionObserver` stops ambient motion outside the viewport. The reduced-motion view displays the complete static artwork.
 
 ## Remaining Figma differences
 
 - The Figma hero and card artwork consists of many vector and text nodes. The implementation preserves its workflow and interface structure but does not reproduce every vector edge, shadow and micro-label exactly.
-- The Figma case study contains placeholder copy and no verified result metric. That copy is retained, and the CTA goes to the site's case-studies anchor until a real case study destination exists.
+- The Figma case study contains placeholder copy and no verified result metric. That copy is retained, and its CTA is disabled until a real case study destination exists.
 - The supplied file has only a desktop page frame. Mobile layouts are an adaptation, not an authoritative Figma match.

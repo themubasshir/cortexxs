@@ -3,6 +3,7 @@ try { ({ chromium } = require('playwright-core')); }
 catch { ({ chromium } = require(process.env.CORTEXX_PLAYWRIGHT_MODULE || 'C:/Users/Cyb3r/AppData/Local/Temp/marsai/node_modules/playwright-core')); }
 const fs = require('node:fs');
 const path = require('node:path');
+const assert = require('node:assert/strict');
 
 const base = process.env.CORTEXX_QA_BASE || 'http://localhost/cortexx';
 const output = path.join(__dirname, '../docs/qa/ai-automation-20261027');
@@ -40,6 +41,11 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
       const box = s => { const r = document.querySelector(s).getBoundingClientRect(); return { x: Math.round(r.x), y: Math.round(r.y), width: Math.round(r.width), height: Math.round(r.height) }; };
       return { hero: box('.ai-hero'), heading: box('h1'), workflow: box('.ai-workflow'), buttons: [...document.querySelectorAll('.ai-hero .ai-button')].map(x => { const r = x.getBoundingClientRect(); return { x:r.x,y:r.y,width:r.width,height:r.height }; }) };
     });
+    await page.locator('.ai-motion-toggle').click();
+    result.ai.pausedClass = await page.locator('.ai-workflow').getAttribute('class');
+    result.ai.pauseLabel = await page.locator('.ai-motion-toggle').getAttribute('aria-label');
+    await page.locator('.ai-motion-toggle').click();
+    result.ai.resumedClass = await page.locator('.ai-workflow').getAttribute('class');
     result.ai.heroOverlapsCtas = await page.evaluate(() => {
       const art = document.querySelector('.ai-workflow').getBoundingClientRect();
       return [...document.querySelectorAll('.ai-hero .ai-button')].some(button => {
@@ -81,17 +87,26 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
       if ([390, 1440].includes(width)) await page.screenshot({ path: path.join(output, `full-page-${width}.png`), fullPage: true });
       if ([360, 390, 430, 768].includes(width)) await page.screenshot({ path: path.join(output, `hero-${width}.png`) });
     }
+    await page.locator('.footer').scrollIntoViewIfNeeded();
+    await page.waitForTimeout(100);
+    result.ai.footerRevealed = await page.locator('.footer').evaluate(el => el.classList.contains('footer-in'));
+    await page.locator('#newsForm input[type=email]').fill('bad-email');
+    await page.locator('#newsForm button[type=submit]').click();
+    result.ai.newsletterMessage = await page.locator('#newsMsg').innerText();
     const mobileContext = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
     const mobile = await mobileContext.newPage();
     mobile.on('pageerror', error => result.errors.push({ route: 'ai reduced', message: error.message }));
     await mobile.goto(base + '/services/ai-automation', { waitUntil: 'domcontentloaded' });
     await mobile.waitForTimeout(150);
-    result.ai.reducedMotion = await mobile.evaluate(() => ({ media: matchMedia('(prefers-reduced-motion: reduce)').matches, workflowClass: document.querySelector('.ai-workflow').className, cards: [...document.querySelectorAll('.ai-flow-card')].map(x => ({ opacity: getComputedStyle(x).opacity, visibility: getComputedStyle(x).visibility })), status: getComputedStyle(document.querySelector('.ai-workflow-status')).opacity }));
+    result.ai.reducedMotion = await mobile.evaluate(() => ({ media: matchMedia('(prefers-reduced-motion: reduce)').matches, workflowClass: document.querySelector('.ai-workflow').className, cards: [...document.querySelectorAll('.ai-flow-card')].map(x => ({ opacity: getComputedStyle(x).opacity, visibility: getComputedStyle(x).visibility })) }));
     await mobile.screenshot({ path: path.join(output, 'hero-reduced-390.png') });
-    await mobile.locator('.ai-menu-button').click();
-    result.ai.menuOpened = await mobile.locator('.ai-mobile-nav').isVisible();
-    await mobile.keyboard.press('Escape');
-    result.ai.menuClosed = await mobile.locator('.ai-mobile-nav').isHidden();
+    await mobile.locator('#menuToggle').click();
+    result.ai.menuOpened = await mobile.locator('#mobileNav').evaluate(el => el.classList.contains('open'));
+    await mobile.locator('#menuClose').click();
+    result.ai.menuClosed = await mobile.locator('#mobileNav').evaluate(el => !el.classList.contains('open'));
+    await mobile.locator('[data-testimonial-next]').click();
+    await mobile.waitForTimeout(100);
+    result.ai.testimonialAdvanced = await mobile.locator('.ai-testimonial-track').evaluate(el => el.scrollLeft > 0);
     await mobileContext.close();
 
     await page.setViewportSize({ width: 1440, height: 900 });
@@ -102,11 +117,10 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     result.homepage.desktopCards = await page.locator('.desktop-services .svc-card').count();
     result.homepage.links = await page.locator('.service-row').evaluateAll(els => els.map(el => ({ href: el.getAttribute('href'), text: el.innerText })));
     result.homepage.carousel = await page.locator('#testimonialCarousel').count();
+    await page.evaluate(() => { window.__qaFirstCarouselCard = document.querySelector('#testimonialCarousel .testimonial-track').firstElementChild; });
     await page.locator('#tNext').click();
-    await page.waitForTimeout(200);
-    result.homepage.carouselTransformDuringClick = await page.locator('#testimonialCarousel .testimonial-track').first().evaluate(el => getComputedStyle(el).transform);
-    result.homepage.carouselMoved = !['none', 'matrix(1, 0, 0, 1, 0, 0)'].includes(result.homepage.carouselTransformDuringClick);
-    await page.waitForTimeout(500);
+    await page.waitForTimeout(800);
+    result.homepage.carouselMoved = await page.evaluate(() => document.querySelector('#testimonialCarousel .testimonial-track').firstElementChild !== window.__qaFirstCarouselCard);
     result.homepage.footer = await page.locator('.footer').count();
     await page.locator('.footer').scrollIntoViewIfNeeded();
     await page.waitForTimeout(100);
@@ -144,6 +158,32 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
       const r = await page.goto(base + '/services/' + slug, { waitUntil: 'domcontentloaded' });
       result.services[slug] = { status: r.status(), finalUrl: page.url(), body: (await page.locator('body').innerText()).slice(0, 80) };
     }
+    assert.equal(result.ai.response, 200);
+    assert.equal(result.ai.finalUrl, base + '/services/ai-automation');
+    assert.equal(result.ai.heightInitial, result.ai.heightSettled);
+    assert.equal(result.ai.heroOverlapsCtas, false);
+    assert.match(result.ai.animationSettled, /is-settled/);
+    assert.equal(result.ai.pausedClass, 'ai-workflow');
+    assert.match(result.ai.resumedClass, /is-settled/);
+    assert.equal(result.ai.offscreenClass, 'ai-workflow');
+    assert.equal(result.ai.reducedMotion.cards.every(card => card.opacity === '1' && card.visibility === 'visible'), true);
+    assert.equal(result.ai.menuOpened && result.ai.menuClosed && result.ai.testimonialAdvanced, true);
+    assert.equal(result.ai.footerRevealed, true);
+    assert.equal(result.ai.newsletterMessage, 'Please enter a valid email.');
+    assert.equal(result.ai.brokenImages.length, 0);
+    for (const [width, metrics] of Object.entries(result.responsive)) assert.equal(metrics.scrollWidth, Number(width));
+    assert.equal(result.homepage.response, 200);
+    assert.equal(result.homepage.desktopCards, 4);
+    assert.equal(result.homepage.mobileServices, 4);
+    assert.equal(result.homepage.carouselMoved, true);
+    assert.equal(result.homepage.footerRevealed, true);
+    assert.equal(result.homepage.mobileMenuOpened && result.homepage.mobileMenuClosed, true);
+    assert.equal(result.homepage.mobileActiveAfter, 'ai-automation');
+    assert.equal(result.homepage.mobileOverflow, false);
+    assert.equal(result.homepage.mobileScrollHeightBefore, result.homepage.mobileScrollHeightAfter);
+    assert.equal(result.homepage.newsletterMessage, 'Please enter a valid email.');
+    for (const service of Object.values(result.services)) assert.equal(service.status, 200);
+    assert.equal(result.errors.length, 0);
     await context.close();
   } finally {
     await browser.close();
