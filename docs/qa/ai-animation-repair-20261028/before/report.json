@@ -1,0 +1,127 @@
+{
+  "status": 200,
+  "url": "http://localhost/cortexx/services/ai-automation",
+  "errors": [],
+  "samples": [
+    {
+      "ms": 0,
+      "time": 525.6999999997206,
+      "className": "ai-workflow is-playing",
+      "imageOpacity": "0",
+      "imageTranslate": "0px 12px",
+      "imageFilter": "none",
+      "animationName": "ai-figma-enter",
+      "animationPlayState": "running",
+      "nodeOpacity": null,
+      "connectorOpacity": null,
+      "height": 6553,
+      "box": {
+        "x": 700.5,
+        "y": 142,
+        "width": 632,
+        "height": 702
+      },
+      "file": "C:\\xampp\\htdocs\\cortexx\\docs\\qa\\ai-animation-repair-20261028\\before\\hero-0ms.png"
+    },
+    {
+      "ms": 500,
+      "time": 1034.2999999998137,
+      "className": "ai-workflow is-playing",
+      "imageOpacity": "0.873277",
+      "imageTranslate": "0px 1.52068px",
+      "imageFilter": "none",
+      "animationName": "ai-figma-enter",
+      "animationPlayState": "running",
+      "nodeOpacity": null,
+      "connectorOpacity": null,
+      "height": 6553,
+      "box": {
+        "x": 700.5,
+        "y": 142,
+        "width": 632,
+        "height": 702
+      },
+      "file": "C:\\xampp\\htdocs\\cortexx\\docs\\qa\\ai-animation-repair-20261028\\before\\hero-500ms.png"
+    },
+    {
+      "ms": 1500,
+      "time": 2029.2999999998137,
+      "className": "ai-workflow is-playing",
+      "imageOpacity": "1",
+      "imageTranslate": "0px",
+      "imageFilter": "none",
+      "animationName": "ai-figma-enter",
+      "animationPlayState": "running",
+      "nodeOpacity": null,
+      "connectorOpacity": null,
+      "height": 6553,
+      "box": {
+        "x": 700.5,
+        "y": 142,
+        "width": 632,
+        "height": 702
+      },
+      "file": "C:\\xampp\\htdocs\\cortexx\\docs\\qa\\ai-animation-repair-20261028\\before\\hero-1500ms.png"
+    },
+    {
+      "ms": 3000,
+      "time": 3528.5,
+      "className": "ai-workflow is-settled",
+      "imageOpacity": "1",
+      "imageTranslate": "0px -0.246687px",
+      "imageFilter": "brightness(1.00308)",
+      "animationName": "ai-figma-breathe",
+      "animationPlayState": "running",
+      "nodeOpacity": null,
+      "connectorOpacity": null,
+      "height": 6553,
+      "box": {
+        "x": 700.5,
+        "y": 142,
+        "width": 632,
+        "height": 702
+      },
+      "file": "C:\\xampp\\htdocs\\cortexx\\docs\\qa\\ai-animation-repair-20261028\\before\\hero-3000ms.png"
+    },
+    {
+      "ms": 6000,
+      "time": 6525.5,
+      "className": "ai-workflow is-settled",
+      "imageOpacity": "1",
+      "imageTranslate": "0px -1.75337px",
+      "imageFilter": "brightness(1.02192)",
+      "animationName": "ai-figma-breathe",
+      "animationPlayState": "running",
+      "nodeOpacity": null,
+      "connectorOpacity": null,
+      "height": 6553,
+      "box": {
+        "x": 700.5,
+        "y": 142,
+        "width": 632,
+        "height": 702
+      },
+      "file": "C:\\xampp\\htdocs\\cortexx\\docs\\qa\\ai-animation-repair-20261028\\before\\hero-6000ms.png"
+    },
+    {
+      "ms": 12000,
+      "time": 12535.599999999627,
+      "className": "ai-workflow is-settled",
+      "imageOpacity": "1",
+      "imageTranslate": "0px -1.74182px",
+      "imageFilter": "brightness(1.02177)",
+      "animationName": "ai-figma-breathe",
+      "animationPlayState": "running",
+      "nodeOpacity": null,
+      "connectorOpacity": null,
+      "height": 6553,
+      "box": {
+        "x": 700.5,
+        "y": 142,
+        "width": 632,
+        "height": 702
+      },
+      "file": "C:\\xampp\\htdocs\\cortexx\\docs\\qa\\ai-animation-repair-20261028\\before\\hero-12000ms.png"
+    }
+  ]
+}

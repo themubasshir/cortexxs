@@ -1,0 +1,87 @@
+{
+  "errors": [],
+  "status": 200,
+  "running": {
+    "className": "ai-workflow is-settled",
+    "signalTranslate": "9.88923px",
+    "signalOpacity": "1",
+    "signalAnimation": "ai-signal-x",
+    "svgOpacity": "1",
+    "height": 6553,
+    "overflow": false,
+    "buttonLabel": "Pause animation"
+  },
+  "paused": {
+    "className": "ai-workflow",
+    "signalTranslate": "none",
+    "signalOpacity": "0",
+    "signalAnimation": "none",
+    "svgOpacity": "1",
+    "height": 6553,
+    "overflow": false,
+    "buttonLabel": "Play animation"
+  },
+  "pausedLater": {
+    "className": "ai-workflow",
+    "signalTranslate": "none",
+    "signalOpacity": "0",
+    "signalAnimation": "none",
+    "svgOpacity": "1",
+    "height": 6553,
+    "overflow": false,
+    "buttonLabel": "Play animation"
+  },
+  "resumed": {
+    "className": "ai-workflow is-settled",
+    "signalTranslate": "0px",
+    "signalOpacity": "0",
+    "signalAnimation": "ai-signal-x",
+    "svgOpacity": "1",
+    "height": 6553,
+    "overflow": false,
+    "buttonLabel": "Pause animation"
+  },
+  "resumedLater": {
+    "className": "ai-workflow is-settled",
+    "signalTranslate": "10.4391px",
+    "signalOpacity": "1",
+    "signalAnimation": "ai-signal-x",
+    "svgOpacity": "1",
+    "height": 6553,
+    "overflow": false,
+    "buttonLabel": "Pause animation"
+  },
+  "offscreen": {
+    "className": "ai-workflow",
+    "signalTranslate": "none",
+    "signalOpacity": "0",
+    "signalAnimation": "none",
+    "svgOpacity": "1",
+    "height": 6553,
+    "overflow": false,
+    "buttonLabel": "Pause animation"
+  },
+  "onscreenAgain": {
+    "className": "ai-workflow is-settled",
+    "signalTranslate": "2.19795px",
+    "signalOpacity": "0.292469",
+    "signalAnimation": "ai-signal-x",
+    "svgOpacity": "1",
+    "height": 6553,
+    "overflow": false,
+    "buttonLabel": "Pause animation"
+  },
+  "reduced": {
+    "className": "ai-workflow",
+    "media": true,
+    "signalAnimation": "none",
+    "overflow": false,
+    "nodeOpacities": [
+      "1",
+      "1",
+      "1",
+      "1",
+      "1"
+    ]
+  }
+}

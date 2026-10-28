@@ -28,10 +28,11 @@ const sections = [
     measured[name] = box;
     await page.screenshot({ path: path.join(output, `current-${name}.png`), fullPage: true, clip: { x: 0, y: box.y, width: 1440, height: box.height }, animations: 'disabled' });
   }
+  const recognition = await page.locator('.ai-recognition').boundingBox();
+  measured.recognition = recognition;
+  await page.screenshot({ path: path.join(output, 'current-recognition.png'), fullPage: true, clip: { x: 0, y: recognition.y, width: 1440, height: recognition.height }, animations: 'disabled' });
   await browser.close();
   fs.writeFileSync(path.join(output, 'current-sections.json'), JSON.stringify({ status: response.status(), url: page.url(), measured, errors }, null, 2));
-  for (const [name] of sections) {
-    execFileSync('python', ['-c', `from PIL import Image,ImageDraw;import sys;a=Image.open(sys.argv[1]).convert('RGB');b=Image.open(sys.argv[2]).convert('RGB');o=Image.new('RGB',(a.width+b.width,max(a.height,b.height)+32),'white');o.paste(a,(0,32));o.paste(b,(a.width,32));d=ImageDraw.Draw(o);d.text((12,8),'Decoded Figma reference',fill='black');d.text((a.width+12,8),'Current browser render',fill='black');o.save(sys.argv[3])`, path.join(output, `figma-${name}.png`), path.join(output, `current-${name}.png`), path.join(output, `compare-${name}.png`)]);
-  }
+  execFileSync('python', [path.resolve(__dirname, '../scripts/compare-ai-crops.py'), output, ...sections.map(([name]) => name), 'recognition']);
   console.log(JSON.stringify({ status: response.status(), errors, measured }, null, 2));
 })().catch(error => { console.error(error); process.exitCode = 1; });

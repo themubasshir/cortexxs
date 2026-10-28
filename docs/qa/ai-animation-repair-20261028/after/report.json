@@ -1,0 +1,145 @@
+{
+  "status": 200,
+  "url": "http://localhost/cortexx/services/ai-automation",
+  "errors": [],
+  "samples": [
+    {
+      "ms": 0,
+      "time": 608.3999999994412,
+      "className": "ai-workflow is-playing",
+      "imageOpacity": "0",
+      "imageTranslate": "none",
+      "imageFilter": "none",
+      "animationName": "ai-canvas-in",
+      "animationPlayState": "running",
+      "nodeOpacity": "0",
+      "nodeTranslate": "0px 12px",
+      "connectorClip": "inset(0px 100% 0px 0px)",
+      "signalOpacity": "0",
+      "signalTranslate": "0px",
+      "height": 6553,
+      "box": {
+        "x": 700.5,
+        "y": 142,
+        "width": 632,
+        "height": 702
+      },
+      "file": "C:\\xampp\\htdocs\\cortexx\\docs\\qa\\ai-animation-repair-20261028\\after\\hero-0ms.png"
+    },
+    {
+      "ms": 500,
+      "time": 1107.8999999994412,
+      "className": "ai-workflow is-playing",
+      "imageOpacity": "1",
+      "imageTranslate": "none",
+      "imageFilter": "none",
+      "animationName": "ai-canvas-in",
+      "animationPlayState": "running",
+      "nodeOpacity": "0.632181",
+      "nodeTranslate": "0px 4.41382px",
+      "connectorClip": "inset(0px 100% 0px 0px)",
+      "signalOpacity": "0",
+      "signalTranslate": "0px",
+      "height": 6553,
+      "box": {
+        "x": 700.5,
+        "y": 142,
+        "width": 632,
+        "height": 702
+      },
+      "file": "C:\\xampp\\htdocs\\cortexx\\docs\\qa\\ai-animation-repair-20261028\\after\\hero-500ms.png"
+    },
+    {
+      "ms": 1500,
+      "time": 2119.5,
+      "className": "ai-workflow is-playing",
+      "imageOpacity": "1",
+      "imageTranslate": "none",
+      "imageFilter": "none",
+      "animationName": "ai-canvas-in",
+      "animationPlayState": "running",
+      "nodeOpacity": "1",
+      "nodeTranslate": "0px",
+      "connectorClip": "inset(0px 0% 0px 0px)",
+      "signalOpacity": "0.000369048",
+      "signalTranslate": "0.00277345px",
+      "height": 6553,
+      "box": {
+        "x": 700.5,
+        "y": 142,
+        "width": 632,
+        "height": 702
+      },
+      "file": "C:\\xampp\\htdocs\\cortexx\\docs\\qa\\ai-animation-repair-20261028\\after\\hero-1500ms.png"
+    },
+    {
+      "ms": 3000,
+      "time": 3618.7000000001863,
+      "className": "ai-workflow is-playing",
+      "imageOpacity": "1",
+      "imageTranslate": "none",
+      "imageFilter": "none",
+      "animationName": "ai-canvas-in",
+      "animationPlayState": "running",
+      "nodeOpacity": "1",
+      "nodeTranslate": "0px",
+      "connectorClip": "inset(0px 0% 0px 0px)",
+      "signalOpacity": "0",
+      "signalTranslate": "0px",
+      "height": 6553,
+      "box": {
+        "x": 700.5,
+        "y": 142,
+        "width": 632,
+        "height": 702
+      },
+      "file": "C:\\xampp\\htdocs\\cortexx\\docs\\qa\\ai-animation-repair-20261028\\after\\hero-3000ms.png"
+    },
+    {
+      "ms": 6000,
+      "time": 6606.899999999441,
+      "className": "ai-workflow is-settled",
+      "imageOpacity": "1",
+      "imageTranslate": "none",
+      "imageFilter": "none",
+      "animationName": "none",
+      "animationPlayState": "running",
+      "nodeOpacity": "1",
+      "nodeTranslate": "none",
+      "connectorClip": "none",
+      "signalOpacity": "1",
+      "signalTranslate": "38.4547px",
+      "height": 6553,
+      "box": {
+        "x": 700.5,
+        "y": 142,
+        "width": 632,
+        "height": 702
+      },
+      "file": "C:\\xampp\\htdocs\\cortexx\\docs\\qa\\ai-animation-repair-20261028\\after\\hero-6000ms.png"
+    },
+    {
+      "ms": 12000,
+      "time": 12616.599999999627,
+      "className": "ai-workflow is-settled",
+      "imageOpacity": "1",
+      "imageTranslate": "none",
+      "imageFilter": "none",
+      "animationName": "none",
+      "animationPlayState": "running",
+      "nodeOpacity": "1",
+      "nodeTranslate": "none",
+      "connectorClip": "none",
+      "signalOpacity": "1",
+      "signalTranslate": "12.361px",
+      "height": 6553,
+      "box": {
+        "x": 700.5,
+        "y": 142,
+        "width": 632,
+        "height": 702
+      },
+      "file": "C:\\xampp\\htdocs\\cortexx\\docs\\qa\\ai-animation-repair-20261028\\after\\hero-12000ms.png"
+    }
+  ]
+}

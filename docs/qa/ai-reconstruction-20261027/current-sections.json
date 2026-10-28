@@ -43,6 +43,12 @@
       "y": 5801,
       "width": 1440,
       "height": 751.671875
+    },
+    "recognition": {
+      "x": 100,
+      "y": 5529,
+      "width": 1240,
+      "height": 172
     }
   },
   "errors": []

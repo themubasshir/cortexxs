@@ -143,32 +143,66 @@
 @media(max-width:520px){.ai-flow-one{left:21.9%;top:15.9%}.ai-flow-two{left:63.5%;top:15.9%}.ai-flow-three{left:63.5%;top:39.6%}.ai-flow-four{left:21.9%;top:39.7%}.ai-flow-five{left:43.1%;top:63.5%;transform:none}}
 
 /* Artwork and geometry traced from the decoded source design. */
+.ai-page h2{letter-spacing:0}
 .ai-page h2 em{color:inherit}
+.ai-page .ai-challenges h2 em,.ai-page .ai-capabilities h2 em,.ai-page .ai-testimonials h2 em,.ai-page .ai-hero h1 em{color:#4a71fa}
 .ai-page .ai-pill{background:#f6f6f7;border-color:#ededf0;color:#454952;font-weight:600}
 .ai-page .ai-button{border-radius:8px}
 .ai-hero-glow{display:none}
+.ai-hero{background:radial-gradient(ellipse at 25% 60%,#f9f9ff 0%,#fff 54%)}
 .ai-hero-grid{position:relative;display:block;padding:0}
 .ai-hero-copy{position:absolute;left:0;top:279.5px;width:500px;padding:0}
 .ai-hero-copy h1{font-weight:800}
 .ai-hero-copy>p{color:#555b65}
 .ai-workflow,.ai-hero .ai-workflow{position:absolute;left:608px;top:142px;width:632px;height:702px;max-height:none;aspect-ratio:auto;border-radius:0;background:transparent;box-shadow:none;overflow:visible;transform:none}
 .ai-workflow::before,.ai-workflow::after{display:none}
-.ai-figma-workflow{display:block;width:100%;height:100%;object-fit:contain}
+.ai-workflow-svg{display:block;width:100%;height:100%;overflow:visible}
+.ai-runtime-signals circle{fill:#4a71fa;filter:drop-shadow(0 0 3px #4a71fa)}
+.ai-runtime-signals circle,.ai-runtime-signals path{opacity:0}
 .ai-motion-toggle{right:18px;bottom:26px;background:#fff;border:0;box-shadow:none;color:#171717}
 .ai-motion-toggle:not([aria-pressed="true"]){color:transparent;background:transparent}
 .ai-motion-toggle:not([aria-pressed="true"]):hover{background:#ffffff66}
 .ai-motion-toggle[aria-pressed="true"]{background:#fff;color:#171717}
-@media(prefers-reduced-motion:no-preference){.ai-workflow.is-playing .ai-figma-workflow{animation:ai-figma-enter .9s ease-out both}.ai-workflow.is-settled .ai-figma-workflow{animation:ai-figma-breathe 6s ease-in-out infinite}}
-@keyframes ai-figma-enter{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
-@keyframes ai-figma-breathe{50%{filter:brightness(1.025);translate:0 -2px}}
+@media(prefers-reduced-motion:no-preference){
+  .ai-workflow.is-playing .ai-workflow-svg{animation:ai-canvas-in .5s ease-out both}
+  .ai-workflow.is-playing [data-figma-id="1027:245"]{animation:ai-node-in .5s .45s both}
+  .ai-workflow.is-playing [data-figma-id="1027:274"]{animation:ai-node-in .5s .85s both}
+  .ai-workflow.is-playing [data-figma-id="1027:336"]{animation:ai-node-in .5s 1.25s both}
+  .ai-workflow.is-playing [data-figma-id="1027:309"]{animation:ai-node-in .5s 1.65s both}
+  .ai-workflow.is-playing [data-figma-id="1027:364"]{animation:ai-node-in .5s 2.25s both,ai-complete .55s 2.85s both}
+  .ai-workflow.is-playing [data-figma-id="1027:231"]{animation:ai-line-reveal-x .5s 1.15s both}
+  .ai-workflow.is-playing [data-figma-id="1027:233"]{animation:ai-line-reveal-y .5s 1.8s both}
+  .ai-workflow.is-playing [data-figma-id="1027:232"]{animation:ai-line-reveal-x .5s 2.05s both}
+  .ai-workflow.is-playing [data-figma-id="1027:234"]{animation:ai-line-reveal-y .65s 2.45s both}
+  .ai-workflow.is-playing .ai-signal-enquiry{animation:ai-signal-x .7s linear 1.65s both}
+  .ai-workflow.is-playing .ai-signal-review{animation:ai-signal-y .8s linear 2.15s both}
+  .ai-workflow.is-playing .ai-signal-action{animation:ai-signal-x .7s linear 2.55s both}
+  .ai-workflow.is-playing .ai-signal-system{animation:ai-signal-route 1s linear 2.9s both}
+  .ai-workflow.is-settled [data-figma-id="1027:336"]{animation:ai-operate 4s ease-in-out infinite}
+  .ai-workflow.is-settled [data-figma-id="1027:364"]{animation:ai-operate 4s ease-in-out -2s infinite}
+  .ai-workflow.is-settled .ai-signal-enquiry{animation:ai-signal-x 3.8s linear infinite}
+  .ai-workflow.is-settled .ai-signal-review{animation:ai-signal-y 3.8s linear -1.1s infinite}
+  .ai-workflow.is-settled .ai-signal-action{animation:ai-signal-x 3.8s linear -2.2s infinite}
+  .ai-workflow.is-settled .ai-signal-system{animation:ai-signal-route 3.8s linear -2.8s infinite}
+}
+@keyframes ai-canvas-in{from{opacity:0}to{opacity:1}}
+@keyframes ai-node-in{from{opacity:0;translate:0 12px}to{opacity:1;translate:0 0}}
+@keyframes ai-line-reveal-x{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes ai-line-reveal-y{from{clip-path:inset(0 0 100% 0)}to{clip-path:inset(0 0 0 0)}}
+@keyframes ai-complete{50%{filter:drop-shadow(0 0 7px #4a71fa)}}
+@keyframes ai-operate{50%{filter:drop-shadow(0 0 5px #4a71fa)}}
+@keyframes ai-signal-x{0%,100%{opacity:0;translate:0 0}12%{opacity:1}88%{opacity:1}99%{translate:62px 0}}
+@keyframes ai-signal-y{0%,100%{opacity:0;translate:0 0}12%{opacity:1}88%{opacity:1}99%{translate:0 80px}}
+@keyframes ai-signal-route{0%,100%{opacity:0;stroke-dasharray:5 250;stroke-dashoffset:210}12%,88%{opacity:1}99%{stroke-dashoffset:0}}
 .ai-capability-art,.ai-capability-card:nth-child(n+3) .ai-capability-art{height:309px;background:#fff}
 .ai-capability-art img{display:block;width:100%;height:100%;object-fit:cover}
-.ai-capability-card{border-color:#dce5ff;box-shadow:none}
+.ai-capability-card{border-color:#eceef5;box-shadow:0 8px 28px #1724400c}
+.ai-capability-art::after{display:block;content:"";position:absolute;inset:0;border:1px solid #e7eaf3;border-radius:19px;box-shadow:inset 0 0 0 3px #fff;pointer-events:none;background:none}
 .ai-capability-copy h3{letter-spacing:-.035em}
 .ai-process{background:#f9f9ff}
 .ai-step-number{background:#fff;border:1px solid #d9dce8;color:#8790a1}
 .ai-step-list li:first-child .ai-step-number{background:#3153ee;border-color:#3153ee;color:#fff}
-.ai-case-card{box-shadow:none}
+.ai-case-card{box-shadow:0 16px 45px #171c3012}
 .ai-case-details .ai-button-primary{background:#171717;box-shadow:none}
 @media(min-width:1101px){
   .ai-hero-copy{top:279.5px}
@@ -191,3 +225,21 @@
 .ai-challenge-icon img{display:block;width:28px;height:32px;object-fit:contain}
 .ai-challenge-arrow{border:2px solid #d2d2d4;color:#5a6576;font-size:17px}
 @media(min-width:1101px){.ai-challenge-grid>div:first-child{min-height:572px;display:flex;flex-direction:column;align-items:flex-start}.ai-challenge-grid h2{max-width:450px;margin-bottom:0}.ai-challenge-grid>div:first-child>p{margin-top:auto;margin-bottom:0;font-size:20px;line-height:1.55;color:#4b4e56}.ai-challenge-list{border-top:0}.ai-challenge p{color:#343941;font-size:16px}.ai-challenges{padding-bottom:60px}.ai-case-details>h3{max-width:410px}.ai-case-details p{max-width:480px}}
+
+/* Match the source text weights and the restrained card surfaces. */
+.ai-challenge h3{letter-spacing:-.03em}
+.ai-challenge p,.ai-capability-copy p,.ai-step-list p,.ai-case-details p{font-weight:500}
+.ai-capability-copy h3{letter-spacing:0}
+.ai-process-intro>p{font-weight:500;color:#4a4e55}
+.ai-step-list::before{background:linear-gradient(to bottom,#3153ee 0 116px,#d8d8dc 116px)}
+.ai-case-details>div{margin-bottom:16px}
+.ai-case-details .ai-button{margin-top:18px}
+.ai-testimonial-track article{box-shadow:0 8px 28px #1724400a}
+@media(min-width:1101px){
+  .ai-hero-copy h1{margin-top:18px}
+  .ai-hero .ai-actions{margin-top:49px}
+  .ai-hero .ai-button{min-height:48px;padding:12px 20px;gap:12px}
+  .ai-hero .ai-button-primary{padding-inline:24px}
+}
+.ai-hero .ai-button-light span{width:16px;height:16px;border:1px solid currentColor;border-radius:50%;display:grid;place-items:center;font-size:10px;line-height:1}
+@media(min-width:1101px){.ai-process-intro>p{max-width:475px}}

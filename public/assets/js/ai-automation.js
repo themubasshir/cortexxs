@@ -22,7 +22,7 @@
       settleTimer = setTimeout(() => {
         workflow.classList.remove('is-playing');
         if (visible && !document.hidden && !motion.matches) workflow.classList.add('is-settled');
-      }, 2400);
+      }, 4000);
     } else {
       workflow.classList.add('is-settled');
     }

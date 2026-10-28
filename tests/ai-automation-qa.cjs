@@ -22,7 +22,8 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     result.ai.finalUrl = page.url();
     result.ai.title = await page.title();
     result.ai.heading = await page.locator('h1').innerText();
-    result.ai.artwork = await page.locator('.ai-workflow').count();
+    result.ai.artwork = await page.locator('.ai-workflow-svg').count();
+    result.ai.workflowNodes = await page.locator('.ai-workflow-svg [data-figma-id="1027:245"], .ai-workflow-svg [data-figma-id="1027:274"], .ai-workflow-svg [data-figma-id="1027:336"], .ai-workflow-svg [data-figma-id="1027:309"], .ai-workflow-svg [data-figma-id="1027:364"]').count();
     result.ai.stylesheet = await page.locator('link[href*="ai-automation.css"]').getAttribute('href');
     result.ai.script = await page.locator('script[src*="ai-automation.js"]').getAttribute('src');
     result.ai.initiallyDeferredImages = await page.evaluate(() => [...document.images].filter(i => !i.complete).length);
@@ -33,7 +34,7 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     result.ai.animationMid = await page.locator('.ai-workflow').getAttribute('class');
     result.ai.heightMid = await page.evaluate(() => document.documentElement.scrollHeight);
     await page.screenshot({ path: path.join(output, 'hero-mid-1440.png') });
-    await page.waitForTimeout(1900);
+    await page.waitForTimeout(3300);
     result.ai.animationSettled = await page.locator('.ai-workflow').getAttribute('class');
     result.ai.heightSettled = await page.evaluate(() => document.documentElement.scrollHeight);
     await page.screenshot({ path: path.join(output, 'hero-settled-1440.png') });
@@ -98,7 +99,7 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     mobile.on('pageerror', error => result.errors.push({ route: 'ai reduced', message: error.message }));
     await mobile.goto(base + '/services/ai-automation', { waitUntil: 'domcontentloaded' });
     await mobile.waitForTimeout(150);
-    result.ai.reducedMotion = await mobile.evaluate(() => ({ media: matchMedia('(prefers-reduced-motion: reduce)').matches, workflowClass: document.querySelector('.ai-workflow').className, artwork: (() => { const image = document.querySelector('.ai-figma-workflow'); return { complete: image.complete, naturalWidth: image.naturalWidth, opacity: getComputedStyle(image).opacity, visibility: getComputedStyle(image).visibility }; })() }));
+    result.ai.reducedMotion = await mobile.evaluate(() => ({ media: matchMedia('(prefers-reduced-motion: reduce)').matches, workflowClass: document.querySelector('.ai-workflow').className, artwork: (() => { const svg = document.querySelector('.ai-workflow-svg'); return { visible: getComputedStyle(svg).visibility === 'visible' && getComputedStyle(svg).opacity === '1', nodes: ['1027:245','1027:274','1027:336','1027:309','1027:364'].map(id => getComputedStyle(svg.querySelector('[data-figma-id="' + id + '"]')).opacity) }; })() }));
     await mobile.screenshot({ path: path.join(output, 'hero-reduced-390.png') });
     await mobile.locator('#menuToggle').click();
     result.ai.menuOpened = await mobile.locator('#mobileNav').evaluate(el => el.classList.contains('open'));
@@ -166,7 +167,8 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     assert.equal(result.ai.pausedClass, 'ai-workflow');
     assert.match(result.ai.resumedClass, /is-settled/);
     assert.equal(result.ai.offscreenClass, 'ai-workflow');
-    assert.equal(result.ai.reducedMotion.artwork.complete && result.ai.reducedMotion.artwork.naturalWidth > 0 && result.ai.reducedMotion.artwork.opacity === '1' && result.ai.reducedMotion.artwork.visibility === 'visible', true);
+    assert.equal(result.ai.reducedMotion.artwork.visible && result.ai.reducedMotion.artwork.nodes.every(opacity => opacity === '1'), true);
+    assert.equal(result.ai.workflowNodes, 5);
     assert.equal(result.ai.menuOpened && result.ai.menuClosed && result.ai.testimonialAdvanced, true);
     assert.equal(result.ai.footerRevealed, true);
     assert.equal(result.ai.newsletterMessage, 'Please enter a valid email.');

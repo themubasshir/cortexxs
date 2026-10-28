@@ -104,12 +104,13 @@ function renderNode(id, depth = 0) {
   if (n.type === 'TEXT' && n.derivedTextData?.glyphs) {
     const base = (n.fillPaints || []).find(p => p.visible !== false);
     const baseColor = base?.type === 'SOLID' ? color(base.color) : 'rgba(0,0,0,1)';
-    const lastWord = n.textData?.characters?.lastIndexOf('Growth.') ?? -1;
-    const override = n.textData?.styleOverrideTable?.[0]?.fillPaints?.find(p => p.type === 'SOLID');
+    const styles = new Map((n.textData?.styleOverrideTable || []).map(style => [style.styleID, style]));
     for (const glyph of n.derivedTextData.glyphs) {
       const outline = pathData(glyph.commandsBlob);
       if (!outline) continue;
-      const fill = lastWord >= 0 && glyph.firstCharacter >= lastWord && override ? color(override.color) : baseColor;
+      const styleID = n.textData?.characterStyleIDs?.[glyph.firstCharacter] || 0;
+      const override = styles.get(styleID)?.fillPaints?.find(p => p.type === 'SOLID');
+      const fill = override ? color(override.color) : baseColor;
       const size = num(glyph.fontSize || n.fontSize || 16);
       const point = glyph.position || { x: 0, y: 0 };
       result += `<path d="${outline}" fill="${fill}" transform="translate(${num(point.x)} ${num(point.y)}) scale(${size} ${-size})"/>`;

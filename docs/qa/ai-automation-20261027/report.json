@@ -6,6 +6,7 @@
     "title": "AI & Automation Services | Cortexx",
     "heading": "Smarter Systems For The Work That Drives Growth.",
     "artwork": 1,
+    "workflowNodes": 5,
     "stylesheet": "/cortexx/assets/css/ai-automation.css?v=1",
     "script": "/cortexx/assets/js/ai-automation.js?v=1",
     "initiallyDeferredImages": 16,
@@ -24,7 +25,7 @@
       },
       "heading": {
         "x": 100,
-        "y": 344,
+        "y": 338,
         "width": 500,
         "height": 198
       },
@@ -37,14 +38,14 @@
       "buttons": [
         {
           "x": 100,
-          "y": 701.75,
-          "width": 181.609375,
+          "y": 712.75,
+          "width": 147.890625,
           "height": 50
         },
         {
-          "x": 293.609375,
-          "y": 701.75,
-          "width": 163.015625,
+          "x": 259.890625,
+          "y": 712.75,
+          "width": 149.296875,
           "height": 50
         }
       ]
@@ -67,10 +68,14 @@
       "media": true,
       "workflowClass": "ai-workflow",
       "artwork": {
-        "complete": true,
-        "naturalWidth": 632,
-        "opacity": "1",
-        "visibility": "visible"
+        "visible": true,
+        "nodes": [
+          "1",
+          "1",
+          "1",
+          "1",
+          "1"
+        ]
       }
     },
     "menuOpened": true,
@@ -81,7 +86,7 @@
     "360": {
       "viewport": 360,
       "scrollWidth": 360,
-      "scrollHeight": 8804,
+      "scrollHeight": 9019,
       "h1Size": "42px",
       "h1Rect": {
         "x": 16,
@@ -107,22 +112,22 @@
         {
           "x": 16,
           "y": 517.6875,
-          "width": 137.65625,
+          "width": 117.40625,
           "height": 46,
           "top": 517.6875,
-          "right": 153.65625,
+          "right": 133.40625,
           "bottom": 563.6875,
           "left": 16
         },
         {
-          "x": 161.65625,
+          "x": 141.40625,
           "y": 517.6875,
-          "width": 121.640625,
+          "width": 127.390625,
           "height": 46,
           "top": 517.6875,
-          "right": 283.296875,
+          "right": 268.796875,
           "bottom": 563.6875,
-          "left": 161.65625
+          "left": 141.40625
         }
       ],
       "sectionOrder": [
@@ -137,7 +142,7 @@
     "390": {
       "viewport": 390,
       "scrollWidth": 390,
-      "scrollHeight": 8673,
+      "scrollHeight": 8870,
       "h1Size": "42px",
       "h1Rect": {
         "x": 16,
@@ -163,22 +168,22 @@
         {
           "x": 16,
           "y": 444.265625,
-          "width": 137.65625,
+          "width": 117.40625,
           "height": 46,
           "top": 444.265625,
-          "right": 153.65625,
+          "right": 133.40625,
           "bottom": 490.265625,
           "left": 16
         },
         {
-          "x": 161.65625,
+          "x": 141.40625,
           "y": 444.265625,
-          "width": 121.640625,
+          "width": 127.390625,
           "height": 46,
           "top": 444.265625,
-          "right": 283.296875,
+          "right": 268.796875,
           "bottom": 490.265625,
-          "left": 161.65625
+          "left": 141.40625
         }
       ],
       "sectionOrder": [
@@ -193,7 +198,7 @@
     "430": {
       "viewport": 430,
       "scrollWidth": 430,
-      "scrollHeight": 8669,
+      "scrollHeight": 8758,
       "h1Size": "42px",
       "h1Rect": {
         "x": 16,
@@ -219,22 +224,22 @@
         {
           "x": 16,
           "y": 444.265625,
-          "width": 137.65625,
+          "width": 117.40625,
           "height": 46,
           "top": 444.265625,
-          "right": 153.65625,
+          "right": 133.40625,
           "bottom": 490.265625,
           "left": 16
         },
         {
-          "x": 161.65625,
+          "x": 141.40625,
           "y": 444.265625,
-          "width": 121.640625,
+          "width": 127.390625,
           "height": 46,
           "top": 444.265625,
-          "right": 283.296875,
+          "right": 268.796875,
           "bottom": 490.265625,
-          "left": 161.65625
+          "left": 141.40625
         }
       ],
       "sectionOrder": [
@@ -249,7 +254,7 @@
     "768": {
       "viewport": 768,
       "scrollWidth": 768,
-      "scrollHeight": 8280,
+      "scrollHeight": 8328,
       "h1Size": "60px",
       "h1Rect": {
         "x": 74,
@@ -275,22 +280,22 @@
         {
           "x": 74,
           "y": 519.3125,
-          "width": 181.609375,
+          "width": 147.890625,
           "height": 50,
           "top": 519.3125,
-          "right": 255.609375,
+          "right": 221.890625,
           "bottom": 569.3125,
           "left": 74
         },
         {
-          "x": 267.609375,
+          "x": 233.890625,
           "y": 519.3125,
-          "width": 163.015625,
+          "width": 167.296875,
           "height": 50,
           "top": 519.3125,
-          "right": 430.625,
+          "right": 401.1875,
           "bottom": 569.3125,
-          "left": 267.609375
+          "left": 233.890625
         }
       ],
       "sectionOrder": [
@@ -309,12 +314,12 @@
       "h1Size": "60px",
       "h1Rect": {
         "x": 24,
-        "y": 343.5,
+        "y": 337.5,
         "width": 500,
         "height": 198,
-        "top": 343.5,
+        "top": 337.5,
         "right": 524,
-        "bottom": 541.5,
+        "bottom": 535.5,
         "left": 24
       },
       "artworkRect": {
@@ -330,23 +335,23 @@
       "ctaRects": [
         {
           "x": 24,
-          "y": 701.75,
-          "width": 181.609375,
+          "y": 712.75,
+          "width": 147.890625,
           "height": 50,
-          "top": 701.75,
-          "right": 205.609375,
-          "bottom": 751.75,
+          "top": 712.75,
+          "right": 171.890625,
+          "bottom": 762.75,
           "left": 24
         },
         {
-          "x": 217.609375,
-          "y": 701.75,
-          "width": 163.015625,
+          "x": 183.890625,
+          "y": 712.75,
+          "width": 149.296875,
           "height": 50,
-          "top": 701.75,
-          "right": 380.625,
-          "bottom": 751.75,
-          "left": 217.609375
+          "top": 712.75,
+          "right": 333.1875,
+          "bottom": 762.75,
+          "left": 183.890625
         }
       ],
       "sectionOrder": [
@@ -365,12 +370,12 @@
       "h1Size": "60px",
       "h1Rect": {
         "x": 100,
-        "y": 343.5,
+        "y": 337.5,
         "width": 500,
         "height": 198,
-        "top": 343.5,
+        "top": 337.5,
         "right": 600,
-        "bottom": 541.5,
+        "bottom": 535.5,
         "left": 100
       },
       "artworkRect": {
@@ -386,23 +391,23 @@
       "ctaRects": [
         {
           "x": 100,
-          "y": 701.75,
-          "width": 181.609375,
+          "y": 712.75,
+          "width": 147.890625,
           "height": 50,
-          "top": 701.75,
-          "right": 281.609375,
-          "bottom": 751.75,
+          "top": 712.75,
+          "right": 247.890625,
+          "bottom": 762.75,
           "left": 100
         },
         {
-          "x": 293.609375,
-          "y": 701.75,
-          "width": 163.015625,
+          "x": 259.890625,
+          "y": 712.75,
+          "width": 149.296875,
           "height": 50,
-          "top": 701.75,
-          "right": 456.625,
-          "bottom": 751.75,
-          "left": 293.609375
+          "top": 712.75,
+          "right": 409.1875,
+          "bottom": 762.75,
+          "left": 259.890625
         }
       ],
       "sectionOrder": [

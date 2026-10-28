@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "reference": [
+      1440,
+      900
+    ],
+    "browser": [
+      1440,
+      900
+    ]
+  },
+  "challenges": {
+    "reference": [
+      1440,
+      752
+    ],
+    "browser": [
+      1440,
+      796
+    ]
+  },
+  "capabilities": {
+    "reference": [
+      1440,
+      1331
+    ],
+    "browser": [
+      1440,
+      1373
+    ]
+  },
+  "process": {
+    "reference": [
+      1440,
+      898
+    ],
+    "browser": [
+      1440,
+      948
+    ]
+  },
+  "case": {
+    "reference": [
+      1440,
+      799
+    ],
+    "browser": [
+      1440,
+      841
+    ]
+  },
+  "testimonials": {
+    "reference": [
+      1440,
+      941
+    ],
+    "browser": [
+      1440,
+      943
+    ]
+  },
+  "footer": {
+    "reference": [
+      1440,
+      752
+    ],
+    "browser": [
+      1440,
+      752
+    ]
+  },
+  "recognition": {
+    "reference": [
+      1440,
+      172
+    ],
+    "browser": [
+      1440,
+      172
+    ]
+  }
+}
