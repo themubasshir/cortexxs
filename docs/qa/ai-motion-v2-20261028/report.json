@@ -1,0 +1,444 @@
+{
+  "route": "http://localhost/cortexx/services/ai-automation",
+  "timeline": {
+    "390": [
+      {
+        "active": [
+          1
+        ],
+        "progress": 0.006831742568857289,
+        "lineLeft": 20,
+        "firstCenterX": 20,
+        "height": 8883,
+        "scrollY": 4549,
+        "overflow": false,
+        "targetStep": 1,
+        "expectedScroll": 4549
+      },
+      {
+        "active": [
+          1,
+          2
+        ],
+        "progress": 0.207540769020998,
+        "lineLeft": 20,
+        "firstCenterX": 20,
+        "height": 8883,
+        "scrollY": 4664,
+        "overflow": false,
+        "targetStep": 2,
+        "expectedScroll": 4664
+      },
+      {
+        "active": [
+          1,
+          2,
+          3
+        ],
+        "progress": 0.4065044995909462,
+        "lineLeft": 20,
+        "firstCenterX": 20,
+        "height": 8883,
+        "scrollY": 4778,
+        "overflow": false,
+        "targetStep": 3,
+        "expectedScroll": 4778
+      },
+      {
+        "active": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "progress": 0.6072135260430869,
+        "lineLeft": 20,
+        "firstCenterX": 20,
+        "height": 8883,
+        "scrollY": 4893,
+        "overflow": false,
+        "targetStep": 4,
+        "expectedScroll": 4893
+      },
+      {
+        "active": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "progress": 0.8061772566130351,
+        "lineLeft": 20,
+        "firstCenterX": 20,
+        "height": 8883,
+        "scrollY": 5007,
+        "overflow": false,
+        "targetStep": 5,
+        "expectedScroll": 5007
+      },
+      {
+        "active": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "progress": 1,
+        "lineLeft": 20,
+        "firstCenterX": 20,
+        "height": 8883,
+        "scrollY": 5122,
+        "overflow": false,
+        "targetStep": 6,
+        "expectedScroll": 5122
+      },
+      {
+        "active": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "progress": 0.8061772566130351,
+        "lineLeft": 20,
+        "firstCenterX": 20,
+        "height": 8883,
+        "scrollY": 5007,
+        "overflow": false,
+        "targetStep": 5,
+        "expectedScroll": 5007
+      },
+      {
+        "active": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "progress": 0.6072135260430869,
+        "lineLeft": 20,
+        "firstCenterX": 20,
+        "height": 8883,
+        "scrollY": 4893,
+        "overflow": false,
+        "targetStep": 4,
+        "expectedScroll": 4893
+      },
+      {
+        "active": [
+          1,
+          2,
+          3
+        ],
+        "progress": 0.4065044995909462,
+        "lineLeft": 20,
+        "firstCenterX": 20,
+        "height": 8883,
+        "scrollY": 4778,
+        "overflow": false,
+        "targetStep": 3,
+        "expectedScroll": 4778
+      },
+      {
+        "active": [
+          1,
+          2
+        ],
+        "progress": 0.207540769020998,
+        "lineLeft": 20,
+        "firstCenterX": 20,
+        "height": 8883,
+        "scrollY": 4664,
+        "overflow": false,
+        "targetStep": 2,
+        "expectedScroll": 4664
+      },
+      {
+        "active": [
+          1
+        ],
+        "progress": 0.006831742568857289,
+        "lineLeft": 20,
+        "firstCenterX": 20,
+        "height": 8883,
+        "scrollY": 4549,
+        "overflow": false,
+        "targetStep": 1,
+        "expectedScroll": 4549
+      }
+    ],
+    "1440": [
+      {
+        "active": [
+          1
+        ],
+        "progress": 0.00625,
+        "lineLeft": 23,
+        "firstCenterX": 23,
+        "height": 6553,
+        "scrollY": 2528,
+        "overflow": false,
+        "targetStep": 1,
+        "expectedScroll": 2528
+      },
+      {
+        "active": [
+          1,
+          2
+        ],
+        "progress": 0.20625,
+        "lineLeft": 23,
+        "firstCenterX": 23,
+        "height": 6553,
+        "scrollY": 2656,
+        "overflow": false,
+        "targetStep": 2,
+        "expectedScroll": 2656
+      },
+      {
+        "active": [
+          1,
+          2,
+          3
+        ],
+        "progress": 0.40625,
+        "lineLeft": 23,
+        "firstCenterX": 23,
+        "height": 6553,
+        "scrollY": 2784,
+        "overflow": false,
+        "targetStep": 3,
+        "expectedScroll": 2784
+      },
+      {
+        "active": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "progress": 0.60625,
+        "lineLeft": 23,
+        "firstCenterX": 23,
+        "height": 6553,
+        "scrollY": 2912,
+        "overflow": false,
+        "targetStep": 4,
+        "expectedScroll": 2912
+      },
+      {
+        "active": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "progress": 0.80625,
+        "lineLeft": 23,
+        "firstCenterX": 23,
+        "height": 6553,
+        "scrollY": 3040,
+        "overflow": false,
+        "targetStep": 5,
+        "expectedScroll": 3040
+      },
+      {
+        "active": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "progress": 1,
+        "lineLeft": 23,
+        "firstCenterX": 23,
+        "height": 6553,
+        "scrollY": 3168,
+        "overflow": false,
+        "targetStep": 6,
+        "expectedScroll": 3168
+      },
+      {
+        "active": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "progress": 0.80625,
+        "lineLeft": 23,
+        "firstCenterX": 23,
+        "height": 6553,
+        "scrollY": 3040,
+        "overflow": false,
+        "targetStep": 5,
+        "expectedScroll": 3040
+      },
+      {
+        "active": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "progress": 0.60625,
+        "lineLeft": 23,
+        "firstCenterX": 23,
+        "height": 6553,
+        "scrollY": 2912,
+        "overflow": false,
+        "targetStep": 4,
+        "expectedScroll": 2912
+      },
+      {
+        "active": [
+          1,
+          2,
+          3
+        ],
+        "progress": 0.40625,
+        "lineLeft": 23,
+        "firstCenterX": 23,
+        "height": 6553,
+        "scrollY": 2784,
+        "overflow": false,
+        "targetStep": 3,
+        "expectedScroll": 2784
+      },
+      {
+        "active": [
+          1,
+          2
+        ],
+        "progress": 0.20625,
+        "lineLeft": 23,
+        "firstCenterX": 23,
+        "height": 6553,
+        "scrollY": 2656,
+        "overflow": false,
+        "targetStep": 2,
+        "expectedScroll": 2656
+      },
+      {
+        "active": [
+          1
+        ],
+        "progress": 0.00625,
+        "lineLeft": 23,
+        "firstCenterX": 23,
+        "height": 6553,
+        "scrollY": 2528,
+        "overflow": false,
+        "targetStep": 1,
+        "expectedScroll": 2528
+      }
+    ]
+  },
+  "carousel": {
+    "390": {
+      "original": [
+        "Alex Carter",
+        "Carlos Rivera",
+        "Jordan MItchell Rivera"
+      ],
+      "next": [
+        "Carlos Rivera",
+        "Jordan MItchell Rivera",
+        "Alex Carter"
+      ],
+      "wrapped": [
+        "Jordan MItchell Rivera",
+        "Alex Carter",
+        "Carlos Rivera"
+      ],
+      "midAnimations": 3,
+      "cardCount": 3,
+      "visibleCount": 1,
+      "focusVisible": true,
+      "height": 8883,
+      "overflow": false,
+      "clipped": false,
+      "swipe": true
+    },
+    "1440": {
+      "original": [
+        "Alex Carter",
+        "Carlos Rivera",
+        "Jordan MItchell Rivera"
+      ],
+      "next": [
+        "Carlos Rivera",
+        "Jordan MItchell Rivera",
+        "Alex Carter"
+      ],
+      "wrapped": [
+        "Jordan MItchell Rivera",
+        "Alex Carter",
+        "Carlos Rivera"
+      ],
+      "midAnimations": 3,
+      "cardCount": 3,
+      "visibleCount": 3,
+      "focusVisible": true,
+      "height": 6553,
+      "overflow": false,
+      "clipped": false
+    }
+  },
+  "responsive": {
+    "360": {
+      "overflow": false,
+      "visibleCount": 1,
+      "clipped": false,
+      "height": 8942
+    },
+    "430": {
+      "overflow": false,
+      "visibleCount": 1,
+      "clipped": false,
+      "height": 8748
+    },
+    "768": {
+      "overflow": false,
+      "visibleCount": 2,
+      "clipped": false,
+      "height": 8330
+    },
+    "1280": {
+      "overflow": false,
+      "visibleCount": 3,
+      "clipped": false,
+      "height": 6553
+    }
+  },
+  "reveals": {
+    ".ai-challenges": true,
+    ".ai-capabilities": true,
+    ".ai-case": true,
+    ".ai-testimonials": true,
+    ".ai-recognition": true,
+    "heightBefore": 6553,
+    "heightAfter": 6553
+  },
+  "errors": [],
+  "reduced": {
+    "active": 6,
+    "progress": 1,
+    "textVisible": true,
+    "carouselFirstAfterNext": "Carlos Rivera",
+    "carouselAnimations": 0
+  },
+  "noJavaScript": {
+    "challengeVisible": true,
+    "timelineTextVisible": true,
+    "cardsScrollable": true
+  }
+}

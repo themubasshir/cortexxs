@@ -4,7 +4,7 @@ const assert = require('node:assert/strict');
 let chromium;
 try { ({ chromium } = require('playwright-core')); }
 catch { ({ chromium } = require(process.env.CORTEXX_PLAYWRIGHT_MODULE || 'C:/Users/Cyb3r/AppData/Local/Temp/marsai/node_modules/playwright-core')); }
-const output = path.resolve(__dirname, '../docs/qa/ai-animation-repair-20261028/controls');
+const output = path.resolve(__dirname, '../docs/qa/ai-animation-repair-20261028', process.argv[2] || 'controls');
 fs.mkdirSync(output, { recursive: true });
 const inspect = () => {
   const workflow = document.querySelector('.ai-workflow');

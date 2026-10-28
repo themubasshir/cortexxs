@@ -69,6 +69,12 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     await page.locator('img[loading="lazy"]').evaluateAll(images => images.forEach(image => { image.loading = 'eager'; }));
     await page.waitForFunction(() => [...document.images].every(image => image.complete), null, { timeout: 10000 });
     result.ai.brokenImages = await page.evaluate(() => [...document.images].filter(image => image.naturalWidth === 0).map(image => image.src));
+    for (const selector of ['.ai-challenges', '.ai-capabilities', '.ai-case', '.ai-testimonials', '.ai-recognition']) {
+      await page.locator(selector).scrollIntoViewIfNeeded();
+      await page.waitForTimeout(80);
+    }
+    await page.waitForTimeout(650);
+    await page.evaluate(() => scrollTo({ top: 0, behavior: 'instant' }));
     await page.screenshot({ path: path.join(output, 'full-page-1440.png'), fullPage: true });
 
     for (const width of [360, 390, 430, 768, 1280, 1440]) {
@@ -105,9 +111,10 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     result.ai.menuOpened = await mobile.locator('#mobileNav').evaluate(el => el.classList.contains('open'));
     await mobile.locator('#menuClose').click();
     result.ai.menuClosed = await mobile.locator('#mobileNav').evaluate(el => !el.classList.contains('open'));
+    const firstTestimonial = await mobile.locator('.ai-testimonial-track article:first-child footer strong').innerText();
     await mobile.locator('[data-testimonial-next]').click();
     await mobile.waitForTimeout(100);
-    result.ai.testimonialAdvanced = await mobile.locator('.ai-testimonial-track').evaluate(el => el.scrollLeft > 0);
+    result.ai.testimonialAdvanced = await mobile.locator('.ai-testimonial-track article:first-child footer strong').innerText() !== firstTestimonial;
     await mobileContext.close();
 
     await page.setViewportSize({ width: 1440, height: 900 });
