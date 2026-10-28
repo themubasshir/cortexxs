@@ -113,22 +113,23 @@ ob_start();
           <svg viewBox="0 0 25 20" fill="none"><path d="M0 10h18M13 4l6 6-6 6" stroke="#1d1d1d" stroke-width="1.6"/></svg></a>
       </div>
     </div>
-    <div class="svc-grid desktop-services" aria-hidden="true">
+    <div class="svc-grid desktop-services">
       <?php
+      $serviceRoutes = array_column($services, 'route', 'slug');
       $svcs = [
-        ['Software','Systems built to simplify and scale.','<rect x="5" y="4" width="22" height="18" rx="2"/><path d="M5 9h22M9 4v5"/>'],
-        ['Websites','Digital experiences that attract and convert','<path d="M4 6h24M8 6v14a2 2 0 002 2h4a2 2 0 002-2V6"/><rect x="4" y="4" width="24" height="4" rx="1"/>'],
-        ['Apps','Useful products designed around real users.','<rect x="6" y="4" width="20" height="24" rx="3"/><path d="M12 24h8"/><circle cx="16" cy="10" r="2"/>'],
-        ['AI & Automation','Smarter workflows that save time','<circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M8 8l2.5 2.5M24 8l-2.5-2.5M8 24l2.5-2.5M24 24l-2.5-2.5"/>'],
+        ['Software','Systems built to simplify and scale.','<rect x="5" y="4" width="22" height="18" rx="2"/><path d="M5 9h22M9 4v5"/>','software'],
+        ['Websites','Digital experiences that attract and convert','<path d="M4 6h24M8 6v14a2 2 0 002 2h4a2 2 0 002-2V6"/><rect x="4" y="4" width="24" height="4" rx="1"/>','web-development'],
+        ['Apps','Useful products designed around real users.','<rect x="6" y="4" width="20" height="24" rx="3"/><path d="M12 24h8"/><circle cx="16" cy="10" r="2"/>','ui-ux-design'],
+        ['AI & Automation','Smarter workflows that save time','<circle cx="16" cy="16" r="5"/><path d="M16 4v4M16 24v4M4 16h4M24 16h4M8 8l2.5 2.5M24 8l-2.5-2.5M8 24l2.5-2.5M24 24l-2.5-2.5"/>','ai-automation'],
       ];
       foreach ($svcs as $s): ?>
-      <article class="svc-card reveal">
+      <a class="svc-card reveal<?= $s[3] === 'ai-automation' ? ' svc-card-ai' : '' ?>" href="<?= htmlspecialchars($b . $serviceRoutes[$s[3]], ENT_QUOTES) ?>">
         <div class="svc-top">
           <span class="svc-icon"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2"><?= $s[2] ?></svg></span>
           <span class="svc-go"><svg viewBox="0 0 14 14"><path d="M2 12L12 2M4 2h8v8"/></svg></span>
         </div>
         <div><h3><?= htmlspecialchars($s[0]) ?></h3><p><?= htmlspecialchars($s[1]) ?></p></div>
-      </article>
+      </a>
       <?php endforeach; ?>
     </div>
     <?php $mobileServices = array_values(array_filter($services, fn($service) => !empty($service['active']))); ?>

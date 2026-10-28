@@ -140,7 +140,7 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .svc-icon svg{width:100%;height:100%}
 .svc-go{width:32px;height:32px;border-radius:999px;background:#e8efff;display:flex;align-items:center;justify-content:center;transition:.2s}
 .svc-card:hover .svc-go,.svc-card:focus-within .svc-go{background:var(--blue);border-color:var(--blue)}
-.svc-card:hover .svc-go svg{stroke:#fff}
+.svc-card:hover .svc-go svg,.svc-card:focus-visible .svc-go svg{stroke:#fff}
 .svc-go svg{width:14px;height:14px;stroke:var(--blue);fill:none;stroke-width:2}
 .svc-card h3{font-size:24px;font-weight:700;letter-spacing:-.72px;color:var(--ink);line-height:32px}
 .svc-card p{font-size:18px;line-height:28px;letter-spacing:-.18px;color:var(--muted)}
@@ -318,6 +318,7 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 /* ---------- reveal ---------- */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1)}
 .reveal.in{opacity:1;transform:none}
+.svc-card-ai.reveal.in:hover{transform:translateY(-4px)}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
   .reveal{opacity:1;transform:none}

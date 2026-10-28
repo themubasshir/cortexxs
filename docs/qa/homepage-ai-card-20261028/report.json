@@ -1,0 +1,93 @@
+{
+  "base": "http://localhost/cortexx",
+  "desktop": {
+    "1280": {
+      "dimensions": {
+        "width": 281,
+        "height": 190
+      },
+      "beforeHover": {
+        "border": "rgb(225, 225, 225)",
+        "arrow": "rgb(232, 239, 255)"
+      },
+      "hover": {
+        "border": "rgb(57, 96, 249)",
+        "arrow": "rgb(13, 45, 206)",
+        "transform": "matrix(1, 0, 0, 1, 0, -3.58425)"
+      },
+      "focus": {
+        "visible": true,
+        "arrow": "rgb(255, 255, 255)"
+      },
+      "tabs": 17,
+      "cardClick": true,
+      "arrowClick": true,
+      "enter": true
+    },
+    "1440": {
+      "dimensions": {
+        "width": 293,
+        "height": 190
+      },
+      "beforeHover": {
+        "border": "rgb(225, 225, 225)",
+        "arrow": "rgb(232, 239, 255)"
+      },
+      "hover": {
+        "border": "rgb(57, 96, 249)",
+        "arrow": "rgb(13, 45, 206)",
+        "transform": "matrix(1, 0, 0, 1, 0, -3.58441)"
+      },
+      "focus": {
+        "visible": true,
+        "arrow": "rgb(255, 255, 255)"
+      },
+      "tabs": 17,
+      "cardClick": true,
+      "arrowClick": true,
+      "enter": true
+    }
+  },
+  "mobile": {
+    "360": {
+      "oneTap": true,
+      "previewBefore": {
+        "width": 241,
+        "height": 167
+      },
+      "previewAfter": {
+        "width": 241,
+        "height": 167
+      },
+      "scrollBefore": 2849,
+      "scrollAfter": 3029
+    },
+    "390": {
+      "oneTap": true,
+      "previewBefore": {
+        "width": 241,
+        "height": 167
+      },
+      "previewAfter": {
+        "width": 241,
+        "height": 167
+      },
+      "scrollBefore": 2841,
+      "scrollAfter": 3021
+    },
+    "430": {
+      "oneTap": true,
+      "previewBefore": {
+        "width": 241,
+        "height": 167
+      },
+      "previewAfter": {
+        "width": 241,
+        "height": 167
+      },
+      "scrollBefore": 2863,
+      "scrollAfter": 3043
+    }
+  },
+  "errors": []
+}
