@@ -1,0 +1,49 @@
+{
+  "status": 200,
+  "url": "http://localhost/cortexx/services/ai-automation",
+  "measured": {
+    "hero": {
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 900
+    },
+    "challenges": {
+      "x": 0,
+      "y": 900,
+      "width": 1440,
+      "height": 796
+    },
+    "capabilities": {
+      "x": 0,
+      "y": 1696,
+      "width": 1440,
+      "height": 1373
+    },
+    "process": {
+      "x": 0,
+      "y": 3069,
+      "width": 1440,
+      "height": 948
+    },
+    "case": {
+      "x": 0,
+      "y": 4017,
+      "width": 1440,
+      "height": 841
+    },
+    "testimonials": {
+      "x": 0,
+      "y": 4858,
+      "width": 1440,
+      "height": 943
+    },
+    "footer": {
+      "x": 0,
+      "y": 5801,
+      "width": 1440,
+      "height": 751.671875
+    }
+  },
+  "errors": []
+}

@@ -22,6 +22,8 @@ const browserErrors = [];
       page.on('pageerror', error => browserErrors.push(error.message));
       page.on('console', message => { if (message.type() === 'error') browserErrors.push(message.text()); });
       await page.goto(base + '/', { waitUntil: 'domcontentloaded' });
+      await page.evaluate(() => { scrollTo({ top: 0, behavior: 'instant' }); dispatchEvent(new Event('scroll')); });
+      await page.waitForTimeout(120);
       await page.evaluate(() => document.fonts.ready);
       await page.locator('.site-header').waitFor();
       const homeHeaderStyle = await page.locator('.nav a').first().evaluate(el => ({ color:getComputedStyle(el).color, font:getComputedStyle(el).font, href:el.getAttribute('href') }));
@@ -37,6 +39,8 @@ const browserErrors = [];
         footerRect: await page.locator('.footer').evaluate(el => { const r = el.getBoundingClientRect(); return { w:r.width,h:r.height }; }),
       };
       await page.goto(base + '/services/ai-automation', { waitUntil: 'domcontentloaded' });
+      await page.evaluate(() => { scrollTo({ top: 0, behavior: 'instant' }); dispatchEvent(new Event('scroll')); });
+      await page.waitForTimeout(120);
       await page.evaluate(() => document.fonts.ready);
       await page.locator('img[loading="lazy"]').evaluateAll(images => images.forEach(image => { image.loading = 'eager'; }));
       await page.waitForFunction(() => [...document.images].every(image => image.complete), null, { timeout: 10000 });
@@ -64,6 +68,7 @@ const browserErrors = [];
       await page.screenshot({ path: path.join(out, `${phase}-ai-full-${width}.png`), fullPage: true, animations: 'disabled' });
       if (phase === 'after') {
         await page.locator('.footer').scrollIntoViewIfNeeded();
+        await page.waitForTimeout(100);
         const aiFooter = await page.locator('.footer').screenshot({ animations: 'disabled' });
         ai.headerStyle = aiHeaderStyle;
         ai.headerHash = hash(aiHeader);

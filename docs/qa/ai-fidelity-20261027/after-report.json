@@ -5,7 +5,7 @@
     "390": {
       "home": {
         "headerHash": "421c4777bf8a2db1308e1f9d9ef646c7b6563618fd03e359fd153497b99b75ca",
-        "footerHash": "7a45becbf2d6aa48e9c3dbf74a7b4436529eca103589220a2e63c614b137964c",
+        "footerHash": "8ddde752c877481b708066f3e6b7951aa98ab1b9afb72d7730389fadd5ac509c",
         "headerStyle": {
           "color": "rgb(50, 50, 50)",
           "font": "18px / 27px Manrope, system-ui, sans-serif",
@@ -39,7 +39,7 @@
               "x": 0,
               "y": 0,
               "w": 390,
-              "h": 1041,
+              "h": 993,
               "fontSize": "16px"
             }
           ],
@@ -64,25 +64,25 @@
           "heroArt": [
             {
               "x": 16,
-              "y": 600,
+              "y": 530,
               "w": 358,
-              "h": 375,
+              "h": 398,
               "fontSize": "16px"
             }
           ],
           "challenges": [
             {
               "x": 0,
-              "y": 1041,
+              "y": 993,
               "w": 390,
-              "h": 1396,
+              "h": 1230,
               "fontSize": "16px"
             }
           ],
           "challengesTitle": [
             {
               "x": 16,
-              "y": 1171,
+              "y": 1123,
               "w": 358,
               "h": 122,
               "fontSize": "38px"
@@ -91,28 +91,28 @@
           "challengeRows": [
             {
               "x": 16,
-              "y": 1662,
+              "y": 1449,
               "w": 358,
               "h": 176,
               "fontSize": "16px"
             },
             {
               "x": 16,
-              "y": 1838,
+              "y": 1624,
               "w": 358,
               "h": 176,
               "fontSize": "16px"
             },
             {
               "x": 16,
-              "y": 2013,
+              "y": 1800,
               "w": 358,
               "h": 176,
               "fontSize": "16px"
             },
             {
               "x": 16,
-              "y": 2189,
+              "y": 1975,
               "w": 358,
               "h": 176,
               "fontSize": "16px"
@@ -121,16 +121,16 @@
           "capabilities": [
             {
               "x": 0,
-              "y": 2436,
+              "y": 2223,
               "w": 390,
-              "h": 2477,
+              "h": 2384,
               "fontSize": "16px"
             }
           ],
           "capabilityTitle": [
             {
               "x": 16,
-              "y": 2566,
+              "y": 2353,
               "w": 358,
               "h": 81,
               "fontSize": "38px"
@@ -139,53 +139,53 @@
           "capabilityCards": [
             {
               "x": 16,
-              "y": 2696,
+              "y": 2482,
               "w": 358,
-              "h": 409,
+              "h": 331,
               "fontSize": "16px"
             },
             {
               "x": 16,
-              "y": 3124,
+              "y": 2833,
               "w": 358,
-              "h": 409,
+              "h": 331,
               "fontSize": "16px"
             },
             {
               "x": 16,
-              "y": 3553,
+              "y": 3184,
               "w": 358,
-              "h": 432,
+              "h": 452,
               "fontSize": "16px"
             },
             {
               "x": 16,
-              "y": 4004,
+              "y": 3657,
               "w": 358,
-              "h": 409,
+              "h": 429,
               "fontSize": "16px"
             },
             {
               "x": 16,
-              "y": 4433,
+              "y": 4106,
               "w": 358,
-              "h": 409,
+              "h": 429,
               "fontSize": "16px"
             }
           ],
           "process": [
             {
               "x": 0,
-              "y": 4913,
+              "y": 4607,
               "w": 390,
-              "h": 1501,
+              "h": 1119,
               "fontSize": "16px"
             }
           ],
           "processTitle": [
             {
               "x": 16,
-              "y": 5043,
+              "y": 4737,
               "w": 358,
               "h": 81,
               "fontSize": "38px"
@@ -194,42 +194,42 @@
           "steps": [
             {
               "x": 16,
-              "y": 5655,
+              "y": 4967,
               "w": 358,
               "h": 115,
               "fontSize": "16px"
             },
             {
               "x": 16,
-              "y": 5770,
+              "y": 5081,
               "w": 358,
               "h": 115,
               "fontSize": "16px"
             },
             {
               "x": 16,
-              "y": 5884,
+              "y": 5196,
               "w": 358,
               "h": 115,
               "fontSize": "16px"
             },
             {
               "x": 16,
-              "y": 5999,
+              "y": 5310,
               "w": 358,
               "h": 115,
               "fontSize": "16px"
             },
             {
               "x": 16,
-              "y": 6114,
+              "y": 5425,
               "w": 358,
               "h": 115,
               "fontSize": "16px"
             },
             {
               "x": 16,
-              "y": 6228,
+              "y": 5540,
               "w": 358,
               "h": 115,
               "fontSize": "16px"
@@ -238,7 +238,7 @@
           "caseStudy": [
             {
               "x": 0,
-              "y": 6415,
+              "y": 5726,
               "w": 390,
               "h": 1204,
               "fontSize": "16px"
@@ -247,7 +247,7 @@
           "caseTitle": [
             {
               "x": 16,
-              "y": 6545,
+              "y": 5856,
               "w": 358,
               "h": 41,
               "fontSize": "38px"
@@ -256,7 +256,7 @@
           "caseCard": [
             {
               "x": 16,
-              "y": 6633,
+              "y": 5945,
               "w": 358,
               "h": 913,
               "fontSize": "16px"
@@ -265,7 +265,7 @@
           "testimonials": [
             {
               "x": 0,
-              "y": 7618,
+              "y": 6930,
               "w": 390,
               "h": 1150,
               "fontSize": "16px"
@@ -274,21 +274,21 @@
           "testimonialCards": [
             {
               "x": 16,
-              "y": 7953,
+              "y": 7264,
               "w": 308,
               "h": 340,
               "fontSize": "16px"
             },
             {
               "x": 344,
-              "y": 7953,
+              "y": 7264,
               "w": 308,
               "h": 340,
               "fontSize": "16px"
             },
             {
               "x": 672,
-              "y": 7953,
+              "y": 7264,
               "w": 308,
               "h": 340,
               "fontSize": "16px"
@@ -297,42 +297,42 @@
           "recognitionTiles": [
             {
               "x": 17,
-              "y": 8445,
+              "y": 7756,
               "w": 171,
               "h": 55,
               "fontSize": "16px"
             },
             {
               "x": 202,
-              "y": 8445,
+              "y": 7756,
               "w": 171,
               "h": 55,
               "fontSize": "16px"
             },
             {
               "x": 17,
-              "y": 8537,
+              "y": 7848,
               "w": 171,
               "h": 55,
               "fontSize": "16px"
             },
             {
               "x": 202,
-              "y": 8537,
+              "y": 7848,
               "w": 171,
               "h": 55,
               "fontSize": "16px"
             },
             {
               "x": 17,
-              "y": 8629,
+              "y": 7940,
               "w": 171,
               "h": 55,
               "fontSize": "16px"
             },
             {
               "x": 202,
-              "y": 8629,
+              "y": 7940,
               "w": 171,
               "h": 55,
               "fontSize": "16px"
@@ -341,7 +341,7 @@
           "footer": [
             {
               "x": 0,
-              "y": 8768,
+              "y": 8079,
               "w": 390,
               "h": 594,
               "fontSize": "16px"
@@ -349,7 +349,7 @@
           ]
         },
         "scrollWidth": 390,
-        "scrollHeight": 9362,
+        "scrollHeight": 8673,
         "brokenImages": [],
         "headerStyle": {
           "color": "rgb(50, 50, 50)",
@@ -357,15 +357,15 @@
           "href": "/cortexx/#work"
         },
         "headerHash": "2d9243978f1f59b62009fd7dee38fb55ac1e6be8d359b372cdfbaf998277d368",
-        "footerHash": "4b54ec6ce5411b499fee8d5515b5d11809c78c2cf9acdf0f9d72cef596c63022",
+        "footerHash": "8ddde752c877481b708066f3e6b7951aa98ab1b9afb72d7730389fadd5ac509c",
         "headerMatchesHome": false,
-        "footerMatchesHome": false
+        "footerMatchesHome": true
       }
     },
     "1440": {
       "home": {
         "headerHash": "ac25224aeac8bb165adbc12c73b14039fbc3e75db3ebea2831462031e3283cb9",
-        "footerHash": "eb1d42101b0bb841a0a2c8d27f6a5e3b4c2593093d6d701928b7cbacf4dc2602",
+        "footerHash": "dc2d1ff5e4a7c0bb8c79b52ef4027a5e1121334f7d67bb38529ca2ce8feed814",
         "headerStyle": {
           "color": "rgb(50, 50, 50)",
           "font": "18px / 27px Manrope, system-ui, sans-serif",
@@ -406,7 +406,7 @@
           "heroTitle": [
             {
               "x": 100,
-              "y": 340,
+              "y": 344,
               "w": 500,
               "h": 198,
               "fontSize": "60px"
@@ -415,7 +415,7 @@
           "heroDescription": [
             {
               "x": 100,
-              "y": 562,
+              "y": 566,
               "w": 500,
               "h": 104,
               "fontSize": "22px"
@@ -423,10 +423,10 @@
           ],
           "heroArt": [
             {
-              "x": 723,
-              "y": 196,
-              "w": 617,
-              "h": 647,
+              "x": 708,
+              "y": 142,
+              "w": 632,
+              "h": 702,
               "fontSize": "16px"
             }
           ],
@@ -435,7 +435,7 @@
               "x": 0,
               "y": 900,
               "w": 1440,
-              "h": 752,
+              "h": 796,
               "fontSize": "16px"
             }
           ],
@@ -443,7 +443,7 @@
             {
               "x": 100,
               "y": 1078,
-              "w": 521,
+              "w": 450,
               "h": 192,
               "fontSize": "56px"
             }
@@ -451,28 +451,28 @@
           "challengeRows": [
             {
               "x": 752,
-              "y": 1021,
+              "y": 1020,
               "w": 588,
               "h": 144,
               "fontSize": "16px"
             },
             {
               "x": 752,
-              "y": 1165,
+              "y": 1164,
               "w": 588,
               "h": 144,
               "fontSize": "16px"
             },
             {
               "x": 752,
-              "y": 1309,
+              "y": 1308,
               "w": 588,
               "h": 144,
               "fontSize": "16px"
             },
             {
               "x": 752,
-              "y": 1453,
+              "y": 1452,
               "w": 588,
               "h": 144,
               "fontSize": "16px"
@@ -481,16 +481,16 @@
           "capabilities": [
             {
               "x": 0,
-              "y": 1652,
+              "y": 1696,
               "w": 1440,
-              "h": 1331,
+              "h": 1373,
               "fontSize": "16px"
             }
           ],
           "capabilityTitle": [
             {
               "x": 436,
-              "y": 1769,
+              "y": 1813,
               "w": 568,
               "h": 136,
               "fontSize": "56px"
@@ -499,35 +499,35 @@
           "capabilityCards": [
             {
               "x": 100,
-              "y": 1953,
+              "y": 1997,
               "w": 605,
               "h": 459,
               "fontSize": "16px"
             },
             {
               "x": 735,
-              "y": 1953,
+              "y": 1997,
               "w": 605,
               "h": 459,
               "fontSize": "16px"
             },
             {
               "x": 100,
-              "y": 2442,
+              "y": 2486,
               "w": 393,
               "h": 483,
               "fontSize": "16px"
             },
             {
               "x": 523,
-              "y": 2442,
+              "y": 2486,
               "w": 393,
               "h": 483,
               "fontSize": "16px"
             },
             {
               "x": 947,
-              "y": 2442,
+              "y": 2486,
               "w": 393,
               "h": 483,
               "fontSize": "16px"
@@ -536,16 +536,16 @@
           "process": [
             {
               "x": 0,
-              "y": 2983,
+              "y": 3069,
               "w": 1440,
-              "h": 898,
+              "h": 948,
               "fontSize": "16px"
             }
           ],
           "processTitle": [
             {
               "x": 100,
-              "y": 3120,
+              "y": 3206,
               "w": 568,
               "h": 136,
               "fontSize": "56px"
@@ -554,42 +554,42 @@
           "steps": [
             {
               "x": 716,
-              "y": 3063,
+              "y": 3149,
               "w": 624,
               "h": 128,
               "fontSize": "16px"
             },
             {
               "x": 716,
-              "y": 3191,
+              "y": 3277,
               "w": 624,
               "h": 128,
               "fontSize": "16px"
             },
             {
               "x": 716,
-              "y": 3319,
+              "y": 3405,
               "w": 624,
               "h": 128,
               "fontSize": "16px"
             },
             {
               "x": 716,
-              "y": 3447,
+              "y": 3533,
               "w": 624,
               "h": 128,
               "fontSize": "16px"
             },
             {
               "x": 716,
-              "y": 3575,
+              "y": 3661,
               "w": 624,
               "h": 128,
               "fontSize": "16px"
             },
             {
               "x": 716,
-              "y": 3703,
+              "y": 3789,
               "w": 624,
               "h": 128,
               "fontSize": "16px"
@@ -598,16 +598,16 @@
           "caseStudy": [
             {
               "x": 0,
-              "y": 3881,
+              "y": 4017,
               "w": 1440,
-              "h": 799,
+              "h": 841,
               "fontSize": "16px"
             }
           ],
           "caseTitle": [
             {
               "x": 100,
-              "y": 4058,
+              "y": 4194,
               "w": 1240,
               "h": 68,
               "fontSize": "56px"
@@ -616,7 +616,7 @@
           "caseCard": [
             {
               "x": 100,
-              "y": 4174,
+              "y": 4310,
               "w": 1240,
               "h": 448,
               "fontSize": "16px"
@@ -625,30 +625,30 @@
           "testimonials": [
             {
               "x": 0,
-              "y": 4680,
+              "y": 4858,
               "w": 1440,
-              "h": 941,
+              "h": 943,
               "fontSize": "16px"
             }
           ],
           "testimonialCards": [
             {
               "x": 100,
-              "y": 4955,
+              "y": 5133,
               "w": 400,
               "h": 353,
               "fontSize": "16px"
             },
             {
               "x": 520,
-              "y": 4955,
+              "y": 5133,
               "w": 400,
               "h": 353,
               "fontSize": "16px"
             },
             {
               "x": 940,
-              "y": 4955,
+              "y": 5133,
               "w": 400,
               "h": 353,
               "fontSize": "16px"
@@ -657,42 +657,42 @@
           "recognitionTiles": [
             {
               "x": 117,
-              "y": 5449,
+              "y": 5626,
               "w": 132,
               "h": 55,
               "fontSize": "16px"
             },
             {
               "x": 332,
-              "y": 5449,
+              "y": 5626,
               "w": 132,
               "h": 55,
               "fontSize": "16px"
             },
             {
               "x": 547,
-              "y": 5449,
+              "y": 5626,
               "w": 132,
               "h": 55,
               "fontSize": "16px"
             },
             {
               "x": 761,
-              "y": 5449,
+              "y": 5626,
               "w": 132,
               "h": 55,
               "fontSize": "16px"
             },
             {
               "x": 976,
-              "y": 5449,
+              "y": 5626,
               "w": 132,
               "h": 55,
               "fontSize": "16px"
             },
             {
               "x": 1191,
-              "y": 5449,
+              "y": 5626,
               "w": 132,
               "h": 55,
               "fontSize": "16px"
@@ -701,7 +701,7 @@
           "footer": [
             {
               "x": 0,
-              "y": 5621,
+              "y": 5801,
               "w": 1440,
               "h": 752,
               "fontSize": "16px"
@@ -709,15 +709,15 @@
           ]
         },
         "scrollWidth": 1440,
-        "scrollHeight": 6373,
+        "scrollHeight": 6553,
         "brokenImages": [],
         "headerStyle": {
           "color": "rgb(50, 50, 50)",
           "font": "18px / 27px Manrope, system-ui, sans-serif",
           "href": "/cortexx/#work"
         },
-        "headerHash": "a754b5206d62797fcadadcead8ca55c11182bec2dd0c05e0a0d4fe6c58bd5545",
-        "footerHash": "4caa63638361b688f1656cf4fd501226a9baf2ffb45733fba2466a921fec6c3e",
+        "headerHash": "09ee6b4b898201bd03f16e4829baeebecb1bd0e93a2ad7aeb6b1f22c3dc4e09b",
+        "footerHash": "0c19b62644f61f0c2a459a72fe76f0e69d29f19e4dcf806d40f6fa3592a65931",
         "headerMatchesHome": false,
         "footerMatchesHome": false
       }

@@ -1,14 +1,14 @@
 {
-  "generatedAt": "2026-10-24T15:51:59.414Z",
+  "generatedAt": "2026-10-28T06:47:07.558Z",
   "results": [
     {
       "width": 390,
       "height": 844,
       "reduced": false,
       "baseline": true,
-      "gestures": 130,
-      "negative": 6,
-      "worstDelta": -175,
+      "gestures": 99,
+      "negative": 0,
+      "worstDelta": 0,
       "activations": [
         "web-development",
         "software",
@@ -16,9 +16,10 @@
         "ui-ux-design"
       ],
       "documentHeights": [
-        5823,
-        6077
+        5849
       ],
+      "maxActiveCount": 1,
+      "imagesLoaded": true,
       "scrollCalls": 0,
       "screenshots": [],
       "errors": []
@@ -28,7 +29,7 @@
       "height": 780,
       "reduced": false,
       "baseline": false,
-      "gestures": 169,
+      "gestures": 98,
       "negative": 0,
       "worstDelta": 0,
       "activations": [
@@ -38,8 +39,10 @@
         "ui-ux-design"
       ],
       "documentHeights": [
-        6781
+        5804
       ],
+      "maxActiveCount": 1,
+      "imagesLoaded": true,
       "scrollCalls": 0,
       "screenshots": [],
       "errors": []
@@ -49,7 +52,7 @@
       "height": 844,
       "reduced": false,
       "baseline": false,
-      "gestures": 177,
+      "gestures": 99,
       "negative": 0,
       "worstDelta": 0,
       "activations": [
@@ -59,11 +62,12 @@
         "ui-ux-design"
       ],
       "documentHeights": [
-        6841
+        5849
       ],
+      "maxActiveCount": 1,
+      "imagesLoaded": true,
       "scrollCalls": 0,
       "screenshots": [
-        "web-development",
         "software",
         "ai-automation",
         "ui-ux-design"
@@ -75,7 +79,7 @@
       "height": 932,
       "reduced": false,
       "baseline": false,
-      "gestures": 184,
+      "gestures": 105,
       "negative": 0,
       "worstDelta": 0,
       "activations": [
@@ -85,8 +89,10 @@
         "ui-ux-design"
       ],
       "documentHeights": [
-        6965
+        5943
       ],
+      "maxActiveCount": 1,
+      "imagesLoaded": true,
       "scrollCalls": 0,
       "screenshots": [],
       "errors": []
@@ -96,7 +102,7 @@
       "height": 780,
       "reduced": true,
       "baseline": false,
-      "gestures": 169,
+      "gestures": 98,
       "negative": 0,
       "worstDelta": 0,
       "activations": [
@@ -106,8 +112,10 @@
         "ui-ux-design"
       ],
       "documentHeights": [
-        6781
+        5804
       ],
+      "maxActiveCount": 1,
+      "imagesLoaded": true,
       "scrollCalls": 0,
       "screenshots": [],
       "errors": []
@@ -117,7 +125,7 @@
       "height": 844,
       "reduced": true,
       "baseline": false,
-      "gestures": 177,
+      "gestures": 99,
       "negative": 0,
       "worstDelta": 0,
       "activations": [
@@ -127,8 +135,10 @@
         "ui-ux-design"
       ],
       "documentHeights": [
-        6841
+        5849
       ],
+      "maxActiveCount": 1,
+      "imagesLoaded": true,
       "scrollCalls": 0,
       "screenshots": [],
       "errors": []
@@ -138,7 +148,7 @@
       "height": 932,
       "reduced": true,
       "baseline": false,
-      "gestures": 184,
+      "gestures": 105,
       "negative": 0,
       "worstDelta": 0,
       "activations": [
@@ -148,8 +158,10 @@
         "ui-ux-design"
       ],
       "documentHeights": [
-        6965
+        5943
       ],
+      "maxActiveCount": 1,
+      "imagesLoaded": true,
       "scrollCalls": 0,
       "screenshots": [],
       "errors": []
@@ -182,7 +194,7 @@
         "overflow": 0,
         "arrow": "rgb(232, 239, 255)"
       },
-      "hoverArrow": "rgb(183, 196, 244)",
+      "hoverArrow": "rgb(184, 196, 244)",
       "errors": []
     },
     {

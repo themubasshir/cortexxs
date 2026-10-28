@@ -1,5 +1,7 @@
 // Local browser regression checks. Never sends a valid newsletter submission.
-const { chromium } = require('playwright');
+let chromium;
+try { ({ chromium } = require('playwright')); }
+catch { ({ chromium } = require(process.env.CORTEXX_PLAYWRIGHT_MODULE || 'C:/Users/Cyb3r/AppData/Local/Temp/marsai/node_modules/playwright-core')); }
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -18,12 +20,12 @@ const slugs = ['web-development', 'software', 'ai-automation', 'ui-ux-design'];
     const routes = [];
     for (const slug of slugs) {
       await page.goto(base, { waitUntil: 'networkidle' });
-      const link = page.locator(`[data-service="${slug}"]`);
+      const link = page.locator(`.mobile-services [data-service="${slug}"]`);
       const before = await link.evaluate(element => ({
         name: element.innerText.trim(),
         href: element.getAttribute('href'),
-        image: element.querySelector('img').getAttribute('src'),
-        decorative: element.querySelector('.service-preview').getAttribute('aria-hidden'),
+        image: document.querySelector(`[data-service-preview="${element.dataset.service}"]`).getAttribute('src'),
+        decorative: document.querySelector('.mobile-services .service-preview').getAttribute('aria-hidden'),
       }));
       await link.focus();
       const focusable = await link.evaluate(element => document.activeElement === element);

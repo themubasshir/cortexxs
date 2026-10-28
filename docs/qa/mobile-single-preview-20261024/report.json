@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T16:51:49.495Z",
+  "generatedAt": "2026-10-28T06:50:09.549Z",
   "results": [
     {
       "width": 360,
@@ -256,19 +256,19 @@
   "routes": [
     {
       "slug": "web-development",
-      "destination": "/services/web-development"
+      "destination": "/cortexx/services/web-development"
     },
     {
       "slug": "software",
-      "destination": "/services/software"
+      "destination": "/cortexx/services/software"
     },
     {
       "slug": "ai-automation",
-      "destination": "/services/ai-automation"
+      "destination": "/cortexx/services/ai-automation"
     },
     {
       "slug": "ui-ux-design",
-      "destination": "/services/ui-ux-design"
+      "destination": "/cortexx/services/ui-ux-design"
     }
   ],
   "desktops": [

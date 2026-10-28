@@ -1,6 +1,8 @@
 // Run with NODE_PATH pointing to an installed Playwright package.
 // Uses the local site only; it never submits a valid newsletter address.
-const { chromium } = require('playwright');
+let chromium;
+try { ({ chromium } = require('playwright')); }
+catch { ({ chromium } = require(process.env.CORTEXX_PLAYWRIGHT_MODULE || 'C:/Users/Cyb3r/AppData/Local/Temp/marsai/node_modules/playwright-core')); }
 const { execFileSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
@@ -18,13 +20,13 @@ const measure = () => ({
   header: Math.round(document.querySelector('#header').getBoundingClientRect().height),
   listTop: Math.round(document.querySelector('[data-services]').getBoundingClientRect().top),
   listBottom: Math.round(document.querySelector('[data-services]').getBoundingClientRect().bottom),
-  active: [...document.querySelectorAll('[data-service].is-active')].map(row => row.dataset.service),
-  rows: [...document.querySelectorAll('[data-service]')].map(row => ({
+  active: [...document.querySelectorAll('[data-services] [data-service].is-active')].map(row => row.dataset.service),
+  rows: [...document.querySelectorAll('[data-services] [data-service]')].map(row => ({
     slug: row.dataset.service,
     top: Math.round(row.getBoundingClientRect().top),
     height: Math.round(row.getBoundingClientRect().height),
-    preview: Math.round(row.querySelector('.service-preview').getBoundingClientRect().height),
-    imageLoaded: row.querySelector('img').naturalWidth > 0,
+    preview: Math.round(document.querySelector('[data-services] .service-preview').getBoundingClientRect().height),
+    imageLoaded: document.querySelector('[data-service-preview="' + row.dataset.service + '"]').naturalWidth > 0,
   })),
   scrollCalls: window.__qaScrollCalls.length,
 });

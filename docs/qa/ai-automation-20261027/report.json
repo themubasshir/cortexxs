@@ -8,13 +8,13 @@
     "artwork": 1,
     "stylesheet": "/cortexx/assets/css/ai-automation.css?v=1",
     "script": "/cortexx/assets/js/ai-automation.js?v=1",
-    "initiallyDeferredImages": 14,
-    "heightInitial": 6373,
+    "initiallyDeferredImages": 16,
+    "heightInitial": 6553,
     "animationInitial": "ai-workflow is-playing",
     "animationMid": "ai-workflow is-playing",
-    "heightMid": 6373,
+    "heightMid": 6553,
     "animationSettled": "ai-workflow is-settled",
-    "heightSettled": 6373,
+    "heightSettled": 6553,
     "heroGeometry": {
       "hero": {
         "x": 0,
@@ -24,26 +24,26 @@
       },
       "heading": {
         "x": 100,
-        "y": 340,
+        "y": 344,
         "width": 500,
         "height": 198
       },
       "workflow": {
-        "x": 723,
-        "y": 196,
-        "width": 617,
-        "height": 647
+        "x": 708,
+        "y": 142,
+        "width": 632,
+        "height": 702
       },
       "buttons": [
         {
           "x": 100,
-          "y": 698.125,
+          "y": 701.75,
           "width": 181.609375,
           "height": 50
         },
         {
           "x": 293.609375,
-          "y": 698.125,
+          "y": 701.75,
           "width": 163.015625,
           "height": 50
         }
@@ -66,28 +66,12 @@
     "reducedMotion": {
       "media": true,
       "workflowClass": "ai-workflow",
-      "cards": [
-        {
-          "opacity": "1",
-          "visibility": "visible"
-        },
-        {
-          "opacity": "1",
-          "visibility": "visible"
-        },
-        {
-          "opacity": "1",
-          "visibility": "visible"
-        },
-        {
-          "opacity": "1",
-          "visibility": "visible"
-        },
-        {
-          "opacity": "1",
-          "visibility": "visible"
-        }
-      ]
+      "artwork": {
+        "complete": true,
+        "naturalWidth": 632,
+        "opacity": "1",
+        "visibility": "visible"
+      }
     },
     "menuOpened": true,
     "menuClosed": true,
@@ -97,47 +81,47 @@
     "360": {
       "viewport": 360,
       "scrollWidth": 360,
-      "scrollHeight": 9508,
+      "scrollHeight": 8804,
       "h1Size": "42px",
       "h1Rect": {
         "x": 16,
         "y": 172,
         "width": 328,
-        "height": 141.09375,
+        "height": 188.125,
         "top": 172,
         "right": 344,
-        "bottom": 313.09375,
+        "bottom": 360.125,
         "left": 16
       },
       "artworkRect": {
         "x": 16,
-        "y": 626.65625,
+        "y": 603.6875,
         "width": 328,
-        "height": 343.9375,
-        "top": 626.65625,
+        "height": 364.328125,
+        "top": 603.6875,
         "right": 344,
-        "bottom": 970.59375,
+        "bottom": 968.015625,
         "left": 16
       },
       "ctaRects": [
         {
           "x": 16,
-          "y": 470.65625,
+          "y": 517.6875,
           "width": 137.65625,
           "height": 46,
-          "top": 470.65625,
+          "top": 517.6875,
           "right": 153.65625,
-          "bottom": 516.65625,
+          "bottom": 563.6875,
           "left": 16
         },
         {
           "x": 161.65625,
-          "y": 470.65625,
+          "y": 517.6875,
           "width": 121.640625,
           "height": 46,
-          "top": 470.65625,
+          "top": 517.6875,
           "right": 283.296875,
-          "bottom": 516.65625,
+          "bottom": 563.6875,
           "left": 161.65625
         }
       ],
@@ -153,7 +137,7 @@
     "390": {
       "viewport": 390,
       "scrollWidth": 390,
-      "scrollHeight": 9362,
+      "scrollHeight": 8673,
       "h1Size": "42px",
       "h1Rect": {
         "x": 16,
@@ -167,12 +151,12 @@
       },
       "artworkRect": {
         "x": 16,
-        "y": 600.265625,
+        "y": 530.265625,
         "width": 358,
-        "height": 375.40625,
-        "top": 600.265625,
+        "height": 397.640625,
+        "top": 530.265625,
         "right": 374,
-        "bottom": 975.671875,
+        "bottom": 927.90625,
         "left": 16
       },
       "ctaRects": [
@@ -209,7 +193,7 @@
     "430": {
       "viewport": 430,
       "scrollWidth": 430,
-      "scrollHeight": 9179,
+      "scrollHeight": 8669,
       "h1Size": "42px",
       "h1Rect": {
         "x": 16,
@@ -223,12 +207,12 @@
       },
       "artworkRect": {
         "x": 16,
-        "y": 600.265625,
+        "y": 530.265625,
         "width": 398,
-        "height": 417.34375,
-        "top": 600.265625,
+        "height": 442.078125,
+        "top": 530.265625,
         "right": 414,
-        "bottom": 1017.609375,
+        "bottom": 972.34375,
         "left": 16
       },
       "ctaRects": [
@@ -265,7 +249,7 @@
     "768": {
       "viewport": 768,
       "scrollWidth": 768,
-      "scrollHeight": 8957,
+      "scrollHeight": 8280,
       "h1Size": "60px",
       "h1Rect": {
         "x": 74,
@@ -279,12 +263,12 @@
       },
       "artworkRect": {
         "x": 75.5,
-        "y": 685.3125,
+        "y": 609.3125,
         "width": 617,
-        "height": 647,
-        "top": 685.3125,
+        "height": 685.328125,
+        "top": 609.3125,
         "right": 692.5,
-        "bottom": 1332.3125,
+        "bottom": 1294.640625,
         "left": 75.5
       },
       "ctaRects": [
@@ -321,47 +305,47 @@
     "1280": {
       "viewport": 1280,
       "scrollWidth": 1280,
-      "scrollHeight": 6373,
+      "scrollHeight": 6553,
       "h1Size": "60px",
       "h1Rect": {
         "x": 24,
-        "y": 339.875,
+        "y": 343.5,
         "width": 500,
         "height": 198,
-        "top": 339.875,
+        "top": 343.5,
         "right": 524,
-        "bottom": 537.875,
+        "bottom": 541.5,
         "left": 24
       },
       "artworkRect": {
-        "x": 639,
-        "y": 195.5,
-        "width": 617,
-        "height": 647,
-        "top": 195.5,
-        "right": 1256,
-        "bottom": 842.5,
-        "left": 639
+        "x": 632,
+        "y": 142,
+        "width": 632,
+        "height": 702,
+        "top": 142,
+        "right": 1264,
+        "bottom": 844,
+        "left": 632
       },
       "ctaRects": [
         {
           "x": 24,
-          "y": 698.125,
+          "y": 701.75,
           "width": 181.609375,
           "height": 50,
-          "top": 698.125,
+          "top": 701.75,
           "right": 205.609375,
-          "bottom": 748.125,
+          "bottom": 751.75,
           "left": 24
         },
         {
           "x": 217.609375,
-          "y": 698.125,
+          "y": 701.75,
           "width": 163.015625,
           "height": 50,
-          "top": 698.125,
+          "top": 701.75,
           "right": 380.625,
-          "bottom": 748.125,
+          "bottom": 751.75,
           "left": 217.609375
         }
       ],
@@ -377,47 +361,47 @@
     "1440": {
       "viewport": 1440,
       "scrollWidth": 1440,
-      "scrollHeight": 6373,
+      "scrollHeight": 6553,
       "h1Size": "60px",
       "h1Rect": {
         "x": 100,
-        "y": 339.875,
+        "y": 343.5,
         "width": 500,
         "height": 198,
-        "top": 339.875,
+        "top": 343.5,
         "right": 600,
-        "bottom": 537.875,
+        "bottom": 541.5,
         "left": 100
       },
       "artworkRect": {
-        "x": 723,
-        "y": 195.5,
-        "width": 617,
-        "height": 647,
-        "top": 195.5,
+        "x": 708,
+        "y": 142,
+        "width": 632,
+        "height": 702,
+        "top": 142,
         "right": 1340,
-        "bottom": 842.5,
-        "left": 723
+        "bottom": 844,
+        "left": 708
       },
       "ctaRects": [
         {
           "x": 100,
-          "y": 698.125,
+          "y": 701.75,
           "width": 181.609375,
           "height": 50,
-          "top": 698.125,
+          "top": 701.75,
           "right": 281.609375,
-          "bottom": 748.125,
+          "bottom": 751.75,
           "left": 100
         },
         {
           "x": 293.609375,
-          "y": 698.125,
+          "y": 701.75,
           "width": 163.015625,
           "height": 50,
-          "top": 698.125,
+          "top": 701.75,
           "right": 456.625,
-          "bottom": 748.125,
+          "bottom": 751.75,
           "left": 293.609375
         }
       ],

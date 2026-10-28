@@ -1,0 +1,44 @@
+[
+  {
+    "name": "hero",
+    "y": 0,
+    "height": 900,
+    "id": "1027:111"
+  },
+  {
+    "name": "challenges",
+    "y": 900,
+    "height": 752,
+    "id": "1027:890"
+  },
+  {
+    "name": "capabilities",
+    "y": 1652,
+    "height": 1331,
+    "id": "1027:631"
+  },
+  {
+    "name": "process",
+    "y": 2983,
+    "height": 898,
+    "id": "1027:1005"
+  },
+  {
+    "name": "case",
+    "y": 3881,
+    "height": 799,
+    "id": "1027:858"
+  },
+  {
+    "name": "testimonials",
+    "y": 4680,
+    "height": 941,
+    "id": "1027:437"
+  },
+  {
+    "name": "footer",
+    "y": 5621,
+    "height": 752,
+    "id": "1027:567"
+  }
+]

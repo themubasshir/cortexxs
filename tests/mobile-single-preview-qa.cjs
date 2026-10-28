@@ -1,5 +1,7 @@
 // Local visual and scroll regression test. Never submits newsletter data.
-const { chromium } = require('playwright');
+let chromium;
+try { ({ chromium } = require('playwright')); }
+catch { ({ chromium } = require(process.env.CORTEXX_PLAYWRIGHT_MODULE || 'C:/Users/Cyb3r/AppData/Local/Temp/marsai/node_modules/playwright-core')); }
 const fs = require('node:fs');
 const path = require('node:path');
 

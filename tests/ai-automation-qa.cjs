@@ -98,7 +98,7 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     mobile.on('pageerror', error => result.errors.push({ route: 'ai reduced', message: error.message }));
     await mobile.goto(base + '/services/ai-automation', { waitUntil: 'domcontentloaded' });
     await mobile.waitForTimeout(150);
-    result.ai.reducedMotion = await mobile.evaluate(() => ({ media: matchMedia('(prefers-reduced-motion: reduce)').matches, workflowClass: document.querySelector('.ai-workflow').className, cards: [...document.querySelectorAll('.ai-flow-card')].map(x => ({ opacity: getComputedStyle(x).opacity, visibility: getComputedStyle(x).visibility })) }));
+    result.ai.reducedMotion = await mobile.evaluate(() => ({ media: matchMedia('(prefers-reduced-motion: reduce)').matches, workflowClass: document.querySelector('.ai-workflow').className, artwork: (() => { const image = document.querySelector('.ai-figma-workflow'); return { complete: image.complete, naturalWidth: image.naturalWidth, opacity: getComputedStyle(image).opacity, visibility: getComputedStyle(image).visibility }; })() }));
     await mobile.screenshot({ path: path.join(output, 'hero-reduced-390.png') });
     await mobile.locator('#menuToggle').click();
     result.ai.menuOpened = await mobile.locator('#mobileNav').evaluate(el => el.classList.contains('open'));
@@ -166,7 +166,7 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     assert.equal(result.ai.pausedClass, 'ai-workflow');
     assert.match(result.ai.resumedClass, /is-settled/);
     assert.equal(result.ai.offscreenClass, 'ai-workflow');
-    assert.equal(result.ai.reducedMotion.cards.every(card => card.opacity === '1' && card.visibility === 'visible'), true);
+    assert.equal(result.ai.reducedMotion.artwork.complete && result.ai.reducedMotion.artwork.naturalWidth > 0 && result.ai.reducedMotion.artwork.opacity === '1' && result.ai.reducedMotion.artwork.visibility === 'visible', true);
     assert.equal(result.ai.menuOpened && result.ai.menuClosed && result.ai.testimonialAdvanced, true);
     assert.equal(result.ai.footerRevealed, true);
     assert.equal(result.ai.newsletterMessage, 'Please enter a valid email.');
