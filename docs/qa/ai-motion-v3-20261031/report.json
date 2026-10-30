@@ -1,0 +1,588 @@
+{
+  "route": "http://localhost/cortexx/services/ai-automation",
+  "widths": {
+    "360": {
+      "errors": [],
+      "heightStart": 9032,
+      "heightEnd": 9032,
+      "heightsSeen": [
+        9032
+      ],
+      "backward": 0,
+      "hidden": 0,
+      "sections": 0,
+      "overflow": 0,
+      "init": "ready",
+      "caseImage": {
+        "fit": "cover",
+        "clip": "inset(0px)"
+      },
+      "cards": [
+        {
+          "name": "Workflow Automation",
+          "height": 315.5,
+          "padBottom": 20,
+          "scroll": 314,
+          "client": 314,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "AI for Sales & Support",
+          "height": 315.5,
+          "padBottom": 20,
+          "scroll": 314,
+          "client": 314,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Connected Business Tools",
+          "height": 457.5,
+          "padBottom": 20,
+          "scroll": 455,
+          "client": 455,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Company Search Reporting",
+          "height": 434.2,
+          "padBottom": 20,
+          "scroll": 432,
+          "client": 432,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Your AI Featured Products",
+          "height": 457.5,
+          "padBottom": 20,
+          "scroll": 455,
+          "client": 455,
+          "svgs": 1,
+          "imgs": 0
+        }
+      ]
+    },
+    "390": {
+      "errors": [],
+      "heightStart": 8883,
+      "heightEnd": 8883,
+      "heightsSeen": [
+        8883
+      ],
+      "backward": 0,
+      "hidden": 0,
+      "sections": 0,
+      "overflow": 0,
+      "init": "ready",
+      "caseImage": {
+        "fit": "cover",
+        "clip": "inset(0px)"
+      },
+      "cards": [
+        {
+          "name": "Workflow Automation",
+          "height": 330.9,
+          "padBottom": 20,
+          "scroll": 329,
+          "client": 329,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "AI for Sales & Support",
+          "height": 330.9,
+          "padBottom": 20,
+          "scroll": 329,
+          "client": 329,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Connected Business Tools",
+          "height": 452.4,
+          "padBottom": 20,
+          "scroll": 450,
+          "client": 450,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Company Search Reporting",
+          "height": 429.1,
+          "padBottom": 20,
+          "scroll": 427,
+          "client": 427,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Your AI Featured Products",
+          "height": 429.1,
+          "padBottom": 20,
+          "scroll": 427,
+          "client": 427,
+          "svgs": 1,
+          "imgs": 0
+        }
+      ]
+    },
+    "430": {
+      "errors": [],
+      "heightStart": 8771,
+      "heightEnd": 8771,
+      "heightsSeen": [
+        8771
+      ],
+      "backward": 0,
+      "hidden": 0,
+      "sections": 0,
+      "overflow": 0,
+      "init": "ready",
+      "caseImage": {
+        "fit": "cover",
+        "clip": "inset(0px)"
+      },
+      "cards": [
+        {
+          "name": "Workflow Automation",
+          "height": 351.4,
+          "padBottom": 20,
+          "scroll": 349,
+          "client": 349,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "AI for Sales & Support",
+          "height": 351.4,
+          "padBottom": 20,
+          "scroll": 349,
+          "client": 349,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Connected Business Tools",
+          "height": 460.6,
+          "padBottom": 20,
+          "scroll": 459,
+          "client": 459,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Company Search Reporting",
+          "height": 460.6,
+          "padBottom": 20,
+          "scroll": 459,
+          "client": 459,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Your AI Featured Products",
+          "height": 460.6,
+          "padBottom": 20,
+          "scroll": 459,
+          "client": 459,
+          "svgs": 1,
+          "imgs": 0
+        }
+      ]
+    },
+    "768": {
+      "errors": [],
+      "heightStart": 8330,
+      "heightEnd": 8330,
+      "heightsSeen": [
+        8330
+      ],
+      "backward": 0,
+      "hidden": 0,
+      "sections": 0,
+      "overflow": 0,
+      "init": "ready",
+      "caseImage": {
+        "fit": "cover",
+        "clip": "inset(0px)"
+      },
+      "cards": [
+        {
+          "name": "Workflow Automation",
+          "height": 324.5,
+          "padBottom": 20,
+          "scroll": 322,
+          "client": 322,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "AI for Sales & Support",
+          "height": 324.5,
+          "padBottom": 20,
+          "scroll": 322,
+          "client": 322,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Connected Business Tools",
+          "height": 435.4,
+          "padBottom": 20,
+          "scroll": 433,
+          "client": 433,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Company Search Reporting",
+          "height": 435.4,
+          "padBottom": 20,
+          "scroll": 433,
+          "client": 433,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Your AI Featured Products",
+          "height": 435.4,
+          "padBottom": 20,
+          "scroll": 433,
+          "client": 433,
+          "svgs": 1,
+          "imgs": 0
+        }
+      ]
+    },
+    "1280": {
+      "errors": [],
+      "heightStart": 6597,
+      "heightEnd": 6597,
+      "heightsSeen": [
+        6597
+      ],
+      "backward": 0,
+      "hidden": 0,
+      "sections": 0,
+      "overflow": 0,
+      "init": "ready",
+      "caseImage": {
+        "fit": "cover",
+        "clip": "inset(0px)"
+      },
+      "cards": [
+        {
+          "name": "Workflow Automation",
+          "height": 459,
+          "padBottom": 38.1,
+          "scroll": 457,
+          "client": 457,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "AI for Sales & Support",
+          "height": 459,
+          "padBottom": 38.1,
+          "scroll": 457,
+          "client": 457,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Connected Business Tools",
+          "height": 527,
+          "padBottom": 26.7,
+          "scroll": 525,
+          "client": 525,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Company Search Reporting",
+          "height": 527,
+          "padBottom": 49.9,
+          "scroll": 525,
+          "client": 525,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Your AI Featured Products",
+          "height": 527,
+          "padBottom": 49.9,
+          "scroll": 525,
+          "client": 525,
+          "svgs": 1,
+          "imgs": 0
+        }
+      ]
+    },
+    "1440": {
+      "errors": [],
+      "heightStart": 6597,
+      "heightEnd": 6597,
+      "heightsSeen": [
+        6597
+      ],
+      "backward": 0,
+      "hidden": 0,
+      "sections": 0,
+      "overflow": 0,
+      "init": "ready",
+      "caseImage": {
+        "fit": "cover",
+        "clip": "inset(0px)"
+      },
+      "cards": [
+        {
+          "name": "Workflow Automation",
+          "height": 459,
+          "padBottom": 36,
+          "scroll": 457,
+          "client": 457,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "AI for Sales & Support",
+          "height": 459,
+          "padBottom": 36,
+          "scroll": 457,
+          "client": 457,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Connected Business Tools",
+          "height": 527,
+          "padBottom": 24.6,
+          "scroll": 525,
+          "client": 525,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Company Search Reporting",
+          "height": 527,
+          "padBottom": 47.8,
+          "scroll": 525,
+          "client": 525,
+          "svgs": 1,
+          "imgs": 0
+        },
+        {
+          "name": "Your AI Featured Products",
+          "height": 527,
+          "padBottom": 47.8,
+          "scroll": 525,
+          "client": 525,
+          "svgs": 1,
+          "imgs": 0
+        }
+      ]
+    }
+  },
+  "illustrations": {
+    "workflow-1440": {
+      "animationCount": 9,
+      "diffsVsRestPct": [
+        0.12,
+        0.44,
+        0.24
+      ],
+      "liveDiffPct": 0.18,
+      "concurrentlyAnimating": 1
+    },
+    "sales-1440": {
+      "animationCount": 13,
+      "diffsVsRestPct": [
+        0.02,
+        0.88,
+        0.01
+      ],
+      "liveDiffPct": 0.78,
+      "concurrentlyAnimating": 1
+    },
+    "connected-1440": {
+      "animationCount": 12,
+      "diffsVsRestPct": [
+        0.04,
+        0.5,
+        1.15
+      ],
+      "liveDiffPct": 0.57,
+      "concurrentlyAnimating": 1
+    },
+    "search-1440": {
+      "animationCount": 9,
+      "diffsVsRestPct": [
+        0.22,
+        0.22,
+        0.37
+      ],
+      "liveDiffPct": 0.27,
+      "concurrentlyAnimating": 1
+    },
+    "product-1440": {
+      "animationCount": 8,
+      "diffsVsRestPct": [
+        0.21,
+        1.28,
+        1.12
+      ],
+      "liveDiffPct": 1.39,
+      "concurrentlyAnimating": 1
+    },
+    "offscreen-1440": {
+      "animating": 0,
+      "running": 0
+    },
+    "workflow-390": {
+      "animationCount": 9,
+      "diffsVsRestPct": [
+        0.13,
+        0.62,
+        0.43
+      ],
+      "liveDiffPct": 0.15,
+      "concurrentlyAnimating": 1
+    },
+    "sales-390": {
+      "animationCount": 13,
+      "diffsVsRestPct": [
+        0.02,
+        1.08,
+        0.02
+      ],
+      "liveDiffPct": 1.22,
+      "concurrentlyAnimating": 1
+    },
+    "connected-390": {
+      "animationCount": 12,
+      "diffsVsRestPct": [
+        0.04,
+        0.46,
+        1.31
+      ],
+      "liveDiffPct": 0.59,
+      "concurrentlyAnimating": 1
+    },
+    "search-390": {
+      "animationCount": 9,
+      "diffsVsRestPct": [
+        0.29,
+        0.24,
+        0.38
+      ],
+      "liveDiffPct": 0.26,
+      "concurrentlyAnimating": 1
+    },
+    "product-390": {
+      "animationCount": 8,
+      "diffsVsRestPct": [
+        0.21,
+        1.14,
+        1.05
+      ],
+      "liveDiffPct": 1.44,
+      "concurrentlyAnimating": 1
+    },
+    "offscreen-390": {
+      "animating": 0,
+      "running": 0
+    }
+  },
+  "sections": {
+    "390": {
+      "entranceDiffPct": {
+        "challengesOpacity": {
+          "count": 5,
+          "min": 0,
+          "last": 0.8
+        },
+        "challenges": 9.07,
+        "caseOpacity": {
+          "count": 8,
+          "min": 0.25,
+          "last": 0.25
+        },
+        "case": 7.41,
+        "testimonialsOpacity": {
+          "count": 10,
+          "min": 0.1,
+          "last": 0.1
+        },
+        "testimonials": 0.74,
+        "recognitionOpacity": {
+          "count": 6,
+          "min": 0,
+          "last": 0
+        },
+        "recognition": 0.45
+      },
+      "carousel": {
+        "first": "Alex Carter",
+        "afterNext": "Carlos Rivera",
+        "afterPrev": "Alex Carter",
+        "afterKey": "Carlos Rivera",
+        "articles": 3
+      }
+    },
+    "1440": {
+      "entranceDiffPct": {
+        "challengesOpacity": {
+          "count": 5,
+          "min": 0,
+          "last": 1
+        },
+        "challenges": 0,
+        "caseOpacity": {
+          "count": 8,
+          "min": 0.25,
+          "last": 0.36
+        },
+        "case": 1.63,
+        "testimonialsOpacity": {
+          "count": 10,
+          "min": 0.1,
+          "last": 0.24
+        },
+        "testimonials": 0.35,
+        "recognitionOpacity": {
+          "count": 6,
+          "min": 0,
+          "last": 0.19
+        },
+        "recognition": 0.18
+      },
+      "carousel": {
+        "first": "Alex Carter",
+        "afterNext": "Carlos Rivera",
+        "afterPrev": "Alex Carter",
+        "afterKey": "Carlos Rivera",
+        "articles": 3
+      }
+    }
+  },
+  "reduced": {
+    "390": {
+      "transparent": 0,
+      "artRunning": 0,
+      "animating": 0
+    },
+    "1440": {
+      "transparent": 0,
+      "artRunning": 0,
+      "animating": 0
+    }
+  },
+  "failures": [],
+  "noJs": {
+    "imgs": 5,
+    "hidden": 0
+  }
+}

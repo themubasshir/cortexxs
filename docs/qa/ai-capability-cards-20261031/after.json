@@ -1,0 +1,957 @@
+{
+  "label": "after",
+  "base": "http://localhost/cortexx",
+  "widths": {
+    "360": {
+      "errors": [],
+      "during": [
+        {
+          "name": "Workflow Automation",
+          "clippedBy": 0
+        },
+        {
+          "name": "AI for Sales & Support",
+          "clippedBy": 0
+        },
+        {
+          "name": "Connected Business Tools",
+          "clippedBy": 0
+        },
+        {
+          "name": "Company Search Reporting",
+          "clippedBy": 0
+        },
+        {
+          "name": "Your AI Featured Products",
+          "clippedBy": 0
+        }
+      ],
+      "cards": [
+        {
+          "name": "Workflow Automation",
+          "height": 315.5,
+          "cssHeight": "315.547px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 167,
+          "copyHeight": 147,
+          "copyScroll": 147,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 314,
+          "clientHeight": 314,
+          "descBottom": 294.5,
+          "cardInnerBottom": 314.5,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 2647
+        },
+        {
+          "name": "AI for Sales & Support",
+          "height": 315.5,
+          "cssHeight": "315.547px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 167,
+          "copyHeight": 147,
+          "copyScroll": 147,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 314,
+          "clientHeight": 314,
+          "descBottom": 294.5,
+          "cardInnerBottom": 314.5,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 2967
+        },
+        {
+          "name": "Connected Business Tools",
+          "height": 457.5,
+          "cssHeight": "457.469px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 257,
+          "copyHeight": 199,
+          "copyScroll": 199,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 455,
+          "clientHeight": 455,
+          "descBottom": 436.5,
+          "cardInnerBottom": 456.5,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 3302
+        },
+        {
+          "name": "Company Search Reporting",
+          "height": 434.2,
+          "cssHeight": "434.219px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 257,
+          "copyHeight": 175,
+          "copyScroll": 175,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 432,
+          "clientHeight": 432,
+          "descBottom": 413.2,
+          "cardInnerBottom": 433.2,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 3780
+        },
+        {
+          "name": "Your AI Featured Products",
+          "height": 457.5,
+          "cssHeight": "457.469px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 257,
+          "copyHeight": 199,
+          "copyScroll": 199,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 455,
+          "clientHeight": 455,
+          "descBottom": 436.5,
+          "cardInnerBottom": 456.5,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 4250
+        }
+      ],
+      "rows": [
+        {
+          "top": 2647,
+          "heights": [
+            315.5
+          ]
+        },
+        {
+          "top": 2967,
+          "heights": [
+            315.5
+          ]
+        },
+        {
+          "top": 3302,
+          "heights": [
+            457.5
+          ]
+        },
+        {
+          "top": 3780,
+          "heights": [
+            434.2
+          ]
+        },
+        {
+          "top": 4250,
+          "heights": [
+            457.5
+          ]
+        }
+      ],
+      "docOverflow": 0
+    },
+    "390": {
+      "errors": [],
+      "during": [
+        {
+          "name": "Workflow Automation",
+          "clippedBy": 0
+        },
+        {
+          "name": "AI for Sales & Support",
+          "clippedBy": 0
+        },
+        {
+          "name": "Connected Business Tools",
+          "clippedBy": 0
+        },
+        {
+          "name": "Company Search Reporting",
+          "clippedBy": 0
+        },
+        {
+          "name": "Your AI Featured Products",
+          "clippedBy": 0
+        }
+      ],
+      "cards": [
+        {
+          "name": "Workflow Automation",
+          "height": 330.9,
+          "cssHeight": "330.922px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 182.4,
+          "copyHeight": 147,
+          "copyScroll": 147,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 329,
+          "clientHeight": 329,
+          "descBottom": 309.9,
+          "cardInnerBottom": 329.9,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 2539
+        },
+        {
+          "name": "AI for Sales & Support",
+          "height": 330.9,
+          "cssHeight": "330.922px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 182.4,
+          "copyHeight": 147,
+          "copyScroll": 147,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 329,
+          "clientHeight": 329,
+          "descBottom": 309.9,
+          "cardInnerBottom": 329.9,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 2874
+        },
+        {
+          "name": "Connected Business Tools",
+          "height": 452.4,
+          "cssHeight": "452.359px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 280.6,
+          "copyHeight": 170,
+          "copyScroll": 170,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 450,
+          "clientHeight": 450,
+          "descBottom": 431.4,
+          "cardInnerBottom": 451.4,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 3225
+        },
+        {
+          "name": "Company Search Reporting",
+          "height": 429.1,
+          "cssHeight": "429.109px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 280.6,
+          "copyHeight": 147,
+          "copyScroll": 147,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 427,
+          "clientHeight": 427,
+          "descBottom": 408.1,
+          "cardInnerBottom": 428.1,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 3697
+        },
+        {
+          "name": "Your AI Featured Products",
+          "height": 429.1,
+          "cssHeight": "429.109px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 280.6,
+          "copyHeight": 147,
+          "copyScroll": 147,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 427,
+          "clientHeight": 427,
+          "descBottom": 408.1,
+          "cardInnerBottom": 428.1,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 4162
+        }
+      ],
+      "rows": [
+        {
+          "top": 2539,
+          "heights": [
+            330.9
+          ]
+        },
+        {
+          "top": 2874,
+          "heights": [
+            330.9
+          ]
+        },
+        {
+          "top": 3225,
+          "heights": [
+            452.4
+          ]
+        },
+        {
+          "top": 3697,
+          "heights": [
+            429.1
+          ]
+        },
+        {
+          "top": 4162,
+          "heights": [
+            429.1
+          ]
+        }
+      ],
+      "docOverflow": 0
+    },
+    "430": {
+      "errors": [],
+      "during": [
+        {
+          "name": "Workflow Automation",
+          "clippedBy": 0
+        },
+        {
+          "name": "AI for Sales & Support",
+          "clippedBy": 0
+        },
+        {
+          "name": "Connected Business Tools",
+          "clippedBy": 0
+        },
+        {
+          "name": "Company Search Reporting",
+          "clippedBy": 0
+        },
+        {
+          "name": "Your AI Featured Products",
+          "clippedBy": 0
+        }
+      ],
+      "cards": [
+        {
+          "name": "Workflow Automation",
+          "height": 351.4,
+          "cssHeight": "351.422px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 202.9,
+          "copyHeight": 147,
+          "copyScroll": 147,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 349,
+          "clientHeight": 349,
+          "descBottom": 330.4,
+          "cardInnerBottom": 350.4,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 2446
+        },
+        {
+          "name": "AI for Sales & Support",
+          "height": 351.4,
+          "cssHeight": "351.422px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 202.9,
+          "copyHeight": 147,
+          "copyScroll": 147,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 349,
+          "clientHeight": 349,
+          "descBottom": 330.4,
+          "cardInnerBottom": 350.4,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 2801
+        },
+        {
+          "name": "Connected Business Tools",
+          "height": 460.6,
+          "cssHeight": "460.641px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 312.1,
+          "copyHeight": 147,
+          "copyScroll": 147,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 459,
+          "clientHeight": 459,
+          "descBottom": 439.6,
+          "cardInnerBottom": 459.6,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 3173
+        },
+        {
+          "name": "Company Search Reporting",
+          "height": 460.6,
+          "cssHeight": "460.641px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 312.1,
+          "copyHeight": 147,
+          "copyScroll": 147,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 459,
+          "clientHeight": 459,
+          "descBottom": 439.6,
+          "cardInnerBottom": 459.6,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 3653
+        },
+        {
+          "name": "Your AI Featured Products",
+          "height": 460.6,
+          "cssHeight": "460.641px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 312.1,
+          "copyHeight": 147,
+          "copyScroll": 147,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 459,
+          "clientHeight": 459,
+          "descBottom": 439.6,
+          "cardInnerBottom": 459.6,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 4150
+        }
+      ],
+      "rows": [
+        {
+          "top": 2446,
+          "heights": [
+            351.4
+          ]
+        },
+        {
+          "top": 2801,
+          "heights": [
+            351.4
+          ]
+        },
+        {
+          "top": 3173,
+          "heights": [
+            460.6
+          ]
+        },
+        {
+          "top": 3653,
+          "heights": [
+            460.6
+          ]
+        },
+        {
+          "top": 4150,
+          "heights": [
+            460.6
+          ]
+        }
+      ],
+      "docOverflow": 0
+    },
+    "768": {
+      "errors": [],
+      "during": [
+        {
+          "name": "Workflow Automation",
+          "clippedBy": 0
+        },
+        {
+          "name": "AI for Sales & Support",
+          "clippedBy": 0
+        },
+        {
+          "name": "Connected Business Tools",
+          "clippedBy": 0
+        },
+        {
+          "name": "Company Search Reporting",
+          "clippedBy": 0
+        },
+        {
+          "name": "Your AI Featured Products",
+          "clippedBy": 0
+        }
+      ],
+      "cards": [
+        {
+          "name": "Workflow Automation",
+          "height": 324.5,
+          "cssHeight": "324.453px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 152.7,
+          "copyHeight": 170,
+          "copyScroll": 170,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 322,
+          "clientHeight": 322,
+          "descBottom": 303.5,
+          "cardInnerBottom": 323.5,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 2762
+        },
+        {
+          "name": "AI for Sales & Support",
+          "height": 324.5,
+          "cssHeight": "324.453px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 152.7,
+          "copyHeight": 170,
+          "copyScroll": 170,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 322,
+          "clientHeight": 322,
+          "descBottom": 303.5,
+          "cardInnerBottom": 323.5,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 2762
+        },
+        {
+          "name": "Connected Business Tools",
+          "height": 435.4,
+          "cssHeight": "435.391px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 234.9,
+          "copyHeight": 199,
+          "copyScroll": 199,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 433,
+          "clientHeight": 433,
+          "descBottom": 414.4,
+          "cardInnerBottom": 434.4,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 3106
+        },
+        {
+          "name": "Company Search Reporting",
+          "height": 435.4,
+          "cssHeight": "435.391px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 234.9,
+          "copyHeight": 199,
+          "copyScroll": 199,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 433,
+          "clientHeight": 433,
+          "descBottom": 414.4,
+          "cardInnerBottom": 434.4,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 3106
+        },
+        {
+          "name": "Your AI Featured Products",
+          "height": 435.4,
+          "cssHeight": "435.391px",
+          "minHeight": "0px",
+          "overflow": "hidden",
+          "artHeight": 234.9,
+          "copyHeight": 199,
+          "copyScroll": 199,
+          "copyPadding": "20px",
+          "pLineHeight": "23.25px",
+          "pFontSize": "15px",
+          "scrollHeight": 433,
+          "clientHeight": 433,
+          "descBottom": 414.4,
+          "cardInnerBottom": 434.4,
+          "clippedBy": 0,
+          "padBottom": 20,
+          "artOverlapsText": false,
+          "top": 3561
+        }
+      ],
+      "rows": [
+        {
+          "top": 2762,
+          "heights": [
+            324.5,
+            324.5
+          ]
+        },
+        {
+          "top": 3106,
+          "heights": [
+            435.4,
+            435.4
+          ]
+        },
+        {
+          "top": 3561,
+          "heights": [
+            435.4
+          ]
+        }
+      ],
+      "docOverflow": 0
+    },
+    "1280": {
+      "errors": [],
+      "during": [
+        {
+          "name": "Workflow Automation",
+          "clippedBy": 0
+        },
+        {
+          "name": "AI for Sales & Support",
+          "clippedBy": 0
+        },
+        {
+          "name": "Connected Business Tools",
+          "clippedBy": 0
+        },
+        {
+          "name": "Company Search Reporting",
+          "clippedBy": 0
+        },
+        {
+          "name": "Your AI Featured Products",
+          "clippedBy": 0
+        }
+      ],
+      "cards": [
+        {
+          "name": "Workflow Automation",
+          "height": 459,
+          "cssHeight": "459px",
+          "minHeight": "459px",
+          "overflow": "hidden",
+          "artHeight": 306.9,
+          "copyHeight": 150,
+          "copyScroll": 150,
+          "copyPadding": "24px",
+          "pLineHeight": "23.2px",
+          "pFontSize": "16px",
+          "scrollHeight": 457,
+          "clientHeight": 457,
+          "descBottom": 419.9,
+          "cardInnerBottom": 458,
+          "clippedBy": 0,
+          "padBottom": 38.1,
+          "artOverlapsText": false,
+          "top": 1997
+        },
+        {
+          "name": "AI for Sales & Support",
+          "height": 459,
+          "cssHeight": "459px",
+          "minHeight": "459px",
+          "overflow": "hidden",
+          "artHeight": 306.9,
+          "copyHeight": 150,
+          "copyScroll": 150,
+          "copyPadding": "24px",
+          "pLineHeight": "23.2px",
+          "pFontSize": "16px",
+          "scrollHeight": 457,
+          "clientHeight": 457,
+          "descBottom": 419.9,
+          "cardInnerBottom": 458,
+          "clippedBy": 0,
+          "padBottom": 38.1,
+          "artOverlapsText": false,
+          "top": 1997
+        },
+        {
+          "name": "Connected Business Tools",
+          "height": 527,
+          "cssHeight": "527px",
+          "minHeight": "527px",
+          "overflow": "hidden",
+          "artHeight": 306.4,
+          "copyHeight": 219,
+          "copyScroll": 219,
+          "copyPadding": "24px",
+          "pLineHeight": "23.2px",
+          "pFontSize": "16px",
+          "scrollHeight": 525,
+          "clientHeight": 525,
+          "descBottom": 499.3,
+          "cardInnerBottom": 526,
+          "clippedBy": 0,
+          "padBottom": 26.7,
+          "artOverlapsText": false,
+          "top": 2486
+        },
+        {
+          "name": "Company Search Reporting",
+          "height": 527,
+          "cssHeight": "527px",
+          "minHeight": "527px",
+          "overflow": "hidden",
+          "artHeight": 306.4,
+          "copyHeight": 219,
+          "copyScroll": 219,
+          "copyPadding": "24px",
+          "pLineHeight": "23.2px",
+          "pFontSize": "16px",
+          "scrollHeight": 525,
+          "clientHeight": 525,
+          "descBottom": 476.1,
+          "cardInnerBottom": 526,
+          "clippedBy": 0,
+          "padBottom": 49.9,
+          "artOverlapsText": false,
+          "top": 2486
+        },
+        {
+          "name": "Your AI Featured Products",
+          "height": 527,
+          "cssHeight": "527px",
+          "minHeight": "527px",
+          "overflow": "hidden",
+          "artHeight": 306.4,
+          "copyHeight": 219,
+          "copyScroll": 219,
+          "copyPadding": "24px",
+          "pLineHeight": "23.2px",
+          "pFontSize": "16px",
+          "scrollHeight": 525,
+          "clientHeight": 525,
+          "descBottom": 476.1,
+          "cardInnerBottom": 526,
+          "clippedBy": 0,
+          "padBottom": 49.9,
+          "artOverlapsText": false,
+          "top": 2486
+        }
+      ],
+      "rows": [
+        {
+          "top": 1997,
+          "heights": [
+            459,
+            459
+          ]
+        },
+        {
+          "top": 2486,
+          "heights": [
+            527,
+            527,
+            527
+          ]
+        }
+      ],
+      "docOverflow": 0
+    },
+    "1440": {
+      "errors": [],
+      "during": [
+        {
+          "name": "Workflow Automation",
+          "clippedBy": 0
+        },
+        {
+          "name": "AI for Sales & Support",
+          "clippedBy": 0
+        },
+        {
+          "name": "Connected Business Tools",
+          "clippedBy": 0
+        },
+        {
+          "name": "Company Search Reporting",
+          "clippedBy": 0
+        },
+        {
+          "name": "Your AI Featured Products",
+          "clippedBy": 0
+        }
+      ],
+      "cards": [
+        {
+          "name": "Workflow Automation",
+          "height": 459,
+          "cssHeight": "459px",
+          "minHeight": "459px",
+          "overflow": "hidden",
+          "artHeight": 309,
+          "copyHeight": 148,
+          "copyScroll": 148,
+          "copyPadding": "24px",
+          "pLineHeight": "23.2px",
+          "pFontSize": "16px",
+          "scrollHeight": 457,
+          "clientHeight": 457,
+          "descBottom": 422,
+          "cardInnerBottom": 458,
+          "clippedBy": 0,
+          "padBottom": 36,
+          "artOverlapsText": false,
+          "top": 1997
+        },
+        {
+          "name": "AI for Sales & Support",
+          "height": 459,
+          "cssHeight": "459px",
+          "minHeight": "459px",
+          "overflow": "hidden",
+          "artHeight": 309,
+          "copyHeight": 148,
+          "copyScroll": 148,
+          "copyPadding": "24px",
+          "pLineHeight": "23.2px",
+          "pFontSize": "16px",
+          "scrollHeight": 457,
+          "clientHeight": 457,
+          "descBottom": 422,
+          "cardInnerBottom": 458,
+          "clippedBy": 0,
+          "padBottom": 36,
+          "artOverlapsText": false,
+          "top": 1997
+        },
+        {
+          "name": "Connected Business Tools",
+          "height": 527,
+          "cssHeight": "527px",
+          "minHeight": "527px",
+          "overflow": "hidden",
+          "artHeight": 308.5,
+          "copyHeight": 217,
+          "copyScroll": 217,
+          "copyPadding": "24px",
+          "pLineHeight": "23.2px",
+          "pFontSize": "16px",
+          "scrollHeight": 525,
+          "clientHeight": 525,
+          "descBottom": 501.4,
+          "cardInnerBottom": 526,
+          "clippedBy": 0,
+          "padBottom": 24.6,
+          "artOverlapsText": false,
+          "top": 2486
+        },
+        {
+          "name": "Company Search Reporting",
+          "height": 527,
+          "cssHeight": "527px",
+          "minHeight": "527px",
+          "overflow": "hidden",
+          "artHeight": 308.5,
+          "copyHeight": 217,
+          "copyScroll": 217,
+          "copyPadding": "24px",
+          "pLineHeight": "23.2px",
+          "pFontSize": "16px",
+          "scrollHeight": 525,
+          "clientHeight": 525,
+          "descBottom": 478.2,
+          "cardInnerBottom": 526,
+          "clippedBy": 0,
+          "padBottom": 47.8,
+          "artOverlapsText": false,
+          "top": 2486
+        },
+        {
+          "name": "Your AI Featured Products",
+          "height": 527,
+          "cssHeight": "527px",
+          "minHeight": "527px",
+          "overflow": "hidden",
+          "artHeight": 308.5,
+          "copyHeight": 217,
+          "copyScroll": 217,
+          "copyPadding": "24px",
+          "pLineHeight": "23.2px",
+          "pFontSize": "16px",
+          "scrollHeight": 525,
+          "clientHeight": 525,
+          "descBottom": 478.2,
+          "cardInnerBottom": 526,
+          "clippedBy": 0,
+          "padBottom": 47.8,
+          "artOverlapsText": false,
+          "top": 2486
+        }
+      ],
+      "rows": [
+        {
+          "top": 1997,
+          "heights": [
+            459,
+            459
+          ]
+        },
+        {
+          "top": 2486,
+          "heights": [
+            527,
+            527,
+            527
+          ]
+        }
+      ],
+      "docOverflow": 0
+    }
+  },
+  "failures": []
+}

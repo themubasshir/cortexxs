@@ -68,8 +68,8 @@
   .ai-capabilities .ai-section-heading { text-align:center; margin-bottom:48px; }
   .ai-capabilities .ai-section-heading h2 { width:568px; margin:17px auto 0; font-size:56px; line-height:68px; }
   .ai-capability-grid { gap:30px; }
-  .ai-capability-card:nth-child(-n+2) { height:459px; }
-  .ai-capability-card:nth-child(n+3) { height:483px; }
+  .ai-capability-card:nth-child(-n+2) { min-height:459px; }
+  .ai-capability-card:nth-child(n+3) { min-height:527px; }
   .ai-capability-copy { padding:16px 24px; }
   .ai-capability-copy h3 { font-size:28px; line-height:36px; }
   .ai-process { padding:80px 0 50px; }
@@ -217,7 +217,12 @@
 @media(max-width:520px){.ai-hero-copy{width:100%}.ai-motion-toggle{right:3%;bottom:3%;width:9%;height:8%}}
 
 .ai-capabilities{background:#fff}
-@media(min-width:1101px){.ai-capability-copy{padding:26px 24px 16px}.ai-capability-copy p{font-size:16px;line-height:1.45;color:#50545e}.ai-capability-copy h3{font-size:28px;line-height:1.2;margin-bottom:8px}}
+.ai-capability-card{display:flex;flex-direction:column}
+.ai-capability-art{flex:none}
+.ai-capability-art img{position:absolute;inset:0}
+.ai-capability-copy{flex:1 0 auto}
+@media(min-width:1101px){.ai-capability-art{height:auto;aspect-ratio:603/309}.ai-capability-card:nth-child(n+3) .ai-capability-art{height:auto;aspect-ratio:392/309}}
+@media(min-width:1101px){.ai-capability-copy{padding:24px}.ai-capability-copy p{font-size:16px;line-height:1.45;color:#50545e}.ai-capability-copy h3{font-size:28px;line-height:1.2;margin-bottom:8px}}
 @media(min-width:1101px){.ai-step-number{width:46px;height:46px;border-width:4px;font-size:0}.ai-step-list li:first-child .ai-step-number{width:46px;height:46px;font-size:17px;box-shadow:0 0 0 8px #e5e9ff}.ai-step-list::before{left:22px;top:28px;bottom:120px}.ai-step-list li{grid-template-columns:56px 1fr}.ai-step-list p{color:#434953}.ai-process-intro>p{font-size:20px;line-height:1.55}}
 @media(min-width:1101px){.ai-case-details>h3{max-width:480px;font-size:32px;line-height:1.12;margin-bottom:20px}.ai-case-details>div{margin-bottom:13px}.ai-case-details p{font-size:16px;line-height:1.45;color:#424852}.ai-case-details .ai-button{margin-top:12px}}
 @media(min-width:1101px){.ai-testimonial-track article{padding:24px}.ai-testimonial-track article>header{height:78px;min-height:78px;margin-bottom:36px}.ai-testimonial-avatar{width:78px;height:78px}.ai-testimonial-brand{width:162px;max-height:60px}.ai-testimonial-track .ai-stars{font-size:23px;letter-spacing:2px;margin-bottom:14px}.ai-testimonial-track blockquote{font-size:24px;line-height:1.3;font-weight:500;letter-spacing:-.035em}.ai-testimonial-track article>footer strong{font-size:20px}.ai-testimonial-track article>footer span{font-size:15px;color:#555c65}.ai-recognition{border-top:0}.ai-recognition h3{text-align:center;font-size:24px;font-weight:500}}
@@ -265,44 +270,63 @@
 .ai-page .ai-testimonial-status{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
 @media(max-width:520px){.ai-page .ai-testimonial-track article{flex-basis:100%;height:auto;min-height:353px}}
 
-/* One-shot section entrances only affect transform and opacity. */
+/* Motion V3. Tokens, entrances and hover responses only use transform, opacity, clip-path and shadow. */
+.ai-page{--ai-ease:cubic-bezier(.22,1,.36,1);--ai-dur:.55s;--ai-dur-short:.3s;--ai-stagger:.1s;--ai-rise:16px;--ai-lift:-4px}
+.ai-capability-art svg{position:absolute;inset:0;display:block;width:100%;height:100%}
+.ai-capability-art .ai-art-layer{transform-box:fill-box;transform-origin:center}
 @media(prefers-reduced-motion:no-preference){
   .ai-page.ai-motion-ready .ai-challenges h2,
   .ai-page.ai-motion-ready .ai-challenge-grid>div:first-child>p,
-  .ai-page.ai-motion-ready .ai-challenge,
   .ai-page.ai-motion-ready .ai-capabilities .ai-section-heading,
-  .ai-page.ai-motion-ready .ai-capability-card,
   .ai-page.ai-motion-ready .ai-case .ai-section-heading,
-  .ai-page.ai-motion-ready .ai-case-card,
   .ai-page.ai-motion-ready .ai-testimonials-head,
-  .ai-page.ai-motion-ready .ai-testimonial-track,
-  .ai-page.ai-motion-ready .ai-recognition-tile{opacity:0;transform:translateY(14px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.2,1)}
-  .ai-page.ai-motion-ready .ai-capability-art img,
-  .ai-page.ai-motion-ready .ai-case-image img{opacity:.78;transform:scale(1.025);transition:opacity .65s ease,transform .65s ease}
+  .ai-page.ai-motion-ready .ai-testimonial-track article,
+  .ai-page.ai-motion-ready .ai-challenge,
+  .ai-page.ai-motion-ready .ai-capability-card,
+  .ai-page.ai-motion-ready .ai-case-card,
+  .ai-page.ai-motion-ready .ai-recognition-tile{opacity:0;transform:translateY(var(--ai-rise));transition:opacity var(--ai-dur) var(--ai-ease),transform var(--ai-dur) var(--ai-ease),box-shadow var(--ai-dur-short) ease;transition-delay:calc(var(--ai-order,0) * var(--ai-stagger))}
+  .ai-page.ai-motion-ready .ai-challenge-grid>div:first-child>p{transition-delay:.12s}
   .ai-page.ai-motion-ready .is-revealed h2,
   .ai-page.ai-motion-ready .ai-challenges.is-revealed .ai-challenge-grid>div:first-child>p,
-  .ai-page.ai-motion-ready .ai-challenges.is-revealed .ai-challenge,
   .ai-page.ai-motion-ready .ai-capabilities.is-revealed .ai-section-heading,
-  .ai-page.ai-motion-ready .ai-capabilities.is-revealed .ai-capability-card,
   .ai-page.ai-motion-ready .ai-case.is-revealed .ai-section-heading,
-  .ai-page.ai-motion-ready .ai-case.is-revealed .ai-case-card,
   .ai-page.ai-motion-ready .ai-testimonials.is-revealed .ai-testimonials-head,
-  .ai-page.ai-motion-ready .ai-testimonials.is-revealed .ai-testimonial-track,
-  .ai-page.ai-motion-ready .ai-recognition.is-revealed .ai-recognition-tile{opacity:1;transform:none}
-  .ai-page.ai-motion-ready .ai-capabilities.is-revealed .ai-capability-art img,
-  .ai-page.ai-motion-ready .ai-case.is-revealed .ai-case-image img{opacity:1;transform:none}
-  .ai-page.ai-motion-ready .ai-challenges.is-revealed .ai-challenge:nth-child(2),
-  .ai-page.ai-motion-ready .ai-capabilities.is-revealed .ai-capability-card:nth-child(2),
-  .ai-page.ai-motion-ready .ai-recognition.is-revealed .ai-recognition-tile:nth-child(2){transition-delay:.1s}
-  .ai-page.ai-motion-ready .ai-challenges.is-revealed .ai-challenge:nth-child(3),
-  .ai-page.ai-motion-ready .ai-capabilities.is-revealed .ai-capability-card:nth-child(3),
-  .ai-page.ai-motion-ready .ai-recognition.is-revealed .ai-recognition-tile:nth-child(3){transition-delay:.2s}
-  .ai-page.ai-motion-ready .ai-challenges.is-revealed .ai-challenge:nth-child(4),
-  .ai-page.ai-motion-ready .ai-capabilities.is-revealed .ai-capability-card:nth-child(4),
-  .ai-page.ai-motion-ready .ai-recognition.is-revealed .ai-recognition-tile:nth-child(4){transition-delay:.3s}
-  .ai-page.ai-motion-ready .ai-capabilities.is-revealed .ai-capability-card:nth-child(5),
-  .ai-page.ai-motion-ready .ai-recognition.is-revealed .ai-recognition-tile:nth-child(5){transition-delay:.4s}
-  .ai-page.ai-motion-ready .ai-recognition.is-revealed .ai-recognition-tile:nth-child(6){transition-delay:.5s}
+  .ai-page.ai-motion-ready .ai-testimonials.is-revealed .ai-testimonial-track article,
+  .ai-page.ai-motion-ready .is-in{opacity:1;transform:none}
+  .ai-page.ai-motion-ready .ai-testimonials.is-revealed .ai-testimonial-track article:nth-child(2){transition-delay:.1s}
+  .ai-page.ai-motion-ready .ai-testimonials.is-revealed .ai-testimonial-track article:nth-child(3){transition-delay:.2s}
+
+  /* Challenges: divider grows, icon settles, arrow nudges on hover. */
+  .ai-page.ai-motion-ready .ai-challenge{position:relative;border-bottom-color:transparent}
+  .ai-page.ai-motion-ready .ai-challenge::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--ai-line);transform:scaleX(0);transform-origin:left center;transition:transform .65s var(--ai-ease);transition-delay:calc(var(--ai-order,0) * var(--ai-stagger) + .12s)}
+  .ai-page.ai-motion-ready .ai-challenge.is-in::after{transform:scaleX(1)}
+  .ai-page.ai-motion-ready .ai-challenge-icon{opacity:0;transform:scale(.82);transition:opacity .45s var(--ai-ease),transform .45s var(--ai-ease);transition-delay:calc(var(--ai-order,0) * var(--ai-stagger) + .1s)}
+  .ai-page.ai-motion-ready .ai-challenge.is-in .ai-challenge-icon{opacity:1;transform:none}
+  .ai-page .ai-challenge-arrow{transition:transform var(--ai-dur-short) var(--ai-ease),border-color var(--ai-dur-short) ease,color var(--ai-dur-short) ease}
+  .ai-page .ai-challenge:hover .ai-challenge-arrow,.ai-page .ai-challenge:focus-within .ai-challenge-arrow{transform:translate(3px,-3px);border-color:#4a71fa;color:#4a71fa}
+
+  /* Case study: card rises, image unveils with a clip wipe, details follow in order. */
+  .ai-page.ai-motion-ready .ai-case-image img{clip-path:inset(0 0 0 100%);transform:scale(1.04);transition:clip-path .9s var(--ai-ease) .2s,transform 1.2s var(--ai-ease) .2s}
+  .ai-page.ai-motion-ready .ai-case-card.is-in .ai-case-image img{clip-path:inset(0);transform:none}
+  .ai-page.ai-motion-ready .ai-case-details>*{opacity:0;transform:translateY(12px);transition:opacity .5s var(--ai-ease),transform .5s var(--ai-ease)}
+  .ai-page.ai-motion-ready .ai-case-card.is-in .ai-case-details>*{opacity:1;transform:none}
+  .ai-page.ai-motion-ready .ai-case-card.is-in .ai-case-details>:nth-child(1){transition-delay:.25s}
+  .ai-page.ai-motion-ready .ai-case-card.is-in .ai-case-details>:nth-child(2){transition-delay:.35s}
+  .ai-page.ai-motion-ready .ai-case-card.is-in .ai-case-details>:nth-child(3){transition-delay:.45s}
+  .ai-page.ai-motion-ready .ai-case-card.is-in .ai-case-details>:nth-child(4){transition-delay:.55s}
+  .ai-page.ai-motion-ready .ai-case-card.is-in .ai-case-details>:nth-child(5){transition-delay:.65s}
+
+  /* Service cards: subtle lift and illustration emphasis; cards stay non-navigational. */
+  .ai-page.ai-motion-ready .ai-capability-card.is-in:hover{transform:translateY(var(--ai-lift));box-shadow:0 18px 40px #1f356f1a;transition-delay:0s}
+  .ai-page .ai-capability-card.is-animating .ai-capability-art::after{border-color:#d3dcf8}
+
+  /* Testimonials and recognition: restrained lift on hover and while the carousel moves. */
+  .ai-page.ai-motion-ready .ai-testimonials.is-revealed .ai-testimonial-track article:hover{box-shadow:0 16px 36px #1724401a;transition-delay:0s}
+  .ai-page .ai-testimonial-controls button{transition:background-color var(--ai-dur-short) ease,border-color var(--ai-dur-short) ease,transform var(--ai-dur-short) var(--ai-ease)}
+  .ai-page .ai-testimonial-controls button:hover,.ai-page .ai-testimonial-controls button:focus-visible{border-color:#4a71fa}
+  .ai-page .ai-testimonial-controls [data-testimonial-prev]:hover{transform:translateX(-2px)}
+  .ai-page .ai-testimonial-controls [data-testimonial-next]:hover{transform:translateX(2px)}
+  .ai-page.ai-motion-ready .ai-recognition-tile.is-in:hover{transform:translateY(-3px);box-shadow:0 12px 26px #1724401a;transition-delay:0s}
 }
 @media(prefers-reduced-motion:reduce){
   .ai-page .ai-step-list::after{transform:scaleY(1)}
