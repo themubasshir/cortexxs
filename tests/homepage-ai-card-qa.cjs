@@ -40,8 +40,8 @@ const routes = {
       }));
       assert.equal(all.desktop.length, 4);
       assert.equal(all.mobile.length, 4);
-      assert.deepEqual(all.desktop.map(item => item.href), [routes.software, routes['web-development'], routes['ui-ux-design'], routes['ai-automation']].map(route => base.replace('http://localhost', '') + route));
-      assert.deepEqual(all.mobile.map(item => item.href), [routes['web-development'], routes.software, routes['ai-automation'], routes['ui-ux-design']].map(route => base.replace('http://localhost', '') + route));
+      assert.deepEqual(all.desktop.map(item => new URL(item.href, base).href), [routes.software, routes['web-development'], routes['ui-ux-design'], routes['ai-automation']].map(route => base + route));
+      assert.deepEqual(all.mobile.map(item => new URL(item.href, base).href), [routes['web-development'], routes.software, routes['ai-automation'], routes['ui-ux-design']].map(route => base + route));
       assert(all.desktop.every(item => item.tag === 'A') && all.mobile.every(item => item.tag === 'A'), 'service destinations must be anchors');
       const initial = await page.evaluate(() => ({ y: scrollY, height: document.documentElement.scrollHeight, overflow: document.documentElement.scrollWidth > innerWidth }));
       assert.equal(initial.overflow, false);
@@ -116,7 +116,7 @@ const routes = {
         return Math.round(last.top + scrollY + last.height / 2 - innerHeight * .72 + 4);
       });
       await page.evaluate(y => scrollTo({ top: y, behavior: 'instant' }), target);
-      await page.waitForTimeout(100);
+      await page.waitForFunction(() => document.querySelectorAll('.ai-step-list li.is-active').length === 6, null, { timeout: 1500 }).catch(() => {});
       assert(await timeline.locator('li.is-active').count() === 6, `${width}: destination timeline did not activate`);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
       assert.equal(await page.evaluate(() => document.documentElement.scrollHeight), destinationHeight, `${width}: destination page height changed`);
