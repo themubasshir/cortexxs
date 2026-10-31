@@ -17,8 +17,9 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'no-preference' });
     const page = await context.newPage();
     page.on('pageerror', error => result.errors.push({ route: 'ai', message: error.message }));
-    page.on('console', message => { if (message.type() === 'error') result.errors.push({ route: 'ai console', message: message.text() }); });
-    const response = await page.goto(base + '/services/ai-automation', { waitUntil: 'domcontentloaded', timeout: 30000 });
+    page.on('console', message => { if (message.type() === 'error') result.errors.push({ route: 'ai console', message: message.text(), url: message.location().url }); });
+    page.on('response', response => { if (response.status() >= 400) result.errors.push({ route: 'HTTP', status: response.status(), url: response.url() }); });
+    const response = await page.goto(base + '/services/ai-automation', { waitUntil: 'networkidle', timeout: 30000 });
     result.ai.response = response.status();
     result.ai.finalUrl = page.url();
     result.ai.title = await page.title();
@@ -104,7 +105,7 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     const mobileContext = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
     const mobile = await mobileContext.newPage();
     mobile.on('pageerror', error => result.errors.push({ route: 'ai reduced', message: error.message }));
-    await mobile.goto(base + '/services/ai-automation', { waitUntil: 'domcontentloaded' });
+    await mobile.goto(base + '/services/ai-automation', { waitUntil: 'networkidle' });
     await mobile.waitForTimeout(150);
     result.ai.reducedMotion = await mobile.evaluate(() => ({ media: matchMedia('(prefers-reduced-motion: reduce)').matches, workflowClass: document.querySelector('.ai-workflow').className, artwork: (() => { const svg = document.querySelector('.ai-workflow-svg'); return { visible: getComputedStyle(svg).visibility === 'visible' && getComputedStyle(svg).opacity === '1', nodes: ['1027:245','1027:274','1027:336','1027:309','1027:364'].map(id => getComputedStyle(svg.querySelector('[data-figma-id="' + id + '"]')).opacity) }; })() }));
     await mobile.screenshot({ path: path.join(output, 'hero-reduced-390.png') });
@@ -120,7 +121,7 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
 
     await page.setViewportSize({ width: 1440, height: 900 });
     page.on('pageerror', error => result.errors.push({ route: 'home', message: error.message }));
-    const homeResponse = await page.goto(base + '/', { waitUntil: 'domcontentloaded' });
+    const homeResponse = await page.goto(base + '/', { waitUntil: 'networkidle' });
     result.homepage.response = homeResponse.status();
     result.homepage.heading = await page.locator('h1').innerText();
     result.homepage.desktopCards = await page.locator('.desktop-services .svc-card').count();
@@ -140,7 +141,7 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     result.homepage.newsletterMessage = await page.locator('#newsMsg').innerText();
     await page.screenshot({ path: path.join(output, 'homepage-1440.png') });
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.reload({ waitUntil: 'domcontentloaded' });
+    await page.reload({ waitUntil: 'networkidle' });
     await page.waitForTimeout(200);
     await page.locator('#menuToggle').click();
     result.homepage.mobileMenuOpened = await page.locator('#mobileNav').evaluate(el => el.classList.contains('open'));
@@ -164,7 +165,7 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     result.homepage.mobileScrollHeightAfter = await page.evaluate(() => document.documentElement.scrollHeight);
     await page.screenshot({ path: path.join(output, 'homepage-390.png'), fullPage: true });
     for (const slug of ['web-development', 'software', 'ai-automation', 'ui-ux-design']) {
-      const r = await page.goto(base + '/services/' + slug, { waitUntil: 'domcontentloaded' });
+      const r = await page.goto(base + '/services/' + slug, { waitUntil: 'networkidle' });
       result.services[slug] = { status: r.status(), finalUrl: page.url(), body: (await page.locator('body').innerText()).slice(0, 80) };
     }
     assert.equal(result.ai.response, 200);

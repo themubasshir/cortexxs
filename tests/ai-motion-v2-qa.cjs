@@ -23,7 +23,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
       const page = await context.newPage();
       page.on('pageerror', error => report.errors.push(error.message));
       page.on('console', message => { if (message.type() === 'error') report.errors.push(message.text()); });
-      const response = await page.goto(report.route, { waitUntil: 'domcontentloaded' });
+      const response = await page.goto(report.route, { waitUntil: 'networkidle' });
       assert(response.status() === 200, `${width}: route failed`);
       await page.evaluate(() => document.fonts.ready);
       const geometry = await page.evaluate(() => {
@@ -142,7 +142,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
     const reduced = await browser.newContext({ viewport: { width: 390, height: 844 }, reducedMotion: 'reduce' });
     const reducedPage = await reduced.newPage();
-    await reducedPage.goto(report.route, { waitUntil: 'domcontentloaded' });
+    await reducedPage.goto(report.route, { waitUntil: 'networkidle' });
     report.reduced = await reducedPage.evaluate(() => ({
       active: document.querySelectorAll('.ai-step-list li.is-active').length,
       progress: Number(getComputedStyle(document.querySelector('.ai-step-list')).getPropertyValue('--ai-timeline-progress')),
@@ -161,7 +161,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
     const revealContext = await browser.newContext({ viewport: { width: 1440, height: 900 } });
     const revealPage = await revealContext.newPage();
-    await revealPage.goto(report.route, { waitUntil: 'domcontentloaded' });
+    await revealPage.goto(report.route, { waitUntil: 'networkidle' });
     const revealHeight = await revealPage.evaluate(() => document.documentElement.scrollHeight);
     for (const selector of ['.ai-challenges', '.ai-capabilities', '.ai-case', '.ai-testimonials', '.ai-recognition']) {
       await revealPage.locator(selector).scrollIntoViewIfNeeded();
@@ -177,7 +177,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
     const noJs = await browser.newContext({ viewport: { width: 390, height: 844 }, javaScriptEnabled: false });
     const noJsPage = await noJs.newPage();
-    await noJsPage.goto(report.route, { waitUntil: 'domcontentloaded' });
+    await noJsPage.goto(report.route, { waitUntil: 'networkidle' });
     report.noJavaScript = await noJsPage.evaluate(() => {
       const track = document.querySelector('.ai-testimonial-track');
       return {
@@ -192,7 +192,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
     for (const width of [360, 430, 768, 1280]) {
       const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: 'reduce' });
       const page = await context.newPage();
-      await page.goto(report.route, { waitUntil: 'domcontentloaded' });
+      await page.goto(report.route, { waitUntil: 'networkidle' });
       report.responsive[width] = await page.evaluate(() => {
         const track = document.querySelector('.ai-testimonial-track');
         const visible = [...track.querySelectorAll('article')].filter(card => card.getAttribute('aria-hidden') === 'false');

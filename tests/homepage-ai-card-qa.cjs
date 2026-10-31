@@ -26,7 +26,7 @@ const routes = {
       const page = await context.newPage();
       page.on('pageerror', error => report.errors.push({ width, kind: 'pageerror', message: error.message }));
       page.on('console', message => { if (message.type() === 'error') report.errors.push({ width, kind: 'console', message: message.text() }); });
-      const response = await page.goto(base + '/', { waitUntil: 'domcontentloaded' });
+      const response = await page.goto(base + '/', { waitUntil: 'networkidle' });
       assert.equal(response.status(), 200);
       await page.evaluate(() => document.fonts.ready);
       const section = page.locator('#capabilities');
@@ -64,11 +64,11 @@ const routes = {
         await page.screenshot({ path: path.join(out, `desktop-${width}-hover.png`) });
         await card.click();
         assert.equal(page.url(), base + routes['ai-automation']);
-        await page.goBack({ waitUntil: 'domcontentloaded' });
+        await page.goBack({ waitUntil: 'networkidle' });
         await section.scrollIntoViewIfNeeded();
         await card.locator('.svc-go').click();
         assert.equal(page.url(), base + routes['ai-automation']);
-        await page.goBack({ waitUntil: 'domcontentloaded' });
+        await page.goBack({ waitUntil: 'networkidle' });
         let tabs = 0;
         while (tabs < 80 && !(await card.evaluate(el => document.activeElement === el))) {
           await page.keyboard.press('Tab');
@@ -91,7 +91,7 @@ const routes = {
         await row.tap();
         await page.waitForURL(base + routes['ai-automation']);
         assert.equal(page.url(), base + routes['ai-automation']);
-        await page.goBack({ waitUntil: 'domcontentloaded' });
+        await page.goBack({ waitUntil: 'networkidle' });
         await page.locator('.mobile-services').scrollIntoViewIfNeeded();
         await page.waitForTimeout(160);
         const previewAfter = await page.locator('.service-preview').boundingBox();
