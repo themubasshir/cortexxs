@@ -54,7 +54,7 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
       for (const number of [1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1]) {
         const y = Math.round(geometry.centers[number - 1] - (width === 1440 ? 900 : 844) * .72 + 4);
         await page.evaluate(target => scrollTo({ top: target, behavior: 'instant' }), y);
-        await page.waitForTimeout(140);
+        await page.waitForFunction(expected => document.querySelectorAll('.ai-step-list li.is-active').length === expected, number, { timeout: 1500 }).catch(() => {});
         const value = await state();
         value.targetStep = number;
         value.expectedScroll = y;
