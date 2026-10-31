@@ -46,8 +46,8 @@ $code = [
 $days = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
 $dayX = [20, 50.9, 82.6, 113.5, 143.7, 174.5, 203.8];
 $work = [
-    ['Cr', 'Online Learning Dashboard', false],
-    ['ReadPlots', 'Interactive reading platform', true],
+    ['Cr', 'Online Learning Dashboard', 'software-cr.png', 'Cr online learning dashboard showing ongoing classes, learning hours, messages, calendar and class schedule'],
+    ['ReadPlots', 'Interactive reading platform', 'software-readplots.png', 'ReadPlots reading app home screen with a featured story and a continue reading shelf'],
 ];
 $steps = [
     ['Strategy & Discovery', 'Understand the business, users, market, and opportunities to establish a clear direction.'],
@@ -168,7 +168,7 @@ ob_start();
         <div class="sw-work-grid">
           <?php foreach ($work as $i => $item): ?>
           <article class="sw-work-card reveal" data-delay="<?= $i * 120 ?>">
-            <div class="sw-work-media<?= $item[2] ? ' is-framed' : ' sw-blank' ?>"><?php if ($item[2]): ?><span class="sw-work-shot sw-blank"></span><?php endif; ?></div>
+            <div class="sw-work-media"><img src="<?= $asset($item[2]) ?>" alt="<?= $e($item[3]) ?>" width="604" height="500" loading="lazy" decoding="async"></div>
             <div class="sw-work-meta"><div><h3><?= $e($item[0]) ?></h3><p><?= $e($item[1]) ?></p></div><img src="<?= $wdAsset('figma-arrow-46.svg') ?>" alt="" width="46" height="46"></div>
           </article>
           <?php endforeach; ?>
@@ -201,7 +201,7 @@ ob_start();
               <span class="sw-logo-orb" style="<?= $at(252, 98, 84) ?>"><img src="<?= $logoIcon ?>" alt="" width="55" height="56"></span>
               <span class="sw-panel-card sw-members" style="<?= $at(389, 90, 131, 112) ?>">
                 <span class="sw-panel-head"><img src="<?= $asset('figma-art-members.svg') ?>" alt="" width="18" height="18">Members</span>
-                <span class="sw-avatars"><i></i><i></i><i></i></span>
+                <span class="sw-avatars"><?php for ($m = 1; $m <= 3; $m++): ?><img src="<?= $asset("software-member-{$m}.png") ?>" alt="Team member <?= $m ?>" width="31" height="31"><?php endfor; ?></span>
               </span>
             </div>
             <div class="sw-build-copy"><h3>Custom Software &amp; SaaS</h3><p>Purpose-built software designed around your business model and growth goals.</p></div>

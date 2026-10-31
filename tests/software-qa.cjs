@@ -85,6 +85,16 @@ const firstCard = page => page.evaluate(() => document.querySelector('.sw-testim
       const r = el.getBoundingClientRect();
       return { cls: el.className, w: Math.round(r.width * 10) / 10, h: Math.round(r.height * 10) / 10, radius: getComputedStyle(el).borderRadius, imgs: el.querySelectorAll('img').length, bg: getComputedStyle(el).backgroundImage.includes('url(') };
     }));
+    result.sw.replacementImages = await page.evaluate(async () => {
+      const imgs = [...document.querySelectorAll('.sw-avatars img, .sw-work-media img')];
+      imgs.forEach(i => { i.loading = 'eager'; });
+      await Promise.all(imgs.map(i => i.decode().catch(() => null)));
+      return imgs.map(i => {
+        const r = i.getBoundingClientRect();
+        const cs = getComputedStyle(i);
+        return { src: i.getAttribute('src').split('/').pop(), alt: i.alt, natural: [i.naturalWidth, i.naturalHeight], box: [Math.round(r.width * 10) / 10, Math.round(r.height * 10) / 10], fit: cs.objectFit, card: i.closest('.sw-build-card, .sw-work-card').querySelector('h3').textContent.trim() };
+      });
+    });
     result.sw.carouselRoots = await page.locator('[data-testimonial-carousel]').count();
     result.sw.homeCarousel = await page.locator('#testimonialCarousel').count();
     result.sw.sectionOrder = await page.evaluate(() => [...document.querySelectorAll('.sw-page main > section')].map(s => s.className.split(' ').find(c => c.startsWith('sw-') && c !== 'sw-section')));
@@ -124,6 +134,9 @@ const firstCard = page => page.evaluate(() => document.querySelector('.sw-testim
     for (const [name, selector] of [['hero', '.sw-hero'], ['featured', '.sw-featured'], ['work', '.sw-work'], ['build', '.sw-build'], ['process', '.sw-process'], ['testimonials', '.sw-testimonials']]) {
       await page.locator(selector).screenshot({ path: path.join(output, `section-${name}-1440.png`) });
     }
+    await page.locator('.sw-build-card').first().screenshot({ path: path.join(output, 'closeup-saas-1440.png') });
+    await page.locator('.sw-members').screenshot({ path: path.join(output, 'closeup-saas-members-1440.png') });
+    await page.locator('.sw-work-grid').screenshot({ path: path.join(output, 'closeup-work-1440.png') });
     await page.evaluate(() => { document.querySelector('.site-header').style.visibility = ''; });
 
     for (const width of [360, 390, 430, 768, 1280, 1440]) {
@@ -157,9 +170,11 @@ const firstCard = page => page.evaluate(() => document.querySelector('.sw-testim
         await shot(page, `full-page-${width}.png`, { fullPage: true });
       }
       if (width === 390) {
+        await page.evaluate(() => { document.querySelector('.site-header').style.visibility = 'hidden'; });
         for (const [name, selector] of [['featured', '.sw-featured'], ['work', '.sw-work'], ['build', '.sw-build'], ['process', '.sw-process'], ['testimonials', '.sw-testimonials']]) {
           await page.locator(selector).screenshot({ path: path.join(output, `section-${name}-390.png`) });
         }
+        await page.evaluate(() => { document.querySelector('.site-header').style.visibility = ''; });
       }
       if (width !== 1440) await page.locator('.sw-hero').screenshot({ path: path.join(output, `hero-${width}.png`) });
     }
@@ -200,7 +215,15 @@ const firstCard = page => page.evaluate(() => document.querySelector('.sw-testim
     assert.match(result.sw.returnClass, /is-settled/);
     assert.equal(result.sw.toggleAfterReinit, 'true');
     assert.equal(result.sw.compareSplit, '30%');
-    assert.equal(result.sw.blankRegions.length, 4);
+    assert.equal(result.sw.blankRegions.length, 2);
+    assert.deepEqual(result.sw.replacementImages.map(i => [i.src, i.card]), [
+      ['software-cr.png', 'Cr'], ['software-readplots.png', 'ReadPlots'],
+      ['software-member-1.png', 'Custom Software & SaaS'], ['software-member-2.png', 'Custom Software & SaaS'], ['software-member-3.png', 'Custom Software & SaaS'],
+    ]);
+    for (const i of result.sw.replacementImages) {
+      assert.ok(i.natural[0] > 0 && i.alt, `image ${i.src}`);
+      assert.equal(i.fit, 'cover', `object-fit ${i.src}`);
+    }
     assert.equal(result.sw.blankRegions.every(r => r.imgs === 0 && !r.bg), true);
     assert.equal(result.sw.carouselRoots, 1);
     assert.equal(result.sw.homeCarousel, 0);

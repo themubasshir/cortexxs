@@ -58,9 +58,14 @@ instead at the same box size. This is a deliberate deviation from the file.
 | Slot | Node | Geometry | Implementation |
 |---|---|---|---|
 | Featured compare image | `1038:983` | 713.4×441 at local 263.3,60 in a 1240×562 `#f2f2f2` media, r16, shadow 0 7 30 #000/0.2 | `.sw-blank` panel, split by the range divider |
-| Work card 1 media | `1038:588` | 604×500, r16 16 0 0 | `.sw-work-media` empty, bg `#f2f2f2` |
-| Work card 2 inner image | `1038:599` | 551×416 at 26,42 inside a `#ebeced` 604×500 media, r12, shadow 0 4 34 #000/0.1 | `.sw-work-media` + `.sw-blank` inner |
-| Build card members | `1038:691/693/695` | 31×31 circles, r15.5, stroke #fff, shadow 0 2 5 #18224a/0.14 | Figma fallback fill `#e9ebf6`, no portrait |
+
+## User-provided images
+
+| Slot | Node | File | Implementation |
+|---|---|---|---|
+| Work card Cr media | `1038:588` | `software-cr.png` (604×500, from `Downloads\cr.png`) | `<img>` fills the 604×500 media, `object-fit:cover` |
+| Work card ReadPlots media | `1038:597/599` | `software-readplots.png` (619×484, from `Downloads\readplots.png`) | The PNG already contains the `#ebeced`-style frame and shadow, so it fills the 604×500 media with `object-fit:cover`; about 9px of white margin is cropped per side |
+| Build card members | `1038:691/693/695` | `software-member-1..3.png` (41×41, from `Downloads\Image1..3.png`), left to right | 31×31 circles, r15.5, stroke #fff, shadow 0 2 5 #18224a/0.14, `object-fit:cover` |
 
 ## Omitted
 
@@ -73,6 +78,6 @@ instead at the same box size. This is a deliberate deviation from the file.
 
 ## Unresolved
 
-- Real images for the three blank slots.
+- Real image for the featured compare slot.
 - SF Pro (illustration UI) and Fira Code (code card) are not loaded; Manrope and the system monospace stack are used.
 - Gradient orientations are approximated from stops.

@@ -140,8 +140,7 @@
 .sw-work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
 .sw-work-card{border-radius:16px;background:#fff;box-shadow:0 12px 15px rgba(210,210,210,.19);overflow:hidden}
 .sw-work-media{position:relative;aspect-ratio:604/500;border-radius:16px 16px 0 0;overflow:hidden}
-.sw-work-media.is-framed{background:#ebeced}
-.sw-work-shot{position:absolute;left:4.3%;top:8.4%;width:91.2%;height:83.2%;border-radius:12px;box-shadow:0 4px 34px rgba(0,0,0,.1)}
+.sw-work-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
 .sw-work-meta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px}
 .sw-work-meta h3{font-size:32px;line-height:32px;font-weight:700;color:#111}
 .sw-work-meta p{margin-top:10px;font-size:16px;line-height:16px;font-weight:500;color:#050d17}
@@ -188,8 +187,8 @@
 .sw-skeleton-row i{width:calc(7*var(--u));height:calc(7*var(--u));border:1px solid #e9eafb;border-radius:50%;background:#f8f8ff}
 .sw-skeleton-row b{width:calc(76*var(--u));height:calc(7*var(--u));border-radius:99px;background:linear-gradient(90deg,#eeeefe,#f4f3fb);box-shadow:0 2px 5px rgba(103,100,217,.06)}
 .sw-avatars{display:flex;justify-content:center;margin-top:calc(15*var(--u));padding:0 calc(1*var(--u))}
-.sw-avatars i{width:calc(31*var(--u));height:calc(31*var(--u));flex:none;border:1px solid #fff;border-radius:50%;background:#e9ebf6;box-shadow:0 2px 5px rgba(24,34,74,.14)}
-.sw-avatars i+i{margin-left:calc(-6*var(--u))}
+.sw-avatars img{width:calc(31*var(--u));height:calc(31*var(--u));flex:none;border:1px solid #fff;border-radius:50%;background:#e9ebf6;box-shadow:0 2px 5px rgba(24,34,74,.14);object-fit:cover}
+.sw-avatars img+img{margin-left:calc(-6*var(--u))}
 .sw-logo-orb{display:grid;place-items:center;border:1px solid rgba(242,243,252,.92);border-radius:50%;background:rgba(255,255,255,.95);box-shadow:0 0 0 calc(12*var(--u)) rgba(252,252,255,.42),0 10px 29px rgba(64,70,178,.12);overflow:hidden}
 .sw-logo-orb img{width:calc(55*var(--u));height:calc(56*var(--u));object-fit:contain}
 .sw-logo-orb.is-sm{box-shadow:0 0 0 calc(9.23*var(--u)) rgba(250,250,255,.45),0 10px 23.5px rgba(59,65,158,.13)}

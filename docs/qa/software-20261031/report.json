@@ -50,22 +50,78 @@
         "radius": "0px 16px 16px 0px",
         "imgs": 0,
         "bg": false
+      }
+    ],
+    "replacementImages": [
+      {
+        "src": "software-cr.png",
+        "alt": "Cr online learning dashboard showing ongoing classes, learning hours, messages, calendar and class schedule",
+        "natural": [
+          604,
+          500
+        ],
+        "box": [
+          604,
+          500
+        ],
+        "fit": "cover",
+        "card": "Cr"
       },
       {
-        "cls": "sw-work-media sw-blank",
-        "w": 604,
-        "h": 500,
-        "radius": "16px 16px 0px 0px",
-        "imgs": 0,
-        "bg": false
+        "src": "software-readplots.png",
+        "alt": "ReadPlots reading app home screen with a featured story and a continue reading shelf",
+        "natural": [
+          619,
+          484
+        ],
+        "box": [
+          604,
+          500
+        ],
+        "fit": "cover",
+        "card": "ReadPlots"
       },
       {
-        "cls": "sw-work-shot sw-blank",
-        "w": 550.8,
-        "h": 416,
-        "radius": "12px",
-        "imgs": 0,
-        "bg": false
+        "src": "software-member-1.png",
+        "alt": "Team member 1",
+        "natural": [
+          41,
+          41
+        ],
+        "box": [
+          30.8,
+          30.8
+        ],
+        "fit": "cover",
+        "card": "Custom Software & SaaS"
+      },
+      {
+        "src": "software-member-2.png",
+        "alt": "Team member 2",
+        "natural": [
+          41,
+          41
+        ],
+        "box": [
+          30.8,
+          30.8
+        ],
+        "fit": "cover",
+        "card": "Custom Software & SaaS"
+      },
+      {
+        "src": "software-member-3.png",
+        "alt": "Team member 3",
+        "natural": [
+          41,
+          41
+        ],
+        "box": [
+          30.8,
+          30.8
+        ],
+        "fit": "cover",
+        "card": "Custom Software & SaaS"
       }
     ],
     "carouselRoots": 1,
