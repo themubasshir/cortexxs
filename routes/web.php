@@ -20,12 +20,6 @@ return function (App $app, array $config, string $base) {
         return (new PageController($config, $base))->aiAutomation($req, $res);
     })->add($csrf);
 
-    $app->get('/favicon.ico', function ($req, $res) use ($base) {
-        $release = getenv('CORTEXX_ASSET_RELEASE') ?: '';
-        $prefix = $base . '/assets' . ($release !== '' ? '/releases/' . rawurlencode($release) : '');
-        return $res->withHeader('Location', $prefix . '/images/favicon.png')->withStatus(302);
-    });
-
     foreach (require ROOT . '/config/services.php' as $service) {
         if ($service['slug'] === 'ai-automation') continue;
         $app->get($service['route'], function ($req, $res) use ($base, $service) {

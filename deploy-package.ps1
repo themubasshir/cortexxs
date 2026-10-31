@@ -29,6 +29,7 @@ Get-ChildItem "$app\vendor" -Recurse -Directory -ErrorAction SilentlyContinue |
 
 # --- web root ---
 Copy-Item "$src\public\assets" "$pub\assets" -Recurse
+Copy-Item "$src\public\favicon.ico" "$pub\favicon.ico"
 Copy-Item "$src\public\.htaccess" "$pub\.htaccess"
 
 # bootstrap index that reaches the private app dir (ASCII only)
