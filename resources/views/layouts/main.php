@@ -21,11 +21,12 @@ $content = str_replace($base . '/assets/', $assetPrefix . '/', $content);
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="<?= $assetPrefix ?>/css/app.css?v=mobile-single-preview-20261024f">
-<?php if (!empty($pageStyles)): ?><link rel="stylesheet" href="<?= $assetPrefix ?>/css/<?= htmlspecialchars($pageStyles) ?>"><?php endif; ?>
+<?php foreach ((array) ($pageStyles ?? []) as $pageStyle): if ($pageStyle === '') continue; ?><link rel="stylesheet" href="<?= $assetPrefix ?>/css/<?= htmlspecialchars($pageStyle) ?>"><?php endforeach; ?>
 </head>
 <body>
 <?= $content ?>
 <?php if (empty($skipAppJs)): ?><script src="<?= $assetPrefix ?>/js/app.js?v=mobile-single-preview-20261024f" defer></script><?php endif; ?>
-<?php if (!empty($pageScripts)): ?><script src="<?= $assetPrefix ?>/js/<?= htmlspecialchars($pageScripts) ?>" defer></script><?php endif; ?>
+<?php foreach ((array) ($pageScripts ?? []) as $pageScript): if ($pageScript === '') continue; ?><script src="<?= $assetPrefix ?>/js/<?= htmlspecialchars($pageScript) ?>" defer></script>
+<?php endforeach; ?>
 </body>
 </html>

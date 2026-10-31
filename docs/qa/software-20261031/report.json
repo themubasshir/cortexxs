@@ -1,0 +1,188 @@
+{
+  "base": "http://localhost/cortexx",
+  "sw": {
+    "response": 200,
+    "title": "Custom Software Development | Cortexx",
+    "heading": "Custom Software Engineered For Growth",
+    "stylesheet": "/cortexx/assets/css/software.css?v=1",
+    "scripts": [
+      "/cortexx/assets/js/software.js?v=1",
+      "/cortexx/assets/js/testimonial-carousel.js?v=1"
+    ],
+    "aiCss": 0,
+    "heightInitial": 7090,
+    "animationInitial": "sw-hero is-playing",
+    "animationMid": "sw-hero is-playing",
+    "animationSettled": "sw-hero is-settled",
+    "heightSettled": 7090,
+    "heroOverlapsCtas": false,
+    "pausedClass": "sw-hero",
+    "pausedState": [
+      "true",
+      "Play animation"
+    ],
+    "resumedClass": "sw-hero is-settled",
+    "resumedState": [
+      "false",
+      "Pause animation"
+    ],
+    "motionFrames": {
+      "maxGapMs": 17,
+      "meanGapMs": 17
+    },
+    "offscreenClass": "sw-hero",
+    "returnClass": "sw-hero is-settled",
+    "toggleAfterReinit": "true",
+    "compareSplit": "30%",
+    "blankRegions": [
+      {
+        "cls": "sw-compare-before sw-blank",
+        "w": 356.7,
+        "h": 441,
+        "radius": "16px 0px 0px 16px",
+        "imgs": 0,
+        "bg": false
+      },
+      {
+        "cls": "sw-compare-after sw-blank",
+        "w": 356.7,
+        "h": 441,
+        "radius": "0px 16px 16px 0px",
+        "imgs": 0,
+        "bg": false
+      },
+      {
+        "cls": "sw-work-media sw-blank",
+        "w": 604,
+        "h": 500,
+        "radius": "16px 16px 0px 0px",
+        "imgs": 0,
+        "bg": false
+      },
+      {
+        "cls": "sw-work-shot sw-blank",
+        "w": 550.8,
+        "h": 416,
+        "radius": "12px",
+        "imgs": 0,
+        "bg": false
+      }
+    ],
+    "carouselRoots": 1,
+    "homeCarousel": 0,
+    "sectionOrder": [
+      "sw-hero",
+      "sw-featured",
+      "sw-work",
+      "sw-build",
+      "sw-process",
+      "sw-testimonials"
+    ],
+    "carousel": {
+      "initial": "Alex Carter",
+      "afterNext": "Carlos Rivera",
+      "afterPrev": "Alex Carter",
+      "wrapped": "Jordan MItchell Rivera",
+      "keyboard": "Alex Carter",
+      "hidden": [
+        "false",
+        "false",
+        "false"
+      ]
+    },
+    "steps": 6,
+    "buildIn": 5,
+    "footerRevealed": true,
+    "brokenImages": [],
+    "reducedMotion": {
+      "media": true,
+      "heroClass": "sw-hero",
+      "copyOpacity": "1",
+      "studioOpacity": "1",
+      "cardsOpacity": [
+        "1",
+        "1",
+        "1",
+        "1"
+      ],
+      "typedClip": "none",
+      "toggleDisplay": "none"
+    },
+    "menuOpened": true
+  },
+  "responsive": {
+    "360": {
+      "scrollWidth": 360,
+      "h1Size": "38px",
+      "studio": {
+        "width": 320,
+        "height": 336
+      },
+      "ctaOverlap": false,
+      "clipped": [],
+      "visibleCards": 1,
+      "pageHeight": 7742
+    },
+    "390": {
+      "scrollWidth": 390,
+      "h1Size": "38px",
+      "studio": {
+        "width": 350,
+        "height": 367
+      },
+      "ctaOverlap": false,
+      "clipped": [],
+      "visibleCards": 1,
+      "pageHeight": 7867
+    },
+    "430": {
+      "scrollWidth": 430,
+      "h1Size": "38px",
+      "studio": {
+        "width": 390,
+        "height": 409
+      },
+      "ctaOverlap": false,
+      "clipped": [],
+      "visibleCards": 1,
+      "pageHeight": 7932
+    },
+    "768": {
+      "scrollWidth": 768,
+      "h1Size": "46px",
+      "studio": {
+        "width": 617,
+        "height": 647
+      },
+      "ctaOverlap": false,
+      "clipped": [],
+      "visibleCards": 2,
+      "pageHeight": 8320
+    },
+    "1280": {
+      "scrollWidth": 1280,
+      "h1Size": "60px",
+      "studio": {
+        "width": 617,
+        "height": 647
+      },
+      "ctaOverlap": false,
+      "clipped": [],
+      "visibleCards": 3,
+      "pageHeight": 7115
+    },
+    "1440": {
+      "scrollWidth": 1440,
+      "h1Size": "60px",
+      "studio": {
+        "width": 617,
+        "height": 647
+      },
+      "ctaOverlap": false,
+      "clipped": [],
+      "visibleCards": 3,
+      "pageHeight": 7090
+    }
+  },
+  "errors": []
+}
