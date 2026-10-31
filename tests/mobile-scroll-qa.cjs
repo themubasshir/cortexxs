@@ -6,6 +6,7 @@ catch { ({ chromium } = require(process.env.CORTEXX_PLAYWRIGHT_MODULE || 'C:/Use
 const { execFileSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
+const { launchOptions } = require('./qa-browser.cjs');
 
 const root = path.resolve(__dirname, '..');
 const output = path.join(root, 'docs', 'qa', 'mobile-scroll-20261024');
@@ -138,7 +139,7 @@ function compactTrace(events) {
 }
 
 (async () => {
-  const browser = await chromium.launch({ headless: true, executablePath: chrome });
+  const browser = await chromium.launch(launchOptions({ headless: true, executablePath: chrome }, base));
   try {
     const results = [];
     results.push(await scenario(browser, { width: 390, reduced: false, baseline: true }));

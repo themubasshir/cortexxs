@@ -4,6 +4,7 @@ catch { ({ chromium } = require(process.env.CORTEXX_PLAYWRIGHT_MODULE || 'C:/Use
 const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
+const { launchOptions } = require('./qa-browser.cjs');
 
 const base = process.env.CORTEXX_QA_BASE || 'http://localhost/cortexx';
 const output = path.join(__dirname, '../docs/qa/ai-automation-20261027');
@@ -11,7 +12,7 @@ fs.mkdirSync(output, { recursive: true });
 const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, errors: [] };
 
 (async () => {
-  const browser = await chromium.launch({ headless: true, executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe' });
+  const browser = await chromium.launch(launchOptions({ headless: true, executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe' }, base));
   try {
     const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'no-preference' });
     const page = await context.newPage();
@@ -127,7 +128,7 @@ const result = { base, ai: {}, responsive: {}, homepage: {}, services: {}, error
     result.homepage.carousel = await page.locator('#testimonialCarousel').count();
     await page.evaluate(() => { window.__qaFirstCarouselCard = document.querySelector('#testimonialCarousel .testimonial-track').firstElementChild; });
     await page.locator('#tNext').click();
-    await page.waitForTimeout(800);
+    await page.waitForFunction(() => document.querySelector('#testimonialCarousel .testimonial-track').firstElementChild !== window.__qaFirstCarouselCard, null, { timeout: 3000 }).catch(() => {});
     result.homepage.carouselMoved = await page.evaluate(() => document.querySelector('#testimonialCarousel .testimonial-track').firstElementChild !== window.__qaFirstCarouselCard);
     result.homepage.footer = await page.locator('.footer').count();
     await page.locator('.footer').scrollIntoViewIfNeeded();

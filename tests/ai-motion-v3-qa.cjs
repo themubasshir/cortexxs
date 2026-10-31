@@ -3,6 +3,7 @@ try { ({ chromium } = require('playwright-core')); }
 catch { ({ chromium } = require(process.env.CORTEXX_PLAYWRIGHT_MODULE || 'C:/Users/Cyb3r/AppData/Local/Temp/marsai/node_modules/playwright-core')); }
 const fs = require('node:fs');
 const path = require('node:path');
+const { launchOptions } = require('./qa-browser.cjs');
 
 const base = process.env.CORTEXX_QA_BASE || 'http://localhost/cortexx';
 const route = base + '/services/ai-automation';
@@ -40,7 +41,7 @@ function cardMetrics() {
 }
 
 (async () => {
-  const browser = await chromium.launch({ headless: true, executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe' });
+  const browser = await chromium.launch(launchOptions({ headless: true, executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe' }, base));
   try {
     // 1. Every width: errors, stable scroll and height, full reveal, card text, overflow.
     for (const width of widths) {
@@ -49,7 +50,12 @@ function cardMetrics() {
       const errors = [];
       page.on('pageerror', e => errors.push(e.message));
       page.on('console', m => { if (m.type() === 'error') errors.push(m.text()); });
-      await page.goto(route, { waitUntil: 'networkidle' });
+      const response = await page.goto(route, { waitUntil: 'networkidle' });
+      if (response?.status() !== 200 || await page.locator('.ai-page').count() !== 1) {
+        fs.writeFileSync(path.join(out, `unexpected-page-${width}.html`), await page.content());
+        await page.screenshot({ path: path.join(out, `unexpected-page-${width}.png`), fullPage: true });
+        throw new Error(`${width}: expected AI page at ${page.url()}, received HTTP ${response?.status() ?? 'none'}: ${await page.title()}`);
+      }
       await settle(page);
       const heightStart = await page.evaluate(() => document.documentElement.scrollHeight);
       let lastY = 0, backward = 0, heights = new Set([heightStart]);

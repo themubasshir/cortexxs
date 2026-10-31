@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { launchOptions } = require('./qa-browser.cjs');
 const assert = require('node:assert/strict');
 let chromium;
 try { ({ chromium } = require('playwright-core')); }
@@ -16,7 +17,7 @@ const routes = {
 };
 
 (async () => {
-  const browser = await chromium.launch({ headless: true, executablePath: process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe' });
+  const browser = await chromium.launch(launchOptions({ headless: true, executablePath: process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe' }, base));
   const report = { base, desktop: {}, mobile: {}, errors: [] };
   try {
     for (const width of [1280, 1440, 360, 390, 430]) {

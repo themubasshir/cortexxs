@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { launchOptions } = require('./qa-browser.cjs');
 let chromium;
 try { ({ chromium } = require('playwright-core')); }
 catch { ({ chromium } = require(process.env.CORTEXX_PLAYWRIGHT_MODULE || 'C:/Users/Cyb3r/AppData/Local/Temp/marsai/node_modules/playwright-core')); }
@@ -11,10 +12,10 @@ const assert = (condition, message) => { if (!condition) throw new Error(message
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 (async () => {
-  const browser = await chromium.launch({
+  const browser = await chromium.launch(launchOptions({
     headless: true,
     executablePath: process.env.CHROME_PATH || 'C:/Program Files/Google/Chrome/Application/chrome.exe',
-  });
+  }, base));
   const report = { route: base + '/services/ai-automation', timeline: {}, carousel: {}, responsive: {}, reveals: {}, errors: [] };
   try {
     for (const width of [1440, 390]) {

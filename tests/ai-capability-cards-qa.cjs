@@ -3,6 +3,7 @@ try { ({ chromium } = require('playwright-core')); }
 catch { ({ chromium } = require(process.env.CORTEXX_PLAYWRIGHT_MODULE || 'C:/Users/Cyb3r/AppData/Local/Temp/marsai/node_modules/playwright-core')); }
 const fs = require('node:fs');
 const path = require('node:path');
+const { launchOptions } = require('./qa-browser.cjs');
 
 const base = process.env.CORTEXX_QA_BASE || 'http://localhost/cortexx';
 const label = process.argv[2] || 'after';
@@ -12,7 +13,7 @@ const widths = [360, 390, 430, 768, 1280, 1440];
 const report = { label, base, widths: {}, failures: [] };
 
 (async () => {
-  const browser = await chromium.launch({ headless: true, executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe' });
+  const browser = await chromium.launch(launchOptions({ headless: true, executablePath: 'C:/Program Files/Google/Chrome/Application/chrome.exe' }, base));
   try {
     for (const width of widths) {
       const context = await browser.newContext({ viewport: { width, height: 900 }, reducedMotion: 'no-preference' });
