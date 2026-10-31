@@ -4,7 +4,7 @@ $asset = fn(string $name) => $b . '/assets/images/web-development/' . $name;
 $title = 'Web Development Services | Cortexx';
 $description = 'Cortexx designs and builds custom, high-performance websites that explain your value, attract the right people and turn attention into action.';
 $canonicalPath = '/services/web-development';
-$pageStyles = 'web-development.css?v=1';
+$pageStyles = 'web-development.css?v=2';
 $pageScripts = 'web-development.js?v=1';
 $nav = [
     ['Work', $b . '/#work'],
@@ -21,8 +21,8 @@ $articles = [
     ['game', 'Platform', 'A unified platform that simplifies workflows, connects teams, and accelerates business growth.'],
 ];
 $work = [
-    ['Nexora', 'Clean technology · Website redesign'],
-    ['Haven', 'Hospitality · Website design'],
+    ['Nexora', 'Clean technology · Website redesign', 'nexora.png', 'Nexora project preview: website homepage design shown on a laptop screen'],
+    ['Haven', 'Hospitality · Website design', 'haven.png', 'Haven project preview: website homepage design with a mountain landscape hero'],
 ];
 // Figma only carries body copy for the expanded CRO row; the other rows use short supporting lines.
 $services = [
@@ -124,7 +124,7 @@ ob_start();
         <div class="wd-work-grid">
           <?php foreach ($work as $i => $item): ?>
           <article class="wd-work-card reveal" data-delay="<?= $i * 120 ?>">
-            <div class="wd-work-media wd-blank" aria-hidden="true"></div>
+            <div class="wd-work-media"><img src="<?= $asset($item[2]) ?>" alt="<?= $e($item[3]) ?>" width="604" height="500" loading="lazy" decoding="async"></div>
             <div class="wd-work-meta"><div><h3><?= $e($item[0]) ?></h3><p><?= $e($item[1]) ?></p></div><img src="<?= $asset('figma-arrow-46.svg') ?>" alt="" width="46" height="46"></div>
           </article>
           <?php endforeach; ?>

@@ -122,9 +122,30 @@ const carouselMoves = async page => {
           studio: { width: Math.round(card.width), height: Math.round(card.height) },
           ctaOverlap: ctas.some(r => r.left < card.right && r.right > card.left && r.top < card.bottom && r.bottom > card.top),
           clipped,
+          work: [...document.querySelectorAll('.wd-work-card')].map(c => {
+            const media = c.querySelector('.wd-work-media');
+            const img = media.querySelector('img');
+            const m = media.getBoundingClientRect();
+            const r = img ? img.getBoundingClientRect() : null;
+            return {
+              title: c.querySelector('h3').textContent,
+              src: img ? img.getAttribute('src').split('/').pop() : null,
+              alt: img ? img.alt : null,
+              natural: img ? [img.naturalWidth, img.naturalHeight] : null,
+              mediaRatio: m.width / m.height,
+              imgFill: r ? [Math.abs(r.width - m.width) < 1, Math.abs(r.height - m.height) < 1] : null,
+              fit: img ? getComputedStyle(img).objectFit : null,
+              radius: getComputedStyle(media).borderRadius,
+              overflow: getComputedStyle(media).overflow,
+              blank: media.classList.contains('wd-blank'),
+            };
+          }),
         };
       });
-      if ([390, 1440].includes(width)) await page.screenshot({ path: path.join(output, `full-page-${width}.png`), fullPage: true });
+      if ([390, 1440].includes(width)) {
+        await page.screenshot({ path: path.join(output, `full-page-${width}.png`), fullPage: true });
+        await page.locator('.wd-work').screenshot({ path: path.join(output, `section-work-${width}.png`) });
+      }
       if (width !== 1440) await page.screenshot({ path: path.join(output, `hero-${width}.png`) });
     }
     await context.close();
@@ -176,7 +197,8 @@ const carouselMoves = async page => {
     assert.deepEqual(result.wd.accordion.map(x => x[1]), ['true', 'false', 'false', 'false', 'false']);
     assert.equal(result.wd.accordionClosed, 0);
     assert.equal(result.wd.compareSplit, '30%');
-    assert.equal(result.wd.blankRegions.length, 4);
+    // Only the before/after compare panels stay blank; work cards carry supplied images.
+    assert.equal(result.wd.blankRegions.length, 2);
     assert.equal(result.wd.blankRegions.every(r => r.imgs === 0 && !r.bg), true);
     assert.equal(result.wd.carouselCount, 1);
     assert.equal(result.wd.aiCarousel, 0);
@@ -189,6 +211,17 @@ const carouselMoves = async page => {
       assert.equal(m.scrollWidth, Number(width), `overflow at ${width}`);
       assert.equal(m.ctaOverlap, false, `CTA overlap at ${width}`);
       assert.deepEqual(m.clipped, [], `clipped text at ${width}`);
+      assert.deepEqual(m.work.map(w => [w.title, w.src]), [['Nexora', 'nexora.png'], ['Haven', 'haven.png']], `work mapping at ${width}`);
+      for (const w of m.work) {
+        assert.equal(w.blank, false, `${w.title} still blank at ${width}`);
+        assert.ok(w.alt.length > 0, `${w.title} alt at ${width}`);
+        assert.deepEqual(w.natural, [604, 500], `${w.title} natural size at ${width}`);
+        assert.ok(Math.abs(w.mediaRatio - 604 / 500) < 0.01, `${w.title} media ratio at ${width}`);
+        assert.deepEqual(w.imgFill, [true, true], `${w.title} img fill at ${width}`);
+        assert.equal(w.fit, 'cover');
+        assert.equal(w.radius, '16px 16px 0px 0px');
+        assert.equal(w.overflow, 'hidden');
+      }
     }
     assert.equal(result.wd.reducedMotion.media, true);
     assert.equal(result.wd.reducedMotion.studioClass, 'wd-studio');

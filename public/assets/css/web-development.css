@@ -110,7 +110,8 @@
 .wd-work h2,.wd-process h2{line-height:68px}
 .wd-work-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px}
 .wd-work-card{border-radius:16px;background:#fff;box-shadow:0 12px 15px rgba(210,210,210,.19);overflow:hidden}
-.wd-work-media{aspect-ratio:604/500;border-radius:16px 16px 0 0}
+.wd-work-media{aspect-ratio:604/500;border-radius:16px 16px 0 0;overflow:hidden;background:#eef1f7}
+.wd-work-media img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
 .wd-work-meta{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px}
 .wd-work-meta h3{font-size:32px;line-height:32px;font-weight:700;color:#111}
 .wd-work-meta p{margin-top:10px;font-size:16px;line-height:16px;font-weight:500;color:#050d17}
