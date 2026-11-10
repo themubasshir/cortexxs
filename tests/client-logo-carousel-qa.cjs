@@ -22,6 +22,11 @@ const names = ['VeloSys', 'Intuitive Technologies', 'FutureTV', 'Lantra', 'GolfV
       assert.equal(await carousel.locator('.trust-set[aria-hidden="true"]').count(), 3);
       assert.equal(await carousel.locator('img').evaluateAll(images => images.every(image => image.complete && image.naturalWidth > 0)), true);
       assert.equal(await carousel.locator('img').evaluateAll(images => images.every(image => image.currentSrc.includes('/client-logos/'))), true);
+      const logoBase = new URL('../', await carousel.locator('img').first().evaluate(image => image.currentSrc));
+      for (const name of ['lumina', 'vortex', 'velocity', 'synergy', 'enigma', 'spectrum']) {
+        const logo = await page.request.get(new URL(`brand-${name}.svg`, logoBase).href);
+        assert.equal(logo.status(), 200, `${name} testimonial logo must remain available`);
+      }
       assert.equal(await page.getByText('Trusted by 50,000+ businesses').count(), 0);
       assert.equal(await page.getByText('Trusted by over 100 businesses').count(), 0);
       const geometry = await carousel.evaluate(element => {
