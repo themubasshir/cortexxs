@@ -36,7 +36,7 @@ ob_start();
       </div>
     </div>
     <div class="trust reveal">
-      <p>Client logos</p>
+      <p>Chosen by businesses thinking ahead.</p>
       <?php $brandLogos = [
           ['VeloSys.png', 'VeloSys'],
           ['Intuitive Technologies Logo.png', 'Intuitive Technologies'],
