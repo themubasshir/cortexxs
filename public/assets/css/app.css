@@ -95,12 +95,16 @@ button{font:inherit;border:0;background:none;cursor:pointer}
 .trust-track{display:flex;width:max-content;margin-left:22px;animation:trustScroll 26s linear infinite}
 .trust-logos:hover .trust-track,.trust-logos:focus-visible .trust-track,.trust-logos:focus-within .trust-track{animation-play-state:paused}
 .trust-track:focus-visible{outline:2px solid var(--blue);outline-offset:6px}
-@keyframes trustScroll{to{transform:translateX(-50%)}}
+@keyframes trustScroll{to{transform:translateX(-25%)}}
 .trust-set{display:flex;align-items:center;flex:none}
-.trust-logos .lg{position:relative;width:180px;height:50px;display:flex;align-items:center;justify-content:center;flex:none}
-.trust-logos .lg:last-child{width:151px}
+.trust-logos .lg{position:relative;width:180px;height:56px;display:flex;align-items:center;justify-content:center;flex:none}
 .trust-logos .lg:not(:last-child)::after{content:"";position:absolute;right:0;top:25px;width:29px;border-top:1px solid var(--line)}
-.trust-logos .lg img{height:34px;max-width:151px;width:auto;display:block}
+.trust-logos .lg img{width:160px;height:48px;object-fit:contain;display:block}
+@media (prefers-reduced-motion:reduce){
+  .trust-logos{overflow-x:auto}
+  .trust-track{animation:none;transform:none}
+  .trust-set[aria-hidden="true"]{display:none}
+}
 .logo-text{font-weight:700;font-size:19px;letter-spacing:-.01em;color:#4a4a4a;display:flex;align-items:center;gap:8px}
 .logo-text .mk{width:30px;height:30px;border-radius:8px;display:inline-block}
 

@@ -26,20 +26,6 @@ ob_start();
           <a class="btn btn-primary" href="#contact">Start Project</a>
           <a class="btn btn-ghost" href="#work">View Work <span aria-hidden="true">→</span></a>
         </div>
-        <div class="social-proof reveal">
-          <div class="avatars">
-            <img src="<?= $img('cb07be31077901284b216bad893805196f094747.png') ?>" alt="Client">
-            <img src="<?= $img('4ae134041644c361fd828d14a56c538158b5906d.png') ?>" alt="Client">
-            <img src="<?= $img('253ea0a2729e2938527d49babb39dfb55ca389cd.png') ?>" alt="Client">
-            <span class="av-more">100+</span>
-          </div>
-          <div class="proof-text">
-            <span class="stars" aria-label="5 out of 5 stars">
-              <?php for ($i=0;$i<5;$i++): ?><svg viewBox="0 0 18 18"><path d="M9 .9l2.4 5 5.5.7-4 3.9 1 5.4L9 13.4l-4.9 2.5 1-5.4-4-3.9 5.5-.7z"/></svg><?php endfor; ?>
-            </span>
-            Trusted by over 100 businesses
-          </div>
-        </div>
       </div>
       <div class="hero-visual reveal">
         <div class="video-card">
@@ -50,14 +36,21 @@ ob_start();
       </div>
     </div>
     <div class="trust reveal">
-      <p>Trusted by 50,000+ businesses for innovative design and growth.</p>
-      <?php $brandLogos = ['lumina' => 'Lumina', 'vortex' => 'Vortex', 'velocity' => 'Velocity', 'synergy' => 'Synergy', 'enigma' => 'Enigma', 'spectrum' => 'Spectrum']; ?>
-      <div class="trust-logos" aria-label="Trusted brands. Logo carousel pauses on hover or keyboard focus.">
+      <p>Client logos</p>
+      <?php $brandLogos = [
+          ['VeloSys.png', 'VeloSys'],
+          ['Intuitive Technologies Logo.png', 'Intuitive Technologies'],
+          ['logo3.png', 'FutureTV'],
+          ['Lantra.png', 'Lantra'],
+          ['GolfView Hotel Golf Logo.png', 'GolfView Hotel'],
+          ['logo 2.png', 'Calyx'],
+      ]; ?>
+      <div class="trust-logos" role="region" aria-label="Client logos. Animation pauses on hover or keyboard focus.">
         <div class="trust-track" tabindex="0">
-          <?php for ($copy = 0; $copy < 2; $copy++): ?>
-          <div class="trust-set" <?= $copy ? 'aria-hidden="true"' : '' ?>>
-            <?php foreach ($brandLogos as $file => $name): ?>
-            <div class="lg"><img src="<?= $b ?>/assets/images/brand-<?= $file ?>.svg" alt="<?= $copy ? '' : $name ?>"></div>
+          <?php for ($copy = 0; $copy < 4; $copy++): ?>
+          <div class="trust-set" role="list" <?= $copy ? 'aria-hidden="true"' : '' ?>>
+            <?php foreach ($brandLogos as [$file, $name]): ?>
+            <div class="lg" role="listitem"><img src="<?= htmlspecialchars($b . '/assets/images/client-logos/' . rawurlencode($file), ENT_QUOTES, 'UTF-8') ?>" alt="<?= $copy ? '' : htmlspecialchars($name, ENT_QUOTES, 'UTF-8') ?>" width="2172" height="724" decoding="async"></div>
             <?php endforeach; ?>
           </div>
           <?php endfor; ?>
